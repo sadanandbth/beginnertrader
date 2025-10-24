@@ -11,6 +11,95 @@
     <meta property="og:url" content="https://beginnertrader.store">
     <meta name="twitter:card" content="summary_large_image">
     <title>BEGINNER TRADER HELPER - Trading Courses & eBooks</title>
+   
+   <!-- Beginner Trader Limited Offer Popup (Smaller & Persistent Timer) -->
+<div id="offerPopup" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);display:flex;justify-content:center;align-items:center;z-index:9999;visibility:hidden;opacity:0;transition:all .5s ease-in-out;">
+  <div style="background:linear-gradient(135deg,#1b4332,#2d6a4f);color:#fff;padding:20px 20px;border-radius:16px;text-align:center;max-width:350px;width:85%;box-shadow:0 0 20px rgba(0,0,0,0.4);position:relative;animation:popupIn .8s ease forwards;">
+    <span onclick="closeOfferPopup()" style="position:absolute;top:8px;right:12px;font-size:1.2rem;color:#fff;cursor:pointer;">&times;</span>
+    <h2 style="color:#ffd166;font-size:1.6rem;margin-bottom:8px;">🔥 Flat 91% OFF — Limited Time!</h2>
+    <p style="margin-bottom:15px;font-size:0.95rem;">
+      Original Price: <del style="color:#ff6b6b;">₹16,000</del><br>
+      <strong style="font-size:1.1rem;color:#06d6a0;">Now Only ₹1,499!</strong>
+    </p>
+
+    <div id="countdownTimer" style="display:flex;justify-content:center;gap:8px;font-weight:bold;margin-bottom:15px;">
+      <div style="background:#081c15;padding:8px 12px;border-radius:8px;min-width:40px;">00</div>:
+      <div style="background:#081c15;padding:8px 12px;border-radius:8px;min-width:40px;">00</div>:
+      <div style="background:#081c15;padding:8px 12px;border-radius:8px;min-width:40px;">00</div>:
+      <div style="background:#081c15;padding:8px 12px;border-radius:8px;min-width:40px;">00</div>
+    </div>
+
+    <a href="#courses" id="claimOfferBtn" style="display:inline-block;padding:10px 20px;background:#06d6a0;color:#000;border-radius:25px;text-decoration:none;font-weight:bold;">Claim Offer</a>
+  </div>
+</div>
+
+<style>
+@keyframes popupIn {
+  0% { transform:scale(.7); opacity:0; }
+  100% { transform:scale(1); opacity:1; }
+}
+</style>
+
+<script>
+(function(){
+  const overlay = document.getElementById('offerPopup');
+  const countdownKey = 'beginnerTraderOffer';
+  const duration = 24*60*60*1000; // 24 hours
+
+  function startCountdown() {
+    let target = localStorage.getItem(countdownKey);
+    if (!target) {
+      target = Date.now() + duration;
+      localStorage.setItem(countdownKey, target);
+    }
+
+    function update() {
+      const now = Date.now();
+      const diff = target - now;
+      if (diff <= 0) {
+        document.getElementById('countdownTimer').textContent = 'Offer Expired!';
+        localStorage.removeItem(countdownKey);
+        return;
+      }
+      const h = Math.floor((diff/(1000*60*60)) % 24);
+      const m = Math.floor((diff/(1000*60)) % 60);
+      const s = Math.floor((diff/1000) % 60);
+      document.getElementById('countdownTimer').innerHTML =
+        `<div style="background:#081c15;padding:8px 12px;border-radius:8px;min-width:40px;">${String(h).padStart(2,'0')}</div>:
+         <div style="background:#081c15;padding:8px 12px;border-radius:8px;min-width:40px;">${String(m).padStart(2,'0')}</div>:
+         <div style="background:#081c15;padding:8px 12px;border-radius:8px;min-width:40px;">${String(s).padStart(2,'0')}</div>`;
+    }
+    update();
+    setInterval(update, 1000);
+  }
+
+  window.addEventListener('load', () => {
+    setTimeout(() => overlay.style.visibility='visible', 800);
+    setTimeout(() => overlay.style.opacity='1', 900);
+    startCountdown();
+  });
+
+  document.getElementById('claimOfferBtn').addEventListener('click', function(e) {
+    e.preventDefault();
+    closeOfferPopup();
+    const target = document.querySelector('#courses');
+    if (target) {
+      window.scrollTo({
+        top: target.offsetTop - 50,
+        behavior: 'smooth'
+      });
+    }
+  });
+})();
+
+function closeOfferPopup() {
+  const overlay = document.getElementById('offerPopup');
+  overlay.style.opacity = '0';
+  setTimeout(() => overlay.style.visibility = 'hidden', 400);
+}
+</script>
+
+   
     
     <!-- External Resources -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -1300,7 +1389,7 @@
 <body>
     <!-- Diwali Special Banner -->
     <div class="diwali-banner" id="diwaliBanner">
-        <p>🪔 Festive Season Offer: Flat 91% OFF on BTH ALGO V4.3.3 Course ! Limited Time Only. 🪔</p>
+        <p>🪔 Festival Season Offer: Flat 91% OFF on BTH ALGO V4.3.3 Course ! Limited Time Only. 🪔</p>
     </div>
 
     <!-- Header -->
@@ -1448,7 +1537,7 @@
                             <!-- First-Time Enroll Offer Box -->
                             <div style="margin-top: 8px; background: #eafaf1; border: 1px solid #2ecc71; padding: 8px 12px; border-radius: 8px; display: inline-block;">
                                 <span style="font-size: 1.0rem; font-weight: bold; color: #1D9F77;">
-                                🎉 Festive Season Offer: ₹ 1499
+                                🎉 Festival Season Offer: ₹ 1499
                                 </span>
                             </div>
                         </div>
