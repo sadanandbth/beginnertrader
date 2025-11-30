@@ -1,32 +1,15 @@
-<!-- ✅ SEO & Social Meta for Beginner Trader Helper -->
-<title>BTH Financial Growth & Compound Interest Calculator | Beginner Trader Helper</title>
-<meta name="description" content="Use Beginner Trader Helper’s Financial Growth & Compound Interest Calculator to analyze your daily, weekly, and monthly compounding returns. Perfect for traders, investors, and learners in our BTH courses.">
-<meta name="keywords" content="Beginner Trader Helper, BTH Calculator, Compound Interest, Daily Interest, Financial Growth, Trading Course, Investment Returns, Trading Tools">
-<meta name="author" content="Beginner Trader Helper">
-
-<!-- Open Graph (for WhatsApp, Facebook, LinkedIn previews) -->
-<meta property="og:title" content="BTH Financial Growth & Compound Interest Calculator">
-<meta property="og:description" content="Analyze your compounding returns, cash flow, and growth potential with Beginner Trader Helper’s official calculator.">
-<meta property="og:image" content="https://iili.io/KDmPb5B.jpg">
-<meta property="og:url" content="https://beginnertrader.store/bth-financial-growth-and-compound-calculator.html">
-<meta property="og:type" content="website">
-
-<!-- Twitter Card (for Twitter/X sharing) -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="BTH Financial Growth & Compound Interest Calculator">
-<meta name="twitter:description" content="A free tool from Beginner Trader Helper to calculate compounding growth and returns.">
-<meta name="twitter:image" content="https://iili.io/KDmPb5B.jpg">
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Compound Interest Calculator</title>
+    <title>Daily Compound Interest Calculator with Trading Simulation</title>
     <!-- Load SheetJS for Excel/XLSX download functionality -->
     <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
     <!-- Font Awesome for Social Media Logos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Chart.js for graph visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         /* --- THEME DEFINITIONS (Using CSS Variables) --- */
         :root {
@@ -43,6 +26,8 @@
             --secondary-color: #49ad77; /* Lighter green accent */
             --download-color: #1e7345; /* Deeper green for buttons */
             --log-bg: #e6f7ed; /* Very light green for log/hover */
+            --profit-color: #28a745;
+            --loss-color: #dc3545;
         }
 
         .dark-mode {
@@ -59,6 +44,8 @@
             --secondary-color: #3a3a5a;
             --download-color: #49ad77;
             --log-bg: #3a3a5a;
+            --profit-color: #4ade80;
+            --loss-color: #f87171;
         }
         
         /* General Styles - Now using variables */
@@ -131,7 +118,7 @@
         }
 
         /* Input & Results Card Styles */
-        .calculator-section, .results-section {
+        .calculator-section, .results-section, .simulation-section {
             background: var(--card-bg);
             padding: 25px;
             border-radius: 15px;
@@ -343,7 +330,6 @@
             font-size: 0.9em;
         }
 
-
         .hidden {
             display: none;
         }
@@ -513,6 +499,89 @@
             font-size: 1.2em;
         }
 
+        /* Trading Simulation Styles */
+        .simulation-controls {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .simulation-results {
+            margin-top: 20px;
+        }
+        
+        .simulation-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-card {
+            background: var(--card-inner-bg);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .stat-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .profit {
+            color: var(--profit-color);
+        }
+        
+        .loss {
+            color: var(--loss-color);
+        }
+        
+        .chart-container {
+            height: 300px;
+            margin-bottom: 20px;
+        }
+        
+        .trading-log {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+        
+        .trading-log-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9em;
+        }
+        
+        .trading-log-table th {
+            background-color: var(--primary-color);
+            color: var(--header-text);
+            padding: 8px;
+            position: sticky;
+            top: 0;
+        }
+        
+        .trading-log-table td {
+            padding: 8px;
+            border-bottom: 1px solid var(--log-bg);
+        }
+        
+        .trading-log-table tr:nth-child(even) {
+            background-color: var(--log-bg);
+        }
+        
+        .win-row {
+            background-color: rgba(40, 167, 69, 0.1) !important;
+        }
+        
+        .loss-row {
+            background-color: rgba(220, 53, 69, 0.1) !important;
+        }
+
         /* --- MOBILE OPTIMIZATION --- */
         @media (max-width: 768px) {
             body {
@@ -560,6 +629,15 @@
             .detailed-log-container {
                 padding: 15px;
                 border-radius: 0;
+            }
+            
+            /* Trading simulation adjustments */
+            .simulation-controls {
+                grid-template-columns: 1fr;
+            }
+            
+            .simulation-stats {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -743,6 +821,87 @@
                 </div>
             </div>
         </div>
+        
+        <!-- Trading Simulation Section -->
+        <div class="simulation-section">
+            <h2 style="margin-bottom: 20px; color: var(--primary-color);">Trading Simulation</h2>
+            
+            <div class="simulation-controls">
+                <div class="form-group">
+                    <label>Win Rate (%)</label>
+                    <input type="number" id="winRate" placeholder="Enter win rate (e.g., 70)" step="0.1" min="0" max="100" value="70">
+                </div>
+                
+                <div class="form-group">
+                    <label>Risk/Reward Ratio</label>
+                    <input type="number" id="rrRatio" placeholder="Enter R:R ratio (e.g., 1:3)" step="0.1" min="0.1" value="3">
+                </div>
+                
+                <div class="form-group">
+                    <label>Max Consecutive Losses</label>
+                    <input type="number" id="maxLossStreak" placeholder="Max losing streak" min="1" value="5">
+                </div>
+                
+                <div class="form-group">
+                    <label>Trades per Day</label>
+                    <input type="number" id="tradesPerDay" placeholder="Trades per day" min="1" value="3">
+                </div>
+            </div>
+            
+            <button class="btn-calculate" onclick="runSimulation()">Run Trading Simulation</button>
+            
+            <div id="simulationResults" class="simulation-results hidden">
+                <div class="simulation-stats">
+                    <div class="stat-card">
+                        <div class="stat-label">Final Balance</div>
+                        <div class="stat-value" id="finalBalance">$0.00</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-label">Total Profit/Loss</div>
+                        <div class="stat-value" id="totalProfitLoss">$0.00</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-label">Win Rate</div>
+                        <div class="stat-value" id="actualWinRate">0%</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-label">Max Drawdown</div>
+                        <div class="stat-value" id="maxDrawdown">0%</div>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <canvas id="simulationChart"></canvas>
+                </div>
+                
+                <div class="trading-log">
+                    <h3>Trading Log</h3>
+                    <div class="log-table-wrapper">
+                        <table class="trading-log-table" id="tradingLogTable">
+                            <thead>
+                                <tr>
+                                    <th>Day</th>
+                                    <th>Trade</th>
+                                    <th>Result</th>
+                                    <th>P&L</th>
+                                    <th>Balance</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tradingLogBody">
+                                <!-- Trading log will be populated here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <button class="btn-download" onclick="downloadTradingLog()">
+                    📥 Download Trading Log (Excel)
+                </button>
+            </div>
+        </div>
 
         <!-- Detailed Daily Log View -->
         <div class="detailed-log-container hidden" id="detailedLogContainer">
@@ -798,6 +957,8 @@
         // Global variables to store calculation results and state
         let dailyLog = [];
         let currencySymbol = '$';
+        let tradingLog = [];
+        let simulationChart = null;
         
         // --- NEW MENU TOGGLE LOGIC ---
         function toggleMenu() {
@@ -817,7 +978,6 @@
             }
         }
 
-
         // --- NEW THEME TOGGLE LOGIC ---
         function toggleTheme() {
             const body = document.body;
@@ -830,6 +990,11 @@
             } else {
                 body.classList.remove('dark-mode');
                 localStorage.setItem('theme', 'light');
+            }
+            
+            // Update chart colors if chart exists
+            if (simulationChart) {
+                updateChartColors();
             }
         }
 
@@ -846,7 +1011,6 @@
                 toggle.checked = false;
             }
         })();
-
 
         // Update currency symbol display
         document.getElementById('currency').addEventListener('change', function() {
@@ -933,7 +1097,6 @@
             document.getElementById('detailedLogContainer').classList.add('hidden');
         }
 
-
         function showDetailedLog(period) {
             if (dailyLog.length === 0) return; // Guard against no calculation run
 
@@ -1005,7 +1168,6 @@
                 parseFloat(d['Principal End']).toFixed(2)
             ])];
 
-
             // 3. Create Workbook and Sheets
             const workbook = XLSX.utils.book_new();
 
@@ -1014,7 +1176,6 @@
 
             const logSheet = XLSX.utils.aoa_to_sheet(logData);
             XLSX.utils.book_append_sheet(workbook, logSheet, "Daily Log");
-
 
             // 4. Write and Download the File
             XLSX.writeFile(workbook, "Compound_Interest_Full_Report.xlsx");
@@ -1051,6 +1212,257 @@
             XLSX.utils.book_append_sheet(workbook, logSheet, "Daily_Log");
             
             XLSX.writeFile(workbook, "Daily_Transaction_Log.xlsx");
+        }
+        
+        // Trading Simulation Functions
+        function runSimulation() {
+            const principal = parseFloat(document.getElementById('principal').value);
+            const days = parseInt(document.getElementById('days').value);
+            const winRate = parseFloat(document.getElementById('winRate').value) / 100;
+            const rrRatio = parseFloat(document.getElementById('rrRatio').value);
+            const maxLossStreak = parseInt(document.getElementById('maxLossStreak').value);
+            const tradesPerDay = parseInt(document.getElementById('tradesPerDay').value);
+            
+            if (!principal || !days || !winRate || !rrRatio || !maxLossStreak || !tradesPerDay) {
+                alert("Please fill in all simulation parameters");
+                return;
+            }
+            
+            // Calculate risk percentage based on daily interest rate
+            const dailyRate = parseFloat(document.getElementById('rate').value) / 100;
+            const riskPercent = dailyRate / rrRatio;
+            
+            // Initialize simulation variables
+            let balance = principal;
+            let totalTrades = 0;
+            let winningTrades = 0;
+            let losingTrades = 0;
+            let currentLossStreak = 0;
+            let maxDrawdown = 0;
+            let peakBalance = principal;
+            
+            tradingLog = [];
+            const balanceHistory = [principal];
+            const dayLabels = ['Day 0'];
+            
+            // Run simulation for each day
+            for (let day = 1; day <= days; day++) {
+                let dayProfit = 0;
+                let dayTrades = [];
+                
+                // Execute trades for the day
+                for (let tradeNum = 1; tradeNum <= tradesPerDay; tradeNum++) {
+                    totalTrades++;
+                    
+                    // Determine if this trade is a win or loss
+                    const isWin = Math.random() < winRate;
+                    const tradeAmount = balance * riskPercent;
+                    let tradeResult;
+                    
+                    if (isWin) {
+                        // Win trade: gain = risk * reward ratio
+                        tradeResult = tradeAmount * rrRatio;
+                        winningTrades++;
+                        currentLossStreak = 0;
+                    } else {
+                        // Loss trade: lose the risk amount
+                        tradeResult = -tradeAmount;
+                        losingTrades++;
+                        currentLossStreak++;
+                        
+                        // Check if we've hit the max loss streak
+                        if (currentLossStreak >= maxLossStreak) {
+                            // Stop trading for the day if max loss streak is reached
+                            break;
+                        }
+                    }
+                    
+                    // Update balance
+                    balance += tradeResult;
+                    dayProfit += tradeResult;
+                    
+                    // Track max drawdown
+                    if (balance > peakBalance) {
+                        peakBalance = balance;
+                    } else {
+                        const drawdown = (peakBalance - balance) / peakBalance * 100;
+                        if (drawdown > maxDrawdown) {
+                            maxDrawdown = drawdown;
+                        }
+                    }
+                    
+                    // Log the trade
+                    const tradeLog = {
+                        day: day,
+                        trade: tradeNum,
+                        result: isWin ? 'WIN' : 'LOSS',
+                        pnl: tradeResult,
+                        balance: balance
+                    };
+                    
+                    dayTrades.push(tradeLog);
+                    tradingLog.push(tradeLog);
+                }
+                
+                // Add day's ending balance to history
+                balanceHistory.push(balance);
+                dayLabels.push(`Day ${day}`);
+            }
+            
+            // Calculate statistics
+            const actualWinRate = (winningTrades / totalTrades) * 100;
+            const totalProfitLoss = balance - principal;
+            const profitLossPercent = (totalProfitLoss / principal) * 100;
+            
+            // Update UI with results
+            document.getElementById('finalBalance').textContent = formatCurrency(balance);
+            document.getElementById('totalProfitLoss').textContent = `${formatCurrency(totalProfitLoss)} (${profitLossPercent.toFixed(2)}%)`;
+            document.getElementById('totalProfitLoss').className = totalProfitLoss >= 0 ? 'stat-value profit' : 'stat-value loss';
+            document.getElementById('actualWinRate').textContent = `${actualWinRate.toFixed(1)}%`;
+            document.getElementById('maxDrawdown').textContent = `${maxDrawdown.toFixed(2)}%`;
+            
+            // Display trading log
+            displayTradingLog();
+            
+            // Create chart
+            createSimulationChart(dayLabels, balanceHistory);
+            
+            // Show results section
+            document.getElementById('simulationResults').classList.remove('hidden');
+        }
+        
+        function displayTradingLog() {
+            const logBody = document.getElementById('tradingLogBody');
+            logBody.innerHTML = '';
+            
+            tradingLog.forEach(trade => {
+                const row = document.createElement('tr');
+                row.className = trade.result === 'WIN' ? 'win-row' : 'loss-row';
+                
+                row.innerHTML = `
+                    <td>${trade.day}</td>
+                    <td>${trade.trade}</td>
+                    <td>${trade.result}</td>
+                    <td class="${trade.pnl >= 0 ? 'profit' : 'loss'}">${formatCurrency(trade.pnl)}</td>
+                    <td>${formatCurrency(trade.balance)}</td>
+                `;
+                
+                logBody.appendChild(row);
+            });
+        }
+        
+        function createSimulationChart(labels, data) {
+            const ctx = document.getElementById('simulationChart').getContext('2d');
+            
+            // Destroy existing chart if it exists
+            if (simulationChart) {
+                simulationChart.destroy();
+            }
+            
+            // Get theme colors
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            const gridColor = isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)';
+            const textColor = isDarkMode ? '#f0f0f0' : '#333';
+            
+            simulationChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Account Balance',
+                        data: data,
+                        borderColor: getComputedStyle(document.documentElement).getPropertyValue('--primary-color'),
+                        backgroundColor: 'rgba(46, 134, 76, 0.1)',
+                        borderWidth: 2,
+                        fill: true,
+                        tension: 0.1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            grid: {
+                                color: gridColor
+                            },
+                            ticks: {
+                                color: textColor,
+                                maxTicksLimit: 10
+                            }
+                        },
+                        y: {
+                            grid: {
+                                color: gridColor
+                            },
+                            ticks: {
+                                color: textColor,
+                                callback: function(value) {
+                                    return formatCurrency(value);
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: textColor
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return `Balance: ${formatCurrency(context.parsed.y)}`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        
+        function updateChartColors() {
+            if (!simulationChart) return;
+            
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            const gridColor = isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)';
+            const textColor = isDarkMode ? '#f0f0f0' : '#333';
+            
+            simulationChart.options.scales.x.grid.color = gridColor;
+            simulationChart.options.scales.x.ticks.color = textColor;
+            simulationChart.options.scales.y.grid.color = gridColor;
+            simulationChart.options.scales.y.ticks.color = textColor;
+            simulationChart.options.plugins.legend.labels.color = textColor;
+            
+            simulationChart.update();
+        }
+        
+        function downloadTradingLog() {
+            if (tradingLog.length === 0) {
+                alert("Please run a simulation first");
+                return;
+            }
+            
+            // Prepare data for the Trading Log Sheet
+            const logHeaders = ['Day', 'Trade', 'Result', 'P&L', 'Balance'];
+            const logData = [
+                ['Trading Simulation Log'],
+                [],
+                logHeaders,
+                ...tradingLog.map(t => [
+                    t.day,
+                    t.trade,
+                    t.result,
+                    parseFloat(t.pnl).toFixed(2),
+                    parseFloat(t.balance).toFixed(2)
+                ])
+            ];
+            
+            const workbook = XLSX.utils.book_new();
+            const logSheet = XLSX.utils.aoa_to_sheet(logData);
+            XLSX.utils.book_append_sheet(workbook, logSheet, "Trading_Log");
+            
+            XLSX.writeFile(workbook, "Trading_Simulation_Log.xlsx");
         }
     </script>
 </body>
