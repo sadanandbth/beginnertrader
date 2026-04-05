@@ -1,2533 +1,1150 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn to trade smartly with our expert trading courses and eBooks. Get instant access to proven strategies, real-world case studies, and more.">
-    <meta name="keywords" content="Trading Courses, Learn Trading, Forex Course, Stock Market eBooks, Price Action, Technical Analysis, Beginner Trading, Buy Trading Course, Download Trading PDF">
-    <meta property="og:title" content="BEGINNER TRADER HELPER - eBooks and Courses">
-    <meta property="og:description" content="Explore and download expert-made trading eBooks and video courses. Start your profitable trading journey today!">
-    <meta property="og:image" content="https://beginnertrader.store/images/og-image.jpg">
-    <meta property="og:url" content="https://beginnertrader.store">
-    <meta name="twitter:card" content="summary_large_image">
-    <title>BEGINNER TRADER HELPER - Trading Courses & eBooks</title>
-   
-   <!-- Beginner Trader Limited Offer Popup (Smaller & Persistent Timer) -->
-<div id="offerPopup" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);display:flex;justify-content:center;align-items:center;z-index:9999;visibility:hidden;opacity:0;transition:all .5s ease-in-out;">
-  <div style="background:linear-gradient(135deg,#1b4332,#2d6a4f);color:#fff;padding:20px 20px;border-radius:16px;text-align:center;max-width:350px;width:85%;box-shadow:0 0 20px rgba(0,0,0,0.4);position:relative;animation:popupIn .8s ease forwards;">
-    <span onclick="closeOfferPopup()" style="position:absolute;top:8px;right:12px;font-size:1.2rem;color:#fff;cursor:pointer;">&times;</span>
-    <h2 style="color:#ffd166;font-size:1.6rem;margin-bottom:8px;">🔥 BTH ALGO V4.4.0 is Now Live!</h2>
-    <p style="margin-bottom:15px;font-size:0.95rem;">
-      Original Price: <del style="color:#ff6b6b;">₹16,000</del><br>
-      <strong style="font-size:1.1rem;color:#06d6a0;">Now Only ₹1,499!</strong>
-    </p>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Beginner Trader Helper™ - Master the Market</title>
+<meta name="description" content="Learn trading with premium courses and eBooks. Master Price Action, SMC strategies, and algo trading.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #050d08;
+  --bg2: #071009;
+  --card: rgba(10,22,14,0.7);
+  --border: rgba(34,197,94,0.15);
+  --border-hover: rgba(34,197,94,0.4);
+  --green: #22c55e;
+  --green-dim: rgba(34,197,94,0.08);
+  --green-glow: rgba(34,197,94,0.3);
+  --gold: #f59e0b;
+  --gold-dim: rgba(245,158,11,0.1);
+  --gold-glow: rgba(245,158,11,0.35);
+  --text: #eef2ee;
+  --muted: #6b7c70;
+  --radius: 1rem;
+  --font-display: 'Manrope', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
 
-    <div id="countdownTimer" style="display:flex;justify-content:center;gap:8px;font-weight:bold;margin-bottom:15px;">
-      <div style="background:#081c15;padding:8px 12px;border-radius:8px;min-width:40px;">00</div>:
-      <div style="background:#081c15;padding:8px 12px;border-radius:8px;min-width:40px;">00</div>:
-      <div style="background:#081c15;padding:8px 12px;border-radius:8px;min-width:40px;">00</div>:
-      <div style="background:#081c15;padding:8px 12px;border-radius:8px;min-width:40px;">00</div>
-    </div>
+/* ========= NOISE GRAIN OVERLAY ========= */
+body::before {
+  content:'';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.5;
+}
 
-    <a href="#courses" id="claimOfferBtn" style="display:inline-block;padding:10px 20px;background:#06d6a0;color:#000;border-radius:25px;text-decoration:none;font-weight:bold;">Claim Offer</a>
+/* ========= GRID LINES BG ========= */
+.grid-bg {
+  background-image: linear-gradient(rgba(34,197,94,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(34,197,94,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* ========= SCROLLBAR ========= */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--green); border-radius: 2px; }
+
+/* ========= TYPOGRAPHY ========= */
+.font-display { font-family: var(--font-display); }
+.gradient-text {
+  background: linear-gradient(135deg, var(--green), #86efac, var(--gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.gold-text {
+  background: linear-gradient(135deg, var(--gold), #fcd34d, #f59e0b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ========= ANNOUNCEMENT BAR ========= */
+.ann-bar {
+  background: linear-gradient(90deg, rgba(34,197,94,0.9), rgba(34,197,94,1), rgba(34,197,94,0.9));
+  padding: 8px 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: #050d08;
+  overflow: hidden;
+  position: relative;
+  z-index: 100;
+}
+.marquee-track {
+  display: flex;
+  animation: marquee 22s linear infinite;
+  white-space: nowrap;
+  width: max-content;
+}
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ========= NAV ========= */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  background: rgba(5,13,8,0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 13px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* Logo — clean and understated */
+.logo {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.logo-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 8px var(--green-glow);
+  flex-shrink: 0;
+}
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a { color: var(--muted); text-decoration: none; font-size: 13px; font-weight: 500; transition: color 0.2s; }
+.nav-links a:hover { color: var(--green); }
+.hamburger { display: none; background: none; border: 1px solid var(--border); padding: 7px 10px; border-radius: 8px; cursor: pointer; color: var(--text); font-size: 16px; }
+.mobile-menu { display: none; flex-direction: column; gap: 14px; padding: 14px 24px 18px; border-top: 1px solid var(--border); }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { color: var(--muted); text-decoration: none; font-size: 14px; }
+
+/* ========= BUTTONS ========= */
+.btn-primary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  background: var(--green); color: #050d08;
+  border: none; border-radius: 9px; padding: 10px 20px;
+  font-family: var(--font-body); font-size: 13px; font-weight: 600;
+  cursor: pointer; text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.34,1.56,0.64,1);
+  box-shadow: 0 0 16px rgba(34,197,94,0.3);
+}
+.btn-primary:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 0 32px rgba(34,197,94,0.5); }
+.btn-outline {
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  background: transparent; color: var(--green);
+  border: 1px solid rgba(34,197,94,0.4); border-radius: 9px; padding: 10px 20px;
+  font-family: var(--font-body); font-size: 13px; font-weight: 600;
+  cursor: pointer; text-decoration: none;
+  transition: all 0.25s;
+}
+.btn-outline:hover { background: rgba(34,197,94,0.08); border-color: var(--green); transform: translateY(-2px); }
+.btn-gold {
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  background: linear-gradient(135deg, #d97706, #f59e0b, #fbbf24);
+  color: #1a0a00; border: none; border-radius: 9px; padding: 10px 20px;
+  font-family: var(--font-body); font-size: 13px; font-weight: 600;
+  cursor: pointer; text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.34,1.56,0.64,1);
+  box-shadow: 0 0 16px rgba(245,158,11,0.35);
+}
+.btn-gold:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 0 32px rgba(245,158,11,0.6); }
+
+/* ========= GLASS CARD ========= */
+.glass {
+  background: var(--card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.glass-hover {
+  background: var(--card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+  will-change: transform;
+}
+.glass-hover:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-5px);
+  box-shadow: 0 16px 48px rgba(34,197,94,0.12), 0 0 0 1px rgba(34,197,94,0.08);
+}
+
+/* ========= SECTION ========= */
+.section { padding: 72px 0; position: relative; }
+.section-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  font-weight: 800;
+  margin-bottom: 10px;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+.section-sub { color: var(--muted); font-size: 14px; max-width: 480px; }
+
+/* ========= HERO ========= */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.hero-mesh {
+  position: absolute; inset: 0; z-index: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 50%, rgba(34,197,94,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 80% 30%, rgba(245,158,11,0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 50% 100%, rgba(34,197,94,0.03) 0%, transparent 50%);
+}
+.orb {
+  position: absolute; border-radius: 50%; pointer-events: none;
+  animation: float-orb 8s ease-in-out infinite;
+}
+.orb1 { width: 320px; height: 320px; top:-70px; right:-50px; background: radial-gradient(circle, rgba(34,197,94,0.06), transparent 70%); animation-delay: 0s; }
+.orb2 { width: 220px; height: 220px; bottom: 10%; left: -30px; background: radial-gradient(circle, rgba(245,158,11,0.05), transparent 70%); animation-delay: -3s; }
+.orb3 { width: 160px; height: 160px; top:40%; right: 15%; background: radial-gradient(circle, rgba(34,197,94,0.04), transparent 70%); animation-delay: -5s; }
+@keyframes float-orb {
+  0%,100% { transform: translateY(0) scale(1); }
+  33% { transform: translateY(-18px) scale(1.03); }
+  66% { transform: translateY(8px) scale(0.97); }
+}
+.ticker-strip {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: rgba(5,13,8,0.9); border-top: 1px solid var(--border);
+  padding: 10px 0; overflow: hidden;
+}
+.ticker-inner { display: flex; animation: marquee 18s linear infinite; width: max-content; white-space: nowrap; }
+.ticker-item { display: inline-flex; align-items: center; gap: 8px; padding: 0 24px; font-size: 12px; font-weight: 500; color: var(--muted); }
+.ticker-item .up { color: var(--green); }
+.ticker-item .down { color: #ef4444; }
+
+.hero-content { position: relative; z-index: 2; text-align: center; padding: 0 24px; max-width: 780px; }
+.badge-new {
+  display: inline-flex; align-items: center; gap: 7px;
+  border: 1px solid rgba(34,197,94,0.25);
+  background: rgba(34,197,94,0.06);
+  border-radius: 100px; padding: 5px 14px;
+  font-size: 11px; font-weight: 600; color: var(--green);
+  margin-bottom: 24px;
+  animation: pulse-badge 3s ease-in-out infinite;
+}
+@keyframes pulse-badge {
+  0%,100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.25); }
+  50% { box-shadow: 0 0 0 6px rgba(34,197,94,0); }
+}
+.hero-h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  margin-bottom: 18px;
+}
+.hero-sub {
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  color: var(--muted);
+  font-weight: 400;
+  margin-bottom: 12px;
+  max-width: 500px;
+  margin-left: auto; margin-right: auto;
+}
+.hero-quote { font-size: 13px; color: var(--muted); font-style: italic; margin-bottom: 36px; opacity: 0.75; }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 48px; }
+.hero-stats { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+.stat-card {
+  background: rgba(10,22,14,0.55);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 28px;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.stat-num { font-family: var(--font-display); font-size: 1.7rem; font-weight: 800; }
+.stat-label { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+/* ========= COURSES ========= */
+.courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; margin-top: 44px; }
+.course-card { display: flex; flex-direction: column; overflow: hidden; }
+.course-img { position: relative; overflow: hidden; height: 190px; }
+.course-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.course-card:hover .course-img img { transform: scale(1.05); }
+.course-img::after { content:''; position:absolute; inset:0; background:linear-gradient(to top, rgba(5,13,8,0.9) 0%, transparent 60%); }
+.course-badge {
+  position: absolute; top: 10px; left: 10px; z-index: 1;
+  background: rgba(245,158,11,0.9); color: #1a0a00;
+  border-radius: 5px; padding: 3px 9px; font-size: 10px; font-weight: 700;
+  backdrop-filter: blur(4px);
+}
+.course-body { padding: 18px; flex: 1; display: flex; flex-direction: column; }
+.course-title { font-family: var(--font-display); font-size: 14px; font-weight: 700; margin-bottom: 7px; line-height: 1.35; }
+.course-desc { font-size: 12px; color: var(--muted); margin-bottom: 14px; }
+.feature-list { list-style: none; margin-bottom: 18px; display: flex; flex-direction: column; gap: 6px; }
+.feature-list li { font-size: 12px; display: flex; gap: 7px; align-items: flex-start; }
+.feature-list li::before { content:'✓'; color: var(--green); font-weight: 700; flex-shrink: 0; }
+.price-row { margin-top: auto; display: flex; align-items: baseline; gap: 9px; margin-bottom: 14px; flex-wrap: wrap; }
+.price-now { font-family: var(--font-display); font-size: 1.45rem; font-weight: 800; }
+.price-old { font-size: 12px; color: var(--muted); text-decoration: line-through; }
+.discount-pill { background: rgba(34,197,94,0.1); color: var(--green); border-radius: 100px; padding: 2px 9px; font-size: 10px; font-weight: 700; }
+
+/* ========= GOLD FREE SECTION ========= */
+.gold-section { padding: 72px 0; position: relative; overflow: hidden; }
+.gold-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(245,158,11,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(245,158,11,0.04) 0%, transparent 50%);
+}
+.gold-card {
+  background: linear-gradient(135deg, rgba(15,20,12,0.9), rgba(18,14,8,0.9));
+  border: 1px solid rgba(245,158,11,0.25);
+  border-radius: 1.2rem;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.4s ease;
+}
+.gold-card::before {
+  content:'';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(245,158,11,0.05) 0%, transparent 60%);
+  pointer-events: none;
+}
+.gold-card:hover { border-color: rgba(245,158,11,0.4); box-shadow: 0 16px 48px rgba(245,158,11,0.1); transform: translateY(-3px); }
+.gold-tag {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.25);
+  border-radius: 100px; padding: 3px 12px; font-size: 10px; font-weight: 700; color: var(--gold);
+  margin-bottom: 7px;
+}
+.gold-title { font-family: var(--font-display); font-size: clamp(1.25rem,2.5vw,1.65rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; }
+.gold-desc { font-size: 13px; color: var(--muted); margin: 8px 0 0; }
+.video-container {
+  position: relative; width: 100%;
+  border-radius: 10px; overflow: hidden;
+  background: #000;
+  aspect-ratio: 16 / 9;
+}
+.video-thumbnail { position: relative; cursor: pointer; width: 100%; height: 100%; }
+.video-thumbnail img {
+  width: 100%; height: 100%; object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease, brightness 0.3s ease;
+}
+.video-thumbnail:hover img { transform: scale(1.02); filter: brightness(0.8); }
+.play-btn {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  width: 58px; height: 58px; border-radius: 50%;
+  background: rgba(245,158,11,0.95);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.25s cubic-bezier(0.34,1.56,0.64,1);
+  box-shadow: 0 0 24px rgba(245,158,11,0.45);
+}
+.play-btn svg { width: 24px; height: 24px; fill: #1a0a00; margin-left: 3px; }
+.video-thumbnail:hover .play-btn { transform: translate(-50%,-50%) scale(1.08); box-shadow: 0 0 40px rgba(245,158,11,0.7); }
+.video-iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.gold-features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; }
+.gold-feat {
+  background: rgba(245,158,11,0.05); border: 1px solid rgba(245,158,11,0.12);
+  border-radius: 8px; padding: 10px 12px;
+  font-size: 12px; display: flex; align-items: center; gap: 7px;
+}
+.gold-feat .check { color: var(--gold); font-size: 13px; flex-shrink: 0; }
+.free-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: linear-gradient(135deg, rgba(245,158,11,0.15), rgba(245,158,11,0.04));
+  border: 1px solid rgba(245,158,11,0.3);
+  border-radius: 10px; padding: 8px 16px;
+  font-size: 12px; font-weight: 600; color: var(--gold);
+  width: fit-content;
+}
+
+/* ========= EBOOKS ========= */
+.ebooks-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; margin-top: 44px; }
+.ebook-card { display: flex; flex-direction: column; overflow: hidden; }
+.ebook-img { position: relative; height: 170px; overflow: hidden; }
+.ebook-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.ebook-card:hover .ebook-img img { transform: scale(1.06); }
+.ebook-img::after { content:''; position:absolute; inset:0; background:linear-gradient(to top, rgba(5,13,8,0.85) 0%, transparent 60%); }
+.ebook-instant {
+  position: absolute; top: 9px; left: 9px; z-index: 1;
+  background: rgba(34,197,94,0.9); color: #050d08;
+  border-radius: 5px; padding: 2px 8px; font-size: 10px; font-weight: 700;
+}
+.ebook-body { padding: 14px; flex: 1; display: flex; flex-direction: column; }
+.ebook-title { font-family: var(--font-display); font-size: 12px; font-weight: 700; margin-bottom: 9px; line-height: 1.4; }
+.ebook-feats { list-style: none; margin-bottom: 12px; display: flex; flex-direction: column; gap: 4px; }
+.ebook-feats li { font-size: 11px; color: var(--muted); display: flex; gap: 5px; }
+.ebook-feats li::before { content:'✅'; flex-shrink: 0; }
+.ebook-meta { display: flex; gap: 10px; font-size: 10px; color: var(--muted); margin-bottom: 12px; }
+.ebook-footer { margin-top: auto; display: flex; align-items: center; justify-content: space-between; }
+.ebook-price { font-family: var(--font-display); font-size: 1.2rem; font-weight: 800; }
+
+/* ========= CONTACT ========= */
+.contact-card { max-width: 600px; margin: 44px auto 0; }
+.contact-row { display: flex; align-items: flex-start; gap: 14px; padding: 18px 0; }
+.contact-row + .contact-row { border-top: 1px solid var(--border); }
+.contact-icon { background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.18); border-radius: 9px; padding: 9px 11px; font-size: 18px; flex-shrink: 0; }
+.contact-label { font-size: 11px; color: var(--muted); margin-bottom: 3px; }
+.contact-val a { color: var(--green); text-decoration: none; font-size: 13px; font-weight: 500; }
+.contact-val a:hover { text-decoration: underline; }
+.contact-val p { font-size: 12px; color: var(--muted); }
+
+/* ========= LEGAL ========= */
+.legal-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 28px 0; }
+.legal-btn {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 9px; padding: 9px 18px;
+  font-size: 12px; font-weight: 500; color: var(--text);
+  cursor: pointer; font-family: var(--font-body);
+  transition: all 0.2s;
+}
+.legal-btn:hover { border-color: rgba(34,197,94,0.35); color: var(--green); }
+
+/* ========= MODAL ========= */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 999;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.modal-overlay.open { opacity: 1; pointer-events: all; }
+.modal-box {
+  background: #0a1610;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 24px;
+  max-width: 460px;
+  width: 100%;
+  position: relative;
+  transform: scale(0.93) translateY(16px);
+  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+.modal-overlay.open .modal-box { transform: scale(1) translateY(0); }
+.modal-close {
+  position: absolute; top: 12px; right: 12px;
+  background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+  border-radius: 7px; padding: 3px 9px; cursor: pointer;
+  color: var(--muted); font-size: 14px; font-family: var(--font-body);
+  transition: all 0.2s;
+}
+.modal-close:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
+
+/* ========= OFFER POPUP — compact & clean ========= */
+.offer-modal .modal-box {
+  background: #080f0a;
+  border: 1px solid rgba(34,197,94,0.2);
+  max-width: 360px;            /* smaller width */
+  padding: 22px 22px 20px;
+  text-align: center;
+}
+.offer-shimmer {
+  position: absolute; top: 0; left: -100%; width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(34,197,94,0.04), transparent);
+  animation: shimmer 3s ease-in-out infinite;
+}
+@keyframes shimmer { to { left: 150%; } }
+.offer-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.2);
+  border-radius: 100px; padding: 4px 12px; font-size: 10px; font-weight: 700; color: var(--green);
+  margin-bottom: 12px;
+}
+.offer-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;          /* was 1.6rem — much smaller */
+  font-weight: 800;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+.offer-price-row { display: flex; align-items: baseline; justify-content: center; gap: 10px; margin: 12px 0 4px; }
+.offer-price-now { font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; }  /* was 2.4rem */
+.offer-price-old { font-size: 0.9rem; color: var(--muted); text-decoration: line-through; }
+.offer-pill {
+  background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.25);
+  color: var(--gold); border-radius: 100px; padding: 3px 11px;
+  font-size: 10px; font-weight: 700; display: inline-block; margin-bottom: 14px;
+}
+.offer-desc { font-size: 12px; color: var(--muted); margin-bottom: 14px; line-height: 1.5; }
+.countdown { display: flex; justify-content: center; gap: 8px; margin-bottom: 16px; }
+.countdown-cell {
+  background: rgba(34,197,94,0.06); border: 1px solid rgba(34,197,94,0.15);
+  border-radius: 7px; padding: 7px 10px; text-align: center; min-width: 46px;
+}
+.countdown-num { font-family: var(--font-display); font-size: 1.1rem; font-weight: 800; color: var(--green); line-height: 1; }
+.countdown-lbl { font-size: 9px; color: var(--muted); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.04em; }
+.offer-actions { display: flex; flex-direction: column; gap: 8px; }
+.offer-dismiss { margin-top: 10px; font-size: 11px; color: var(--muted); cursor: pointer; }
+.offer-dismiss:hover { color: var(--text); }
+
+/* ========= WHATSAPP FLOAT ========= */
+.wa-float {
+  position: fixed; bottom: 26px; right: 26px; z-index: 80;
+  width: 52px; height: 52px; border-radius: 50%;
+  background: #25D366;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; text-decoration: none;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+  animation: wa-bounce 2.4s cubic-bezier(0.28,0.84,0.42,1) infinite;
+}
+.wa-float:hover { animation: none; transform: scale(1.12); box-shadow: 0 6px 30px rgba(37,211,102,0.65); }
+.wa-float svg { width: 26px; height: 26px; fill: white; }
+.wa-tooltip {
+  position: absolute; right: 64px; top: 50%; transform: translateY(-50%);
+  background: rgba(10,22,14,0.95); border: 1px solid rgba(37,211,102,0.25);
+  border-radius: 7px; padding: 6px 11px;
+  font-size: 11px; font-weight: 600; color: var(--text);
+  white-space: nowrap; opacity: 0; pointer-events: none;
+  transition: opacity 0.2s;
+}
+.wa-float:hover .wa-tooltip { opacity: 1; }
+@keyframes wa-bounce {
+  0%,100% { transform: translateY(0) scale(1); }
+  20% { transform: translateY(-10px) scale(1.05); }
+  40% { transform: translateY(-3px) scale(0.97); }
+  60% { transform: translateY(-7px) scale(1.02); }
+  80% { transform: translateY(-2px) scale(0.99); }
+}
+
+/* ========= DIVIDERS ========= */
+.section-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 0; }
+
+/* ========= FOOTER ========= */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 24px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+}
+footer a { color: var(--green); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+/* ========= ANIMATIONS ========= */
+.fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+.fade-up-d1 { transition-delay: 0.1s; }
+.fade-up-d2 { transition-delay: 0.2s; }
+.fade-up-d3 { transition-delay: 0.3s; }
+.fade-up-d4 { transition-delay: 0.4s; }
+
+/* ========= RESPONSIVE ========= */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: block; }
+  .hero-h1 { font-size: 2.2rem; }
+  .courses-grid { grid-template-columns: 1fr; }
+  .ebooks-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .section { padding: 52px 0; }
+  .gold-card .p-grid { grid-template-columns: 1fr !important; }
+  .countdown-cell { min-width: 42px; padding: 6px 8px; }
+}
+@media (max-width: 480px) {
+  .hero-h1 { font-size: 1.9rem; }
+  .stat-card { padding: 12px 18px; }
+  .stat-num { font-size: 1.5rem; }
+  .ebooks-grid { grid-template-columns: 1fr; }
+  .offer-modal .modal-box { max-width: calc(100vw - 32px); padding: 18px; }
+}
+
+/* ========= LIGHT THEME ========= */
+html.light {
+  --bg: #f0f4f0;
+  --bg2: #e8ece8;
+  --card: rgba(255,255,255,0.8);
+  --border: rgba(34,197,94,0.2);
+  --border-hover: rgba(34,197,94,0.5);
+  --green-dim: rgba(34,197,94,0.06);
+  --text: #0f1f14;
+  --muted: #5a7060;
+}
+html.light body { background: var(--bg); }
+html.light .hero-mesh {
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 50%, rgba(34,197,94,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 80% 30%, rgba(245,158,11,0.03) 0%, transparent 60%);
+}
+html.light nav { background: rgba(240,244,240,0.92); }
+html.light .modal-box { background: #f8faf8; }
+html.light .offer-modal .modal-box { background: #f2f8f3; border-color: rgba(34,197,94,0.25); }
+html.light .gold-card { background: linear-gradient(135deg, rgba(255,252,240,0.95), rgba(255,248,220,0.9)); }
+html.light .ticker-strip { background: rgba(240,244,240,0.95); }
+html.light footer { background: var(--bg); }
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="ann-bar">
+  <div class="marquee-track">
+    <span>🚀&nbsp;BTH ALGO V4.4.0 NOW LIVE — 91% OFF TODAY ONLY &nbsp;•&nbsp; 📊 New Update: BTH ALGO V4.4.0 is LIVE &nbsp;•&nbsp; 🔥 Enroll Now & Upgrade Your Trading &nbsp;•&nbsp; ⭐ Trusted by 392K+ Traders &nbsp;•&nbsp; 🎯 Gold Strategy — FREE for MT4 Users &nbsp;•&nbsp; 🚀&nbsp;BTH ALGO V4.4.0 NOW LIVE — 91% OFF TODAY ONLY &nbsp;•&nbsp; 📊 New Update: BTH ALGO V4.4.0 is LIVE &nbsp;•&nbsp; 🔥 Enroll Now & Upgrade Your Trading &nbsp;•&nbsp; ⭐ Trusted by 392K+ Traders &nbsp;•&nbsp; 🎯 Gold Strategy — FREE for MT4 Users &nbsp;•&nbsp;</span>
   </div>
 </div>
 
-<style>
-@keyframes popupIn {
-  0% { transform:scale(.7); opacity:0; }
-  100% { transform:scale(1); opacity:1; }
-}
-</style>
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-dot"></div>
+      <span style="color:var(--text);">Beginner Trader Helper</span><span style="color:var(--green);font-size:10px;vertical-align:super;margin-left:1px;">™</span>
+    </a>
+    <div class="nav-links">
+      <a href="#courses">Courses</a>
+      <a href="#gold-strategy">Gold Strategy</a>
+      <a href="#ebooks">eBooks</a>
+      <a href="#contact">Contact</a>
+      <button id="themeToggle" onclick="toggleTheme()" style="background:rgba(34,197,94,0.07);border:1px solid var(--border);border-radius:7px;padding:5px 9px;cursor:pointer;color:var(--text);font-size:14px;">🌙</button>
+      <a href="https://beginnertrader.shop/calculator/" class="btn-primary" style="padding:9px 18px;font-size:12px;">calculator →</a>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#courses" onclick="closeMenu()">📈 Courses</a>
+    <a href="#gold-strategy" onclick="closeMenu()">🏆 Gold Strategy</a>
+    <a href="#ebooks" onclick="closeMenu()">📘 eBooks</a>
+    <a href="#contact" onclick="closeMenu()">✉️ Contact</a>
+    <div style="display:flex;gap:10px;align-items:center;">
+      <button id="themeToggleMob" onclick="toggleTheme()" style="background:rgba(34,197,94,0.07);border:1px solid var(--border);border-radius:7px;padding:7px 11px;cursor:pointer;color:var(--text);font-size:14px;">🌙</button>
+      <a href="https://beginnertrader.shop/calculator/" class="btn-primary" style="padding:9px 18px;font-size:12px;">calculator →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero grid-bg">
+  <div class="hero-mesh"></div>
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+  <div class="hero-content">
+    <div class="badge-new fade-up">
+      <span>🔥</span> BTH ALGO V4.4.0 is Live Now
+    </div>
+    <h1 class="hero-h1 fade-up fade-up-d1">
+      Master the <span class="gradient-text">Market</span><br>with Confidence
+    </h1>
+    <p class="hero-sub fade-up fade-up-d2">Premium trading education — Price Action, SMC, Algo, and Gold Strategy. Built for Indian traders.</p>
+    <p class="hero-quote fade-up fade-up-d3"></p>
+    <div class="hero-ctas fade-up fade-up-d4">
+      <a href="#courses" class="btn-primary">📈 Explore Courses</a>
+      <a href="#gold-strategy" class="btn-gold">🏆 Free Gold Strategy</a>
+      <a href="#ebooks" class="btn-outline">📘 View eBooks</a>
+    </div>
+    <div class="hero-stats fade-up fade-up-d4">
+      <div class="stat-card">
+        <div class="stat-num gradient-text" id="countSubs">0</div>
+        <div class="stat-label">YouTube Subscribers</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num gradient-text" id="countFollowers">0</div>
+        <div class="stat-label">Instagram Followers</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num gradient-text">5★</div>
+        <div class="stat-label">Student Ratings</div>
+      </div>
+    </div>
+  </div>
+  <!-- TICKER -->
+  <div class="ticker-strip">
+    <div class="ticker-inner">
+      <span class="ticker-item">NIFTY 50 <span class="up">▲ 0.42%</span></span>
+      <span class="ticker-item">BANKNIFTY <span class="up">▲ 0.61%</span></span>
+      <span class="ticker-item">GOLD <span class="up">▲ 0.18%</span></span>
+      <span class="ticker-item">SENSEX <span class="down">▼ 0.12%</span></span>
+      <span class="ticker-item">USDINR <span class="up">▲ 0.05%</span></span>
+      <span class="ticker-item">RELIANCE <span class="up">▲ 1.02%</span></span>
+      <span class="ticker-item">TCS <span class="down">▼ 0.33%</span></span>
+      <span class="ticker-item">NIFTY 50 <span class="up">▲ 0.42%</span></span>
+      <span class="ticker-item">BANKNIFTY <span class="up">▲ 0.61%</span></span>
+      <span class="ticker-item">GOLD <span class="up">▲ 0.18%</span></span>
+      <span class="ticker-item">SENSEX <span class="down">▼ 0.12%</span></span>
+      <span class="ticker-item">USDINR <span class="up">▲ 0.05%</span></span>
+      <span class="ticker-item">RELIANCE <span class="up">▲ 1.02%</span></span>
+      <span class="ticker-item">TCS <span class="down">▼ 0.33%</span></span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- COURSES -->
+<section class="section" id="courses">
+  <div class="section-inner">
+    <div class="text-center fade-up" style="text-align:center;margin-bottom:8px;">
+      <span style="display:inline-block;background:rgba(34,197,94,0.07);border:1px solid rgba(34,197,94,0.18);border-radius:100px;padding:4px 14px;font-size:11px;font-weight:600;color:var(--green);margin-bottom:12px;">📊 Premium Courses</span>
+      <h2 class="section-title">Courses That <span class="gradient-text">Actually Work</span></h2>
+      <p class="section-sub" style="margin:0 auto;">Real strategies. Real results. Hindi-medium tutorials with full support.</p>
+    </div>
+    <div class="courses-grid">
+      <!-- COURSE 1 -->
+      <div class="glass-hover course-card fade-up fade-up-d1">
+        <div class="course-img">
+          <img src="https://i.postimg.cc/q72LZwhc/2.jpg" alt="BTH ALGO Basics" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#0a1a0e,#1a2e1a)';this.removeAttribute('src')">
+        </div>
+        <div class="course-body">
+          <h3 class="course-title">BTH ALGO V4.2 + 4-in-1 eBook Bundle <span style="color:var(--muted);font-weight:400;">(Basics Version)</span></h3>
+          <p class="course-desc">Learn to read charts like a professional trader from scratch.</p>
+          <ul class="feature-list">
+            <li>Premium eBooks on Price Action & SMC</li>
+            <li>Free Indicator access included</li>
+            <li>Step-by-step beginner-friendly content</li>
+            <li> Note: Video tutorials are not included in this version ❌</li>
+            <li>It is designed for traders who prefer reading material and hands-on practice.</li>
+          </ul>
+          <div class="price-row">
+            <span class="price-now gradient-text">₹599</span>
+            <span class="price-old">₹699</span>
+            <span class="discount-pill">14% OFF</span>
+          </div>
+          <a href="https://superprofile.bio/vp/6438454049f50000204a22c4" target="_blank" rel="noopener" class="btn-primary" style="width:100%">Enroll Now →</a>
+        </div>
+      </div>
+      <!-- COURSE 2 -->
+      <div class="glass-hover course-card fade-up fade-up-d2">
+        <div class="course-img">
+          <div class="course-badge">🔥 Limited Time</div>
+          <img src="https://iili.io/qXp3qWx.md.png" alt="BTH ALGO Advanced" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#1a100a,#2e1a0a)';this.removeAttribute('src')">
+        </div>
+        <div class="course-body">
+          <h3 class="course-title">BTH ALGO V4.4.0 <span style="color:var(--muted);font-weight:400;">(Advanced Version)</span></h3>
+          <p class="course-desc">Master advanced price action, SMC, and algorithmic trading.</p>
+          <ul class="feature-list">
+            <li>Language: Hindi — easy to follow</li>
+            <li>Advanced eBook + updated indicator</li>
+            <li>Full HD video tutorials</li>
+            <li>Platform : Trading view</li>
+            <li>Lifetime access & future updates</li>
+          </ul>
+          <div class="price-row">
+            <span class="price-now gradient-text">₹1,499</span>
+            <span class="price-old">₹16,000</span>
+            <span class="discount-pill" style="background:rgba(245,158,11,0.12);color:var(--gold);border:1px solid rgba(245,158,11,0.25);">FLAT 91% OFF</span>
+          </div>
+          <a href="https://superprofile.bio/course/a3cd1c57-33ea-49f2-9733-0e3d2c50fa19?dc=bth4.3.3" target="_blank" rel="noopener" class="btn-primary" style="width:100%">🔥 Enroll Now →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- GOLD STRATEGY FREE SECTION -->
+<section class="gold-section" id="gold-strategy">
+  <div class="gold-bg"></div>
+  <div class="section-inner" style="position:relative;z-index:1;">
+    <div class="text-center fade-up" style="text-align:center;margin-bottom:36px;">
+      <span style="display:inline-block;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.25);border-radius:100px;padding:4px 14px;font-size:11px;font-weight:600;color:var(--gold);margin-bottom:12px;">🏆 Exclusive Free Strategy</span>
+      <h2 class="section-title">Gold Strategy — <span class="gold-text">100% Free</span></h2>
+      <p class="section-sub" style="margin:0 auto;">Specially crafted for MT4 traders. Proven gold trading strategy — no hidden cost.</p>
+    </div>
+
+    <div class="gold-card fade-up fade-up-d1">
+      <div class="offer-shimmer"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;" class="p-grid">
+        <!-- LEFT: Info -->
+        <div style="padding:28px 24px;" class="gold-left">
+          <div style="margin-bottom:18px;">
+            <div class="gold-tag">🏅 FREE Strategy</div>
+            <h3 class="gold-title">Gold <span class="gold-text">Scalping</h3>
+            <p class="gold-desc">Battle-tested XAUUSD strategy for MT4. Works on M5 timeframe.</p>
+          </div>
+
+          <div class="gold-features-grid" style="margin-bottom:20px;">
+            <div class="gold-feat"><span class="check">✦</span> Works on MT4 all Broker</div>
+            <div class="gold-feat"><span class="check">✦</span> XAUUSD / Gold</div>
+            <div class="gold-feat"><span class="check">✦</span> M5 timeframe</div>
+            <div class="gold-feat"><span class="check">✦</span> Clear Entries</div>
+            <div class="gold-feat"><span class="check">✦</span> SL & TP Rules</div>
+            <div class="gold-feat"><span class="check">✦</span> Dual lan: ENGLISH & HINDI</div>
+          </div>
+
+          <div class="free-badge" style="margin-bottom:18px;">
+            <span>🎁</span> Completely Free — No Purchase Needed
+          </div>
+
+          <a href="https://www.youtube.com/@BeginnerTraderHelper" target="_blank" rel="noopener" class="btn-gold" style="margin-bottom:8px;">
+            🏆 Get Gold Strategy Free
+          </a>
+          <p style="font-size:11px;color:var(--muted);margin-top:8px;">Available on YouTube — Subscribe to get instant access</p>
+        </div>
+        <!-- RIGHT: Video -->
+        <div style="padding:24px 24px 24px 0;display:flex;flex-direction:column;justify-content:center;" class="gold-right">
+          <p style="font-size:11px;color:var(--muted);margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;">▶ Watch Strategy Preview</p>
+          <div class="video-container" id="videoContainer">
+            <div class="video-thumbnail" id="videoThumb"
+              data-youtube-id="huHVbCDRzy0"
+              onclick="loadVideo(this)">
+              <img
+                src="https://iili.io/q9QeF7s.md.png"
+                id="thumbImg"
+                alt="Gold Strategy Preview"
+                loading="lazy"
+                onerror="this.src='https://img.youtube.com/vi/huHVbCDRzy0/hqdefault.jpg'"
+              >
+              <div class="play-btn">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+          </div>
+          <p style="font-size:10px;color:var(--muted);margin-top:8px;text-align:center;">Tap to watch — works on all devices</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+<!-- EBOOKS -->
+<section class="section" id="ebooks" style="background:rgba(34,197,94,0.015);">
+  <div class="section-inner">
+    <div class="text-center fade-up" style="text-align:center;margin-bottom:8px;">
+      <span style="display:inline-block;background:rgba(34,197,94,0.07);border:1px solid rgba(34,197,94,0.18);border-radius:100px;padding:4px 14px;font-size:11px;font-weight:600;color:var(--green);margin-bottom:12px;">📘 Digital eBooks</span>
+      <h2 class="section-title">Premium Trading <span class="gradient-text">eBooks</span></h2>
+      <p class="section-sub" style="margin:0 auto;">Instant PDF download. Deep-dive into strategies you can start using today.</p>
+    </div>
+    <div class="ebooks-grid">
+      <!-- EBOOK 1 -->
+      <div class="glass-hover ebook-card fade-up fade-up-d1">
+        <div class="ebook-img">
+          <div class="ebook-instant">⚡ Instant</div>
+          <img src="https://i.postimg.cc/XYFYvDTM/Picsart-24-11-17-14-19-23-695.png" alt="SMC Liquidity Strategy" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#0a1a0e,#1a2e1a)';this.removeAttribute('src')">
+        </div>
+        <div class="ebook-body">
+          <h3 class="ebook-title">SMC LIQUIDITY STRATEGY (Basics to Advanced)</h3>
+          <ul class="ebook-feats">
+            <li>Market Structure, BOS & Liquidity</li>
+            <li>Orderblocks, FVGs & MMXMs</li>
+          </ul>
+          <div class="ebook-meta"><span>📄 189 Pages</span><span>⬇️ PDF</span></div>
+          <div class="ebook-footer">
+            <span class="ebook-price gradient-text">₹239</span>
+            <a href="https://superprofile.bio/vp/smc-liquidity-strategy---basics-to-advanced--" target="_blank" rel="noopener" class="btn-primary" style="padding:8px 14px;font-size:11px;">Get eBook →</a>
+          </div>
+        </div>
+      </div>
+      <!-- EBOOK 2 -->
+      <div class="glass-hover ebook-card fade-up fade-up-d2">
+        <div class="ebook-img">
+          <div class="ebook-instant">⚡ Instant</div>
+          <img src="https://i.postimg.cc/tRzjBnxx/1697987533129.jpg" alt="Price Action Patterns" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#0a1010,#1a2020)';this.removeAttribute('src')">
+        </div>
+        <div class="ebook-body">
+          <h3 class="ebook-title">PRICE ACTION PATTERNS 3.0 + Option Strategy Part-2</h3>
+          <ul class="ebook-feats">
+            <li>Option Strategy Part 2</li>
+            <li>Uptrend & Momentum Strategy</li>
+          </ul>
+          <div class="ebook-meta"><span>📄 130+ Pages</span><span>⬇️ PDF</span></div>
+          <div class="ebook-footer">
+            <span class="ebook-price gradient-text">₹249</span>
+            <a href="https://superprofile.bio/vp/price-action-patterns-3-0---option-strategy-part--2" target="_blank" rel="noopener" class="btn-primary" style="padding:8px 14px;font-size:11px;">Get eBook →</a>
+          </div>
+        </div>
+      </div>
+      <!-- EBOOK 3 -->
+      <div class="glass-hover ebook-card fade-up fade-up-d3">
+        <div class="ebook-img">
+          <div class="ebook-instant">⚡ Instant</div>
+          <img src="https://i.postimg.cc/xTdWgxQw/1681038316.png" alt="Option Strategy" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#0a0a1a,#1a1a2e)';this.removeAttribute('src')">
+        </div>
+        <div class="ebook-body">
+          <h3 class="ebook-title">OPTION STRATEGY FOR BEGINNERS (Advanced) Part 1</h3>
+          <ul class="ebook-feats">
+            <li>Market Overview & Strike Selection</li>
+            <li>Advanced option chain reading</li>
+          </ul>
+          <div class="ebook-meta"><span>📄 75+ Pages</span><span>⬇️ PDF</span></div>
+          <div class="ebook-footer">
+            <span class="ebook-price gradient-text">₹219</span>
+            <a href="https://superprofile.bio/vp/option-strategy-for-beginners--advanced-version--part-1" target="_blank" rel="noopener" class="btn-primary" style="padding:8px 14px;font-size:11px;">Get eBook →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:11px;color:var(--muted);margin-top:24px;">⚠️ All content is educational only. Not SEBI-registered. Not financial advice.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="section-inner">
+    <div class="text-center fade-up" style="text-align:center;margin-bottom:8px;">
+      <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+      <p class="section-sub" style="margin:0 auto;">We're here to help — reach out any time.</p>
+    </div>
+    <div class="glass contact-card fade-up fade-up-d1" style="padding:6px 24px;">
+      <div class="contact-row">
+        <div class="contact-icon">📲</div>
+        <div>
+          <div class="contact-label">Email Support</div>
+          <div class="contact-val"><a href="mailto:bthsupport@beginnertrader.store">bthsupport@beginnertrader.store</a></div>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">🌐</div>
+        <div>
+          <div class="contact-label">Official Websites</div>
+          <div class="contact-val"><a href="https://www.beginnertrader.store/" target="_blank" rel="noopener">beginnertrader.store</a> &nbsp;|&nbsp; <a href="https://beginnertrader.shop" target="_blank" rel="noopener">beginnertrader.shop</a></div>
+        </div>
+      </div>
+      <div class="contact-row" style="border:none;padding-bottom:10px;">
+        <div class="contact-icon">💬</div>
+        <div>
+          <div class="contact-label">WhatsApp Support</div>
+          <div class="contact-val" style="margin-top:8px;">
+            <a href="https://wa.link/3af9e0" target="_blank" rel="noopener" class="btn-primary" style="display:inline-flex;">💬 Chat on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- LEGAL -->
+<section class="section" style="padding:52px 0;">
+  <div class="section-inner" style="text-align:center;">
+    <h2 class="section-title fade-up"><span class="gradient-text">Legal</span></h2>
+    <div class="legal-btns fade-up fade-up-d1">
+      <button class="legal-btn" onclick="openModal('privacy')">🛡️ Privacy Policy</button>
+      <button class="legal-btn" onclick="openModal('terms')">📋 Terms of Service</button>
+      <button class="legal-btn" onclick="openModal('refund')">↩️ Refund Policy</button>
+    </div>
+    <div class="glass fade-up fade-up-d2" style="max-width:600px;margin:0 auto;padding:18px 22px;">
+      <p style="font-size:12px;color:var(--muted);">All products are digital downloads. We are not SEBI-registered. Trading involves risk — use all strategies at your own discretion. Content is for educational purposes only.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p style="font-family:var(--font-display);font-size:14px;font-weight:700;margin-bottom:6px;"><span class="gradient-text">Beginner Trader Helper™</span></p>
+  <p>© <span id="year"></span> Beginner Trader Helper™. All rights reserved.</p>
+  <p style="margin-top:5px;font-size:11px;">
+    <a href="https://beginnertrader.store">beginnertrader.store</a> &nbsp;|&nbsp;
+    <a href="https://beginnertrader.shop">beginnertrader.shop</a>
+  </p>
+</footer>
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<a href="https://wa.link/3af9e0" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <div class="wa-tooltip">💬 Chat with us!</div>
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<!-- OFFER POPUP MODAL — compact -->
+<div class="modal-overlay offer-modal" id="offerModal">
+  <div class="modal-box">
+    <div class="offer-shimmer"></div>
+    <button class="modal-close" onclick="closeModal('offerModal')">✕</button>
+    <div class="offer-badge">🚀 Limited Time</div>
+    <h3 class="offer-title">BTH ALGO <span class="gradient-text">V4.4.0</span> is Live!</h3>
+    <div class="offer-price-row">
+      <span class="offer-price-now gradient-text">₹1,499</span>
+      <span class="offer-price-old">₹16,000</span>
+    </div>
+    <div class="offer-pill">🔥 FLAT 91% OFF — Today Only</div>
+    <p class="offer-desc">Advanced Hindi course with updated indicator, eBooks, HD videos & lifetime support.</p>
+    <div class="countdown" id="countdown">
+      <div class="countdown-cell"><div class="countdown-num" id="cdH">00</div><div class="countdown-lbl">Hours</div></div>
+      <div class="countdown-cell"><div class="countdown-num" id="cdM">23</div><div class="countdown-lbl">Mins</div></div>
+      <div class="countdown-cell"><div class="countdown-num" id="cdS">59</div><div class="countdown-lbl">Secs</div></div>
+    </div>
+    <div class="offer-actions">
+      <a href="https://superprofile.bio/course/a3cd1c57-33ea-49f2-9733-0e3d2c50fa19?dc=bth4.3.3" target="_blank" rel="noopener" class="btn-primary" onclick="closeModal('offerModal')">Claim Offer →</a>
+      <a href="https://beginnertrader.shop" target="_blank" rel="noopener" class="btn-outline" onclick="closeModal('offerModal')">Browse All Products</a>
+    </div>
+    <p class="offer-dismiss" onclick="closeModal('offerModal')">No thanks, I'll pay full price later</p>
+  </div>
+</div>
+
+<!-- LEGAL MODAL -->
+<div class="modal-overlay" id="legalModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('legalModal')">✕</button>
+    <h3 style="font-family:var(--font-display);font-size:1.1rem;font-weight:800;margin-bottom:14px;" id="legalTitle"></h3>
+    <div style="font-size:13px;color:var(--muted);line-height:1.7;" id="legalBody"></div>
+    <button class="btn-primary" style="margin-top:18px;" onclick="closeModal('legalModal')">Close</button>
+  </div>
+</div>
 
 <script>
+// ===== THEME =====
 (function(){
-  const overlay = document.getElementById('offerPopup');
-  const countdownKey = 'beginnerTraderOffer';
-  const duration = 24*60*60*1000; // 24 hours
+  var t = localStorage.getItem('bth-theme') || 'dark';
+  document.documentElement.className = t;
+  updateThemeBtn(t);
+})();
+function updateThemeBtn(t) {
+  ['themeToggle','themeToggleMob'].forEach(function(id){
+    var el = document.getElementById(id);
+    if(el) el.textContent = t === 'dark' ? '🌙' : '☀️';
+  });
+}
+function toggleTheme() {
+  var current = document.documentElement.className;
+  var next = current === 'dark' ? 'light' : 'dark';
+  document.documentElement.className = next;
+  localStorage.setItem('bth-theme', next);
+  updateThemeBtn(next);
+}
 
-  function startCountdown() {
-    let target = localStorage.getItem(countdownKey);
-    if (!target) {
-      target = Date.now() + duration;
-      localStorage.setItem(countdownKey, target);
-    }
+// ===== NAV =====
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+}
 
-    function update() {
-      const now = Date.now();
-      const diff = target - now;
-      if (diff <= 0) {
-        document.getElementById('countdownTimer').textContent = 'Offer Expired!';
-        localStorage.removeItem(countdownKey);
-        return;
-      }
-      const h = Math.floor((diff/(1000*60*60)) % 24);
-      const m = Math.floor((diff/(1000*60)) % 60);
-      const s = Math.floor((diff/1000) % 60);
-      document.getElementById('countdownTimer').innerHTML =
-        `<div style="background:#081c15;padding:8px 12px;border-radius:8px;min-width:40px;">${String(h).padStart(2,'0')}</div>:
-         <div style="background:#081c15;padding:8px 12px;border-radius:8px;min-width:40px;">${String(m).padStart(2,'0')}</div>:
-         <div style="background:#081c15;padding:8px 12px;border-radius:8px;min-width:40px;">${String(s).padStart(2,'0')}</div>`;
-    }
-    update();
-    setInterval(update, 1000);
+// ===== MODAL =====
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+document.querySelectorAll('.modal-overlay').forEach(function(el){
+  el.addEventListener('click', function(e){ if(e.target === el) el.classList.remove('open'); });
+});
+
+// ===== LEGAL CONTENT =====
+var legalContent = {
+  privacy: {
+    title: '🛡️ Privacy Policy',
+    body: 'We collect your name and email address solely to process your orders and deliver digital products. We never sell or share your personal information with third parties for marketing purposes. Your data is protected and used only for order fulfillment and support. Third-party services (such as payment processors) have their own privacy policies. By purchasing, you consent to this policy.'
+  },
+  terms: {
+    title: '📋 Terms of Service',
+    body: 'All products on Beginner Trader Helper™ are digital in nature. Once purchased, access is granted immediately and purchases are non-transferable. Beginner Trader Helper™ is NOT registered with SEBI or any regulatory authority. All content is strictly for educational purposes. Trading in financial markets involves significant risk. By purchasing, you acknowledge that results are not guaranteed and you trade at your own risk.'
+  },
+  refund: {
+    title: '↩️ Refund Policy',
+    body: 'Due to the instant digital delivery nature of our products, all sales are final and non-refundable once access is granted. Exceptions may be considered only in cases of proven duplicate payment or technical failure preventing access. To raise a refund concern, please contact bthsupport@beginnertrader.store within 24 hours of purchase with your order details.'
   }
+};
+function openModal(id) {
+  if(legalContent[id]) {
+    document.getElementById('legalTitle').textContent = legalContent[id].title;
+    document.getElementById('legalBody').textContent = legalContent[id].body;
+    document.getElementById('legalModal').classList.add('open');
+  } else {
+    document.getElementById(id).classList.add('open');
+  }
+}
 
-  window.addEventListener('load', () => {
-    setTimeout(() => overlay.style.visibility='visible', 800);
-    setTimeout(() => overlay.style.opacity='1', 900);
-    startCountdown();
-  });
+// ===== COUNTER ANIMATION =====
+function animateCount(el, target) {
+  var start = 0, duration = 1800, step = 16;
+  var timer = setInterval(function(){
+    start += Math.ceil(target / (duration / step));
+    if(start >= target){ start = target; clearInterval(timer); }
+    el.textContent = start + 'K+';
+  }, step);
+}
+window.addEventListener('load', function(){
+  setTimeout(function(){
+    var s = document.getElementById('countSubs');
+    var f = document.getElementById('countFollowers');
+    if(s) animateCount(s, 392);
+    if(f) animateCount(f, 134);
+  }, 400);
+});
 
-  document.getElementById('claimOfferBtn').addEventListener('click', function(e) {
-    e.preventDefault();
-    closeOfferPopup();
-    const target = document.querySelector('#courses');
-    if (target) {
-      window.scrollTo({
-        top: target.offsetTop - 50,
-        behavior: 'smooth'
-      });
-    }
-  });
+// ===== OFFER POPUP =====
+setTimeout(function(){ document.getElementById('offerModal').classList.add('open'); }, 3500);
+
+// ===== COUNTDOWN =====
+(function(){
+  var endTime = Date.now() + (23*60 + 59)*60*1000;
+  function tick(){
+    var diff = Math.max(0, endTime - Date.now());
+    var h = Math.floor(diff / 3600000);
+    var m = Math.floor((diff % 3600000) / 60000);
+    var s = Math.floor((diff % 60000) / 1000);
+    var cdH = document.getElementById('cdH');
+    var cdM = document.getElementById('cdM');
+    var cdS = document.getElementById('cdS');
+    if(cdH) cdH.textContent = String(h).padStart(2,'0');
+    if(cdM) cdM.textContent = String(m).padStart(2,'0');
+    if(cdS) cdS.textContent = String(s).padStart(2,'0');
+  }
+  tick();
+  setInterval(tick, 1000);
 })();
 
-function closeOfferPopup() {
-  const overlay = document.getElementById('offerPopup');
-  overlay.style.opacity = '0';
-  setTimeout(() => overlay.style.visibility = 'hidden', 400);
+// ===== YOUTUBE VIDEO EMBED =====
+function loadVideo(el) {
+  var videoId = el.getAttribute('data-youtube-id');
+  var container = el.parentElement;
+  var iframe = document.createElement('iframe');
+  iframe.className = 'video-iframe';
+  iframe.setAttribute('src', 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1');
+  iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+  iframe.setAttribute('allowfullscreen', '');
+  iframe.setAttribute('title', 'Gold Strategy Video');
+  el.style.display = 'none';
+  container.appendChild(iframe);
 }
+
+// ===== SCROLL ANIMATIONS =====
+var observer = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fade-up').forEach(function(el){ observer.observe(el); });
+
+// ===== YEAR =====
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// ===== GOLD CARD RESPONSIVE =====
+function fixGoldGrid() {
+  var grid = document.querySelector('.gold-card .p-grid');
+  if(!grid) return;
+  if(window.innerWidth < 768) {
+    grid.style.gridTemplateColumns = '1fr';
+    var right = grid.querySelector('.gold-right');
+    if(right) right.style.padding = '0 24px 24px';
+  } else {
+    grid.style.gridTemplateColumns = '1fr 1fr';
+    var right = grid.querySelector('.gold-right');
+    if(right) right.style.padding = '24px 24px 24px 0';
+  }
+}
+fixGoldGrid();
+window.addEventListener('resize', fixGoldGrid);
 </script>
-
-   
-    
-    <!-- External Resources -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        /* CSS Variables for Consistent Design */
-        :root {
-            --primary-green: #16a34a;
-            --primary-light: #81C784;
-            --primary-dark: #15803d;
-            --background-light: #F1F8E9;
-            --text-color: #333;
-            --white: #FFFFFF;
-            --gray-light: #F5F5F5;
-            --gray-medium: #E0E0E0;
-            --gray-dark: #757575;
-            --diwali-gold: #FFD700;
-            --diwali-orange: #FF8C00;
-            --diwali-red: #FF4500;
-            --card-bg: #ffffff;
-            --card-border: #e2e8f0;
-            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
-        
-        /* Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
-        
-        body {
-            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--background-light);
-            overflow-x: hidden;
-        }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-        
-        /* Utility Classes */
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            text-align: center;
-            color: #343a40;
-        }
-        
-        .section-subtitle {
-            font-size: 1.2rem;
-            color: #6c757d;
-            text-align: center;
-            margin-bottom: 3rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: var(--primary-green);
-            color: white;
-            border-radius: 4px;
-            font-weight: bold;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            text-align: center;
-        }
-        
-        .btn:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--white);
-            color: var(--white);
-        }
-        
-        .btn-outline:hover {
-            background-color: var(--white);
-            color: var(--text-color);
-        }
-        
-        /* Diwali Banner */
-        .diwali-banner {
-            background: linear-gradient(90deg, var(--diwali-red), var(--diwali-orange), var(--diwali-gold));
-            color: white;
-            text-align: center;
-            padding: 10px;
-            font-weight: bold;
-            position: relative;
-            overflow: hidden;
-            z-index: 1001;
-        }
-        
-        .diwali-banner p {
-            margin: 0;
-            font-size: 1.1rem;
-            animation: bannerPulse 2s infinite;
-        }
-        
-        @keyframes bannerPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-        
-        /* Header Styles */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 70px;
-        }
-        
-        .logo {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary-light);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .logo i {
-            color: var(--diwali-gold);
-        }
-        
-        /* Navigation */
-        .desktop-nav {
-            display: flex;
-            gap: 2rem;
-        }
-        
-        .desktop-nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 8px 0;
-            position: relative;
-            transition: color 0.3s ease;
-        }
-        
-        .desktop-nav a:hover {
-            color: var(--diwali-gold);
-        }
-        
-        .desktop-nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--diwali-gold);
-            transition: width 0.3s ease;
-        }
-        
-        .desktop-nav a:hover::after {
-            width: 100%;
-        }
-        
-        /* Mobile Menu */
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 5px;
-            transition: transform 0.3s ease;
-        }
-        
-        .menu-toggle:hover {
-            transform: scale(1.1);
-        }
-        
-        .mobile-nav {
-            display: none;
-            flex-direction: column;
-            position: absolute;
-            top: 70px;
-            left: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.98);
-            backdrop-filter: blur(10px);
-            padding: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .mobile-nav a {
-            color: white;
-            text-decoration: none;
-            padding: 12px 0;
-            font-weight: 500;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            transition: color 0.3s ease;
-        }
-        
-        .mobile-nav a:hover {
-            color: var(--diwali-gold);
-        }
-        
-        .mobile-nav a:last-child {
-            border-bottom: none;
-        }
-        
-        /* Hero Section */
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 128, 0, 0.6)), 
-                        url('https://i.postimg.cc/GtHqcvd9/hero-bg.jpg') no-repeat center center/cover;
-            overflow: hidden;
-            padding-top: 70px;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            padding: 20px;
-        }
-        
-        .hero-content h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: white;
-        }
-        
-        .hero-content h1 span {
-            background: linear-gradient(to right, var(--diwali-gold), var(--diwali-orange));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size: 200% auto;
-            animation: gradientShift 3s ease infinite;
-        }
-        
-        .hero-content h2 {
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: white;
-        }
-        
-        .hero-content p {
-            font-size: 1.1rem;
-            font-style: italic;
-            color: #e0e0e0;
-            margin-bottom: 2rem;
-        }
-        
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
-        
-        .floating {
-            animation: floating 3s ease-in-out infinite;
-        }
-        
-        .floating-delay {
-            animation: floating 3s ease-in-out 0.5s infinite;
-        }
-        
-        @keyframes floating {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        .stat-box {
-            background-color: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            padding: 16px 24px;
-            min-width: 180px;
-            animation: fadeInUp 0.5s ease both;
-            transition: var(--transition);
-            backdrop-filter: blur(5px);
-        }
-        
-        .stat-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.2);
-            background-color: rgba(255, 255, 255, 0.15);
-        }
-        
-        .stat-box h3 {
-            font-size: 1.8rem;
-            color: var(--diwali-gold);
-            margin: 0 0 4px;
-        }
-        
-        .stat-box p {
-            color: #e0e0e0;
-            margin: 0;
-        }
-        
-        /* Scroll Indicator */
-        .scroll-indicator {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2s infinite;
-            z-index: 3;
-        }
-        
-        .scroll-indicator-outer {
-            width: 30px;
-            height: 50px;
-            border: 2px solid rgba(255,255,255,0.7);
-            border-radius: 20px;
-            display: flex;
-            justify-content: center;
-            transition: var(--transition);
-        }
-        
-        .scroll-indicator:hover .scroll-indicator-outer {
-            border-color: var(--diwali-gold);
-            transform: scale(1.1);
-        }
-        
-        .scroll-indicator-inner {
-            width: 6px;
-            height: 12px;
-            background: var(--diwali-gold);
-            margin-top: 10px;
-            border-radius: 3px;
-            animation: pulse 1.5s infinite;
-        }
-        
-        /* Animations */
-        @keyframes fadeInUp {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translate(-50%, 0); }
-            50% { transform: translate(-50%, -12px); }
-        }
-        
-        @keyframes pulse {
-            0% { opacity: 1; transform: translateY(0); }
-            50% { opacity: 0.5; transform: translateY(5px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-        
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        /* Course Card Styles */
-        .courses-section {
-            padding: 100px 0;
-            background-color: white;
-        }
-        
-        .courses-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .course-card {
-            background-color: var(--card-bg);
-            border-radius: 0.75rem;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--card-border);
-            transition: var(--transition);
-            position: relative;
-        }
-        
-        .course-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-        
-        .course-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-        
-        .course-card:hover .course-image {
-            transform: scale(1.02);
-        }
-        
-        .course-content {
-            padding: 1.5rem;
-        }
-        
-        .course-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            color: #111827;
-        }
-        
-        .course-description {
-            color: #6b7280;
-            margin-bottom: 1rem;
-            font-size: 0.9375rem;
-        }
-        
-        .course-features {
-            margin-bottom: 1.5rem;
-        }
-        
-        .feature-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 0.5rem;
-            font-size: 0.875rem;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-        
-        .feature-item::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 1rem;
-            height: 1rem;
-            background-color: var(--primary-green);
-            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
-            mask-repeat: no-repeat;
-            mask-position: center;
-        }
-        
-        .course-price {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-green);
-            margin-bottom: 1.5rem;
-        }
-        
-        .button-group {
-            display: flex;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .enroll-btn {
-            display: inline-block;
-            padding: 0.75rem 1rem;
-            background-color: var(--primary-green);
-            color: white;
-            text-align: center;
-            font-weight: 600;
-            border-radius: 0.375rem;
-            transition: var(--transition);
-            text-decoration: none;
-            flex: 1;
-        }
-        
-        .enroll-btn:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-        
-        .sample-button {
-            display: inline-block;
-            padding: 0.75rem 1rem;
-            background-color: white;
-            color: var(--primary-green);
-            text-align: center;
-            font-weight: 600;
-            border-radius: 0.375rem;
-            transition: var(--transition);
-            text-decoration: none;
-            border: 1px solid var(--primary-green);
-            flex: 1;
-        }
-        
-        .sample-button:hover {
-            background-color: var(--primary-light);
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        .limited-badge {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background-color: #ef4444;
-            color: white;
-            padding: 0.25rem 0.5rem;
-            border-radius: 0.25rem;
-            font-size: 0.75rem;
-            font-weight: 600;
-            animation: pulse 2s infinite;
-        }
-        
-        /* eBooks Section */
-        .ebooks-section {
-            padding: 100px 0;
-            background-color: #f8f9fa;
-        }
-        
-        .ebooks-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .ebook-card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-        
-        .ebook-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-        
-        .ebook-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .ebook-content {
-            padding: 20px;
-        }
-        
-        .ebook-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        
-        .ebook-price {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-green);
-            margin-bottom: 15px;
-        }
-        
-        /* About Section */
-        .about-section {
-            padding: 100px 0;
-            background-color: white;
-        }
-        
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-            margin-top: 50px;
-        }
-        
-        .about-image {
-            flex: 1;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-        
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-        
-        .about-image:hover img {
-            transform: scale(1.05);
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .about-text h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #343a40;
-        }
-        
-        .about-text p {
-            margin-bottom: 15px;
-            color: #495057;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-        
-        .card {
-            background: rgba(255, 255, 255, 0.7);
-            border: 1px solid #ddd;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            transition: var(--transition);
-            backdrop-filter: blur(10px);
-        }
-        
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .card i {
-            font-size: 28px;
-            margin-bottom: 12px;
-        }
-        
-        .value {
-            font-size: 1.6rem;
-            font-weight: bold;
-            margin-bottom: 5px;
-            transition: color 0.3s, transform 0.3s;
-        }
-        
-        .label {
-            color: #777;
-            font-size: 0.9rem;
-        }
-        
-        .expertise-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 10px;
-        }
-        
-        .badge {
-            background: var(--primary-green);
-            color: #fff;
-            font-weight: bold;
-            padding: 8px 14px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            border: none;
-        }
-        
-        .quote-box {
-            background: #f0fdf4;
-            border-left: 4px solid var(--primary-green);
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 8px;
-            font-style: italic;
-            color: #111;
-        }
-        
-        /* Testimonials Section */
-        .testimonials-section {
-            padding: 100px 0;
-            background-color: #f8f9fa;
-        }
-        
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .testimonial-card {
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-        
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .testimonial-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .testimonial-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin-right: 15px;
-        }
-        
-        .testimonial-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .testimonial-author h4 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-        
-        .stars {
-            color: #ffc107;
-            font-size: 1rem;
-        }
-        
-        /* Contact Section */
-        .contact-section {
-            padding: 100px 0;
-            background-color: white;
-        }
-        
-        .contact-container {
-            display: flex;
-            gap: 50px;
-            margin-top: 50px;
-        }
-        
-        .contact-info {
-            flex: 1;
-        }
-        
-        .contact-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .contact-info p {
-            margin-bottom: 15px;
-            color: #495057;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-        }
-        
-        .social-links a {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background-color: var(--primary-green);
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 40px;
-            transition: var(--transition);
-        }
-        
-        .social-links a:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-3px);
-        }
-        
-        .contact-form {
-            flex: 1;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
-        
-        .form-group textarea {
-            height: 150px;
-            resize: vertical;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: #343a40;
-            color: white;
-            padding: 60px 0 20px;
-        }
-        
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-logo h2 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            color: var(--primary-green);
-        }
-        
-        .footer-logo p {
-            color: #adb5bd;
-        }
-        
-        .footer-links h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-        }
-        
-        .footer-links ul {
-            list-style: none;
-        }
-        
-        .footer-links ul li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links ul li a {
-            color: #adb5bd;
-            transition: color 0.3s;
-        }
-        
-        .footer-links ul li a:hover {
-            color: white;
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #495057;
-            color: #adb5bd;
-            font-size: 0.9rem;
-        }
-        
-        .footer-note {
-            background: rgba(0,0,0,0.1);
-            padding: 1.5rem;
-            border-radius: 5px;
-            margin: 2rem 0;
-        }
-        
-        .footer-note p {
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-        
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
-            animation: fadeIn 0.3s ease forwards;
-            overflow-y: auto;
-        }
-        
-        .modal-content {
-            background-color: var(--white);
-            margin: 5% auto;
-            padding: 30px;
-            width: 90%;
-            max-width: 600px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.3);
-            animation: popUp 0.3s ease;
-            position: relative;
-        }
-        
-        .modal .close {
-            position: absolute;
-            right: 20px;
-            top: 10px;
-            font-size: 28px;
-            font-weight: bold;
-            color: var(--gray-dark);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        .modal .close:hover {
-            color: var(--primary-dark);
-            transform: scale(1.1);
-        }
-        
-        @keyframes popUp {
-            from { transform: scale(0.8); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        /* WhatsApp Float */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 9999;
-        }
-        
-        .whatsapp-float a {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background-color: #25d366;
-            color: white;
-            padding: 12px 16px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 500;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: var(--transition);
-            animation: bounce 2s infinite;
-        }
-        
-        .whatsapp-float a:hover {
-            background-color: #1ebe57;
-            transform: scale(1.05);
-        }
-        
-        .whatsapp-float i {
-            font-size: 20px;
-        }
-        
-        /* Official Warning */
-        .official-warning {
-            background-color: #fff3cd;
-            color: #856404;
-            border: 1px solid #ffeeba;
-            border-radius: 6px;
-            padding: 15px 20px;
-            margin: 20px auto;
-            font-size: 15px;
-            line-height: 1.6;
-            max-width: 960px;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
-        }
-        
-        .official-warning a {
-            color: #0c5460;
-            font-weight: 500;
-            text-decoration: underline;
-        }
-        
-        /* FAQ Section */
-        .faq-section {
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--card-border);
-        }
-        
-        .faq-title {
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            color: #111827;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-        
-        .faq-title:hover {
-            color: var(--primary-green);
-        }
-        
-        .faq-title::before {
-            content: "+";
-            display: inline-block;
-            margin-right: 0.5rem;
-            font-weight: bold;
-            color: var(--primary-green);
-            transition: transform 0.3s ease;
-        }
-        
-        .faq-title.active::before {
-            content: "-";
-        }
-        
-        .faq-content {
-            font-size: 0.875rem;
-            color: #6b7280;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-            background-color: #f1f5f9;
-            border-radius: 0.375rem;
-        }
-        
-        .faq-content.active {
-            max-height: 500px;
-            padding: 0.75rem;
-            margin-top: 0.5rem;
-        }
-        
-        .faq-item {
-            margin-bottom: 0.5rem;
-            padding-left: 1.25rem;
-            position: relative;
-        }
-        
-        .faq-item::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--primary-green);
-        }
-        
-        /* Gallery Modal */
-        .gallery-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .gallery-modal.active {
-            display: flex;
-            opacity: 1;
-        }
-        
-        .gallery-modal-content {
-            position: relative;
-            max-width: 90%;
-            max-height: 90%;
-            background-color: white;
-            border-radius: 0.5rem;
-            overflow: hidden;
-            animation: modalFadeIn 0.3s ease;
-        }
-        
-        @keyframes modalFadeIn {
-            from { transform: scale(0.9); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-        
-        .gallery-modal-image {
-            max-width: 100%;
-            max-height: 80vh;
-            display: block;
-        }
-        
-        .gallery-modal-close {
-            position: absolute;
-            top: 0.5rem;
-            right: 0.5rem;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            width: 2rem;
-            height: 2rem;
-            border-radius: 50%;
-            font-size: 1rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.3s ease;
-        }
-        
-        .gallery-modal-close:hover {
-            background-color: var(--primary-green);
-        }
-        
-        .gallery-modal-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            width: 2.5rem;
-            height: 2.5rem;
-            border-radius: 50%;
-            font-size: 1.25rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.3s ease;
-        }
-        
-        .gallery-modal-nav:hover {
-            background-color: var(--primary-green);
-        }
-        
-        .gallery-modal-prev {
-            left: 1rem;
-        }
-        
-        .gallery-modal-next {
-            right: 1rem;
-        }
-        
-        .gallery-modal-indicators {
-            position: absolute;
-            bottom: 1rem;
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-        
-        .gallery-modal-indicator {
-            width: 0.75rem;
-            height: 0.75rem;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        
-        .gallery-modal-indicator.active {
-            background-color: var(--primary-green);
-        }
-        
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .about-content, .contact-container {
-                flex-direction: column;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .desktop-nav {
-                display: none;
-            }
-            
-            .menu-toggle {
-                display: block;
-            }
-            
-            .mobile-nav.active {
-                display: flex;
-            }
-            
-            .hero-content h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero-content h2 {
-                font-size: 1.5rem;
-            }
-            
-            .diwali-banner p {
-                font-size: 0.9rem;
-                padding: 8px;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-            }
-            
-            .btn {
-                width: 100%;
-                max-width: 280px;
-                justify-content: center;
-            }
-            
-            .stat-box {
-                min-width: 160px;
-                padding: 15px;
-            }
-            
-            .scroll-indicator {
-                bottom: 20px;
-            }
-            
-            .courses-grid, .testimonials-grid, .ebooks-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-        }
-        
-        /* Touch device adjustments */
-        @media (hover: none) {
-            .floating {
-                animation: none;
-            }
-            
-            .stat-box:hover, .course-card:hover, .ebook-card:hover, .testimonial-card:hover {
-                transform: none !important;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Diwali Special Banner -->
-    <div class="diwali-banner" id="diwaliBanner">
-        <p>📊 New Update: BTH ALGO V4.4.0 LIVE 🚀 Enroll Now & Upgrade Your Trading ➡️</p>
-    </div>
-
-<!-- Header -->
-<header>
-    <div class="header-container">
-        <a href="#home" class="logo">
-            <i class="fas fa-gem"></i> BEGINNER TRADER HELPER
-        </a>
-        
-        <!-- Desktop Navigation -->
-        <nav class="nav desktop-nav">
-            <a href="#home">Home</a>
-            <a href="#courses">Courses</a>
-            <a href="#ebooks">eBooks</a>
-            <a href="#contact">Contact</a>
-
-            <!-- ⭐ CALCULATOR BUTTON (FIXED) -->
-            <a href="/calculator/" 
-               class="calculator-btn" 
-               style="
-                    margin-left:15px;
-                    padding:10px 18px;
-                    background:#2e864c;
-                    color:#fff;
-                    border-radius:6px;
-                    font-weight:600;
-                    transition:0.3s;
-               ">
-                📊 Calculator
-            </a>
-        </nav>
-
-        <!-- Mobile Menu Button -->
-        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
-            ☰
-        </button>
-    </div>
-
-    <!-- Mobile Navigation -->
-    <div id="mobileMenu" class="mobile-nav">
-        <a href="#home" onclick="toggleMenu()">Home</a>
-        <a href="#courses" onclick="toggleMenu()">Courses</a>
-        <a href="#ebooks" onclick="toggleMenu()">eBooks</a>
-        <a href="#contact" onclick="toggleMenu()">Contact</a>
-
-        <!-- ⭐ CALCULATOR BUTTON (MOBILE FIXED) -->
-        <a href="/calculator/" 
-           onclick="toggleMenu()"
-           style="
-                background:#2e864c;
-                color:#fff;
-                font-weight:600;
-                padding:12px;
-                margin-top:5px;
-                border-radius:5px;
-                text-align:center;
-                display:block;
-           ">
-            📊 Financial Growth Calculator
-        </a>
-    </div>
-</header>
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Master the <span>Market</span></h1>
-            <h2>With Expert Trading Courses</h2>
-            <p>"Your struggle is just a consolidation — wait for a strong breakout."</p>
-
-            <div class="hero-buttons">
-                <button class="btn btn-primary floating" onclick="scrollToSection('courses')">
-                    <i class="fas fa-chart-line"></i> Explore Courses
-                </button>
-                <button class="btn btn-outline floating-delay" onclick="scrollToSection('ebooks')">
-                    <i class="fas fa-book-open"></i> Explore eBooks
-                </button>
-            </div>
-
-            <div class="stats">
-                <div class="stat-box">
-                    <h3>392K+</h3>
-                    <p>YouTube Subscribers</p>
-                </div>
-                <div class="stat-box">
-                    <h3>134K+</h3>
-                    <p>Instagram Followers</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Scroll Indicator -->
-        <div class="scroll-indicator" aria-hidden="true">
-            <div class="scroll-indicator-outer">
-                <div class="scroll-indicator-inner"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Courses Section -->
-    <section id="courses" class="courses-section">
-        <div class="container">
-            <div class="text-center mb-12">
-                <h2 class="section-title">Premium Trading Courses</h2>
-                <p class="section-subtitle">Learn from market experts with our comprehensive video courses</p>
-            </div>
-
-            <div class="courses-grid">
-                <!-- Course 1 -->
-                <div class="course-card">
-                    <div class="image-container">
-                        <img src="https://i.postimg.cc/q72LZwhc/2.jpg" alt="BTH ALGO V4.2 Course" class="course-image">
-                    </div>
-                    <div class="course-content">
-                        <h3 class="course-title">BTH ALGO V4.2 + 4 IN 1 E-BOOK BUNDLE (Basics Version)</h3>
-                        <p class="course-description">Learn to read charts like a pro with this comprehensive technical analysis course.</p>
-                        
-                        <div class="course-features">
-                            <div class="feature-item">Premium eBooks on Price Action & SMC</div>
-                            <div class="feature-item">Free Indicator access for chart analysis</div>
-                        </div>
-                        
-                        <!-- Price Section -->
-                        <div class="course-price">
-                            <span style="font-size: 1.6rem; font-weight: bold; color: #1D9F77;">₹ 599</span>
-                            <span style="text-decoration: line-through; color: #888; font-size: 1rem; margin-left: 8px;">₹ 699</span>
-                            <span style="color: #e74c3c; font-size: 0.9rem; margin-left: 6px;">(14% off)</span>
-                        </div>
-
-                        <div class="button-group">
-                            <a href="https://superprofile.bio/vp/6438454049f50000204a22c4" class="enroll-btn">Enroll Now</a>
-                            <a href="#" class="sample-button" onclick="openGallery(['https://i.postimg.cc/h4rRJbG5/Untitled-design.png', 'https://i.postimg.cc/027n2x0G/downside-setup-bth-v4-1.png', 'https://i.postimg.cc/nhRDnwgY/UPSIDE-TRADE-BTH.png'])">View Sample</a>
-                        </div>
-                        
-                        <div class="faq-section">
-                            <h4 class="faq-title">What is BTH 4.2 (Basics Version)?</h4>
-                            <div class="faq-content">
-                                <div class="faq-item">BTH 4.2 Basics Version is an introductory trading bundle that includes:</div>
-                                <div class="faq-item">✅ Premium eBooks on Price Action & SMC</div>
-                                <div class="faq-item">✅ Free Indicator access for chart analysis</div>
-                                <div class="faq-item">❌ Note: Video tutorials are not included in this version</div>
-                                <div class="faq-item">It is designed for traders who prefer reading material and hands-on practice.</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Course 2 -->
-                <div class="course-card">
-                    <div class="image-container">
-                        <img src="https://iili.io/qXp3qWx.md.png" alt="Price Action Trading" class="course-image">
-                        <div class="limited-badge">Limited Time</div>
-                    </div>
-                    <div class="course-content">
-                        <h3 class="course-title">BTH ALGO V4.4.0 (Advanced Version)</h3>
-                        <p class="course-description">Master price action strategies used by institutional traders worldwide.</p>
-                        
-                        <div class="course-features">
-                          <div class="feature-item">Language Hindi </div>
-                            <div class="feature-item">EBooks covering advanced Price Action & SMC concepts</div>
-                            <div class="feature-item">Updated Trading Indicator for better accuracy</div>
-                            <div class="feature-item">Full Video Tutorials for easy understanding</div>
-                            <div class="feature-item">Platform : Trading view</div>
-                        </div>
-                        
-                        <!-- Price Section -->
-                        <div class="course-price">
-                            <span style="font-size: 1.6rem; font-weight: bold; color: #1D9F77;">₹ 1499</span>
-                            <span style="text-decoration: line-through; color: #888; font-size: 1rem; margin-left: 8px;">₹ 16000</span>
-                            <span style="color: #e74c3c; font-size: 0.9rem; margin-left: 6px;">(FLAT 91% off)</span>
-            
-                            <!-- First-Time Enroll Offer Box -->
-                            <div style="margin-top: 8px; background: #eafaf1; border: 1px solid #2ecc71; padding: 8px 12px; border-radius: 8px; display: inline-block;">
-                                <span style="font-size: 1.0rem; font-weight: bold; color: #1D9F77;">
-                                🎉 Festival Season Offer: ₹ 1499
-                                </span>
-                            </div>
-                        </div>
-                        
-                        <div class="button-group">
-                            <a href="https://superprofile.bio/course/a3cd1c57-33ea-49f2-9733-0e3d2c50fa19?dc=bth4.3.3" class="enroll-btn">Enroll Now</a>
-                            <a href="#" class="sample-button" onclick="openGallery(['https://iili.io/qXyXJu2.md.png', 'https://iili.io/qXygAoG.md.png', 'https://i.postimg.cc/zvNbkYK1/Screenshot-2025-02-08-212051.png'])">View Sample</a>
-                        </div>
-                        
-                        <div class="faq-section">
-                            <h4 class="faq-title">What is BTH 4.4.0 (Advanced Version)?</h4>
-                            <div class="faq-content">
-                                <div class="faq-item">BTH 4.4.0 Advanced Version is a complete trading solution that includes:</div>
-                                <div class="faq-item">✅ Language Hindi </div>
-                                <div class="faq-item">✅ EBooks covering advanced Price Action & SMC concepts</div>
-                                <div class="faq-item">✅ Updated Trading Indicator for better accuracy</div>
-                                <div class="faq-item">✅ Full Video Tutorials for easy understanding</div>
-                                <div class="faq-item">✅ Dedicated Customer Support for guidance</div>
-                                <div class="faq-item">Perfect for traders who want structured learning with hands-on support.</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Image Gallery with Popup</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
-            min-height: 100vh;
-        }
-
-        .gallery-section {
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .gallery-title {
-            font-size: clamp(28px, 5vw, 36px);
-            font-weight: 800;
-            color: #1a1a1a;
-            margin-bottom: 16px;
-            letter-spacing: -0.5px;
-        }
-
-        .gallery-subtitle {
-            font-size: clamp(16px, 3vw, 18px);
-            font-weight: 500;
-            color: #555;
-            margin-bottom: 50px;
-            line-height: 1.6;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .gallery-wrapper {
-            position: relative;
-            margin: 0 auto;
-            max-width: 1200px;
-        }
-
-        .gallery-container {
-            overflow: hidden;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            background: white;
-        }
-
-        .gallery-track {
-            display: flex;
-            transition: transform 0.5s ease;
-            cursor: grab;
-            padding: 20px 0;
-        }
-
-        .gallery-track:active {
-            cursor: grabbing;
-        }
-
-        .gallery-item {
-            flex: 0 0 auto;
-            padding: 0 15px;
-            width: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            max-height: 400px;
-            object-fit: contain;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease;
-            cursor: pointer;
-        }
-
-        .gallery-item img:hover {
-            transform: scale(1.03);
-        }
-
-        .nav-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 50px;
-            height: 50px;
-            background: white;
-            border: none;
-            border-radius: 50%;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10;
-            transition: all 0.3s ease;
-        }
-
-        .nav-button:hover {
-            background: #f0f0f0;
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .nav-button:active {
-            transform: translateY(-50%) scale(0.95);
-        }
-
-        .nav-button.prev {
-            left: 15px;
-        }
-
-        .nav-button.next {
-            right: 15px;
-        }
-
-        .nav-button svg {
-            width: 24px;
-            height: 24px;
-            color: #333;
-        }
-
-        .drag-instruction {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 20px;
-            color: #666;
-            font-size: 14px;
-            gap: 8px;
-        }
-
-        .drag-instruction svg {
-            width: 18px;
-            height: 18px;
-        }
-
-        .gallery-progress {
-            width: 100%;
-            height: 4px;
-            background: #e0e0e0;
-            border-radius: 2px;
-            margin-top: 20px;
-            overflow: hidden;
-        }
-
-        .progress-bar {
-            height: 100%;
-            background: linear-gradient(90deg, #e65100, #1b5e20);
-            width: 0%;
-            transition: width 0.3s ease;
-        }
-
-        /* Image Popup Styles */
-        .image-popup {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-
-        .image-popup.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .popup-content {
-            position: relative;
-            max-width: 90%;
-            max-height: 90%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .popup-image {
-            max-width: 100%;
-            max-height: calc(100vh - 120px);
-            object-fit: contain;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .popup-close {
-            position: absolute;
-            top: -40px;
-            right: -10px;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 30px;
-            cursor: pointer;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            transition: background 0.3s ease;
-        }
-
-        .popup-close:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .popup-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            border-radius: 50%;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.3s ease;
-        }
-
-        .popup-nav:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        .popup-prev {
-            left: 20px;
-        }
-
-        .popup-next {
-            right: 20px;
-        }
-
-        .popup-counter {
-            color: white;
-            margin-top: 15px;
-            font-size: 16px;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 5px 15px;
-            border-radius: 20px;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .gallery-section {
-                padding: 60px 15px;
-            }
-            
-            .gallery-item {
-                width: 250px;
-            }
-            
-            .nav-button {
-                width: 40px;
-                height: 40px;
-            }
-            
-            .nav-button.prev {
-                left: 10px;
-            }
-            
-            .nav-button.next {
-                right: 10px;
-            }
-            
-            .popup-nav {
-                width: 40px;
-                height: 40px;
-                font-size: 20px;
-            }
-            
-            .popup-prev {
-                left: 10px;
-            }
-            
-            .popup-next {
-                right: 10px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .gallery-section {
-                padding: 40px 10px;
-            }
-            
-            .gallery-item {
-                width: 220px;
-                padding: 0 10px;
-            }
-            
-            .nav-button {
-                width: 36px;
-                height: 36px;
-            }
-            
-            .nav-button svg {
-                width: 18px;
-                height: 18px;
-            }
-            
-            .popup-nav {
-                width: 36px;
-                height: 36px;
-                font-size: 18px;
-            }
-        }
-    </style>
-</head>
-<body>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Trading eBooks</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/lucide-static@0.16.40/font/lucide.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-green: #16a34a;
-            --light-green: #dcfce7;
-            --dark-green: #15803d;
-            --accent-green: #22c55e;
-        }
-        
-        .bg-muted\/30 {
-            background-color: rgba(243, 244, 246, 0.3);
-        }
-        .bg-card\/50 {
-            background-color: rgba(255, 255, 255, 0.5);
-        }
-        .border-border\/50 {
-            border-color: rgba(229, 231, 235, 0.5);
-        }
-        .hover\:border-green-500\/50:hover {
-            border-color: rgba(34, 197, 94, 0.5);
-        }
-        .text-green {
-            color: var(--primary-green);
-        }
-        .bg-green {
-            background-color: var(--primary-green);
-        }
-        .hover\:bg-green-600:hover {
-            background-color: var(--dark-green);
-        }
-        .bg-green-badge {
-            background-color: var(--accent-green);
-        }
-        .text-muted-foreground {
-            color: #6b7280;
-        }
-        .text-foreground {
-            color: #111827;
-        }
-        .text-success {
-            color: #10b981;
-        }
-        .hover\:shadow-elegant:hover {
-            box-shadow: 0 10px 15px -3px rgba(22, 163, 74, 0.1), 0 4px 6px -2px rgba(22, 163, 74, 0.05);
-        }
-        .transition-pop {
-            transition: all 0.3s ease-out;
-            transform: scale(0.98);
-            opacity: 0.9;
-        }
-        .transition-pop:hover {
-            transform: scale(1);
-            opacity: 1;
-            box-shadow: 0 10px 25px -5px rgba(22, 163, 74, 0.2);
-        }
-        .line-clamp-2 {
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-    </style>
-</head>
-<body class="bg-gray-50">
-    <section id="ebooks" class="py-12 md:py-20 bg-muted/30">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-8 md:mb-12">
-                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 md:mb-4">
-                    Premium Trading eBooks
-                </h2>
-                <p class="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
-                    Download instantly and start learning today
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-                <!-- eBook 1 -->
-                <div class="group h-full bg-white/50 backdrop-blur-sm rounded-lg border border-gray-200/50 hover:border-green-500/50 transition-pop shadow-sm">
-                    <div class="p-4 space-y-4">
-                        <div class="relative overflow-hidden rounded-lg">
-                            <img 
-                                src="https://i.postimg.cc/XYFYvDTM/Picsart-24-11-17-14-19-23-695.png" 
-                                alt="SMC LIQUIDITY STRATEGY"
-                                class="w-full h-40 md:h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                                loading="lazy"
-                            />
-                            <div class="absolute top-2 right-2 bg-green-badge text-white text-xs px-2 py-1 rounded-full flex items-center">
-                                <i data-lucide="download" class="w-3 h-3 mr-1"></i>
-                               🌐 Instant
-                            </div>
-                        </div>
-                        <h3 class="text-sm font-bold text-gray-900 group-hover:text-green-600 transition-colors line-clamp-2">
-                            SMC LIQUIDITY STRATEGY (BASICS TO ADVANCED)
-                        </h3>
-                    </div>
-
-                    <div class="px-4 pb-4 space-y-4">
-                        <div class="text-xl md:text-2xl font-bold text-green-600">₹239</div>
-                        
-                        <div class="space-y-2">
-                            <div class="flex items-start space-x-2">
-                                <span class="text-green-500 mt-1 text-xs">✅</span>
-                                <span class="text-xs text-gray-800 line-clamp-2">Basics: Market Structure, BOS, Liquidity, Trends, Orderblocks, FVGs, Daily Bias, OTE, SL Placement, PO3, MNO, BBs</span>
-                            </div>
-                            <div class="flex items-start space-x-2">
-                                <span class="text-green-500 mt-1 text-xs">✅</span>
-                                <span class="text-xs text-gray-800 line-clamp-2">Strategies: OB Entries, Liquidity Sweep (LQ SW), SS BOX, MMXMs</span>
-                            </div>
-                            <div class="text-xs text-gray-500">
-                                +1 more feature
-                            </div>
-                        </div>
-
-                        <div class="flex flex-wrap gap-1">
-                            <span class="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded-full flex items-center">
-                                <i data-lucide="file-text" class="w-3 h-3 mr-1"></i>
-                                189 Pages
-                            </span>
-                            <span class="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded-full">
-                                PDF
-                            </span>
-                            <span class="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded-full">
-                                Instant Download
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="px-4 pb-4 pt-0 flex gap-2">
-
-                        </a>
-                        <a href="https://superprofile.bio/vp/smc-liquidity-strategy---basics-to-advanced--" target="_blank" class="flex-1 bg-green hover:bg-green-600 text-white font-semibold py-2 px-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 text-center text-sm flex items-center justify-center">
-                            <i data-lucide="external-link" class="w-3 h-3 mr-1"></i>
-                           🔓 Get eBook
-                        </a>
-                    </div>
-                </div>
-
-                <!-- eBook 2 -->
-                <div class="group h-full bg-white/50 backdrop-blur-sm rounded-lg border border-gray-200/50 hover:border-green-500/50 transition-pop shadow-sm">
-                    <div class="p-4 space-y-4">
-                        <div class="relative overflow-hidden rounded-lg">
-                            <img 
-                                src="https://i.postimg.cc/tRzjBnxx/1697987533129.jpg" 
-                                alt="PRICE ACTION PATTERNS 3.0"
-                                class="w-full h-40 md:h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                                loading="lazy"
-                            />
-                            <div class="absolute top-2 right-2 bg-green-badge text-white text-xs px-2 py-1 rounded-full flex items-center">
-                                <i data-lucide="download" class="w-3 h-3 mr-1"></i>
-                               🌐 Instant
-                            </div>
-                        </div>
-                        <h3 class="text-sm font-bold text-gray-900 group-hover:text-green-600 transition-colors line-clamp-2">
-                            PRICE ACTION PATTERNS 3.0 + OPTION STRATEGY PART -2
-                        </h3>
-                    </div>
-
-                    <div class="px-4 pb-4 space-y-4">
-                        <div class="text-xl md:text-2xl font-bold text-green-600">₹249</div>
-                        
-                        <div class="space-y-2">
-                            <div class="flex items-start space-x-2">
-                                <span class="text-green-500 mt-1 text-xs">✅</span>
-                                <span class="text-xs text-gray-800 line-clamp-2">Introduction to Option Strategy Part 2</span>
-                            </div>
-                            <div class="flex items-start space-x-2">
-                                <span class="text-green-500 mt-1 text-xs">✅</span>
-                                <span class="text-xs text-gray-800 line-clamp-2">Uptrend Strategy in Detail</span>
-                            </div>
-                            <div class="text-xs text-gray-500">
-                                +3 more features
-                            </div>
-                        </div>
-
-                        <div class="flex flex-wrap gap-1">
-                            <span class="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded-full">
-                                130+ Pages
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="px-4 pb-4 pt-0 flex gap-2">
-
-                        </a>
-                        <a href="https://superprofile.bio/vp/price-action-patterns-3-0---option-strategy-part--2" target="_blank" class="flex-1 bg-green hover:bg-green-600 text-white font-semibold py-2 px-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 text-center text-sm flex items-center justify-center">
-                            <i data-lucide="external-link" class="w-3 h-3 mr-1"></i>
-                           🔓 Get eBook
-                        </a>
-                    </div>
-                </div>
-
-                <!-- eBook 3 -->
-                <div class="group h-full bg-white/50 backdrop-blur-sm rounded-lg border border-gray-200/50 hover:border-green-500/50 transition-pop shadow-sm">
-                    <div class="p-4 space-y-4">
-                        <div class="relative overflow-hidden rounded-lg">
-                            <img 
-                                src="https://i.postimg.cc/xTdWgxQw/1681038316.png" 
-                                alt="OPTION STRATEGY FOR BEGINNERS"
-                                class="w-full h-40 md:h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                                loading="lazy"
-                            />
-                            <div class="absolute top-2 right-2 bg-green-badge text-white text-xs px-2 py-1 rounded-full flex items-center">
-                                <i data-lucide="download" class="w-3 h-3 mr-1"></i>
-                               🌐 Instant
-                            </div>
-                        </div>
-                        <h3 class="text-sm font-bold text-gray-900 group-hover:text-green-600 transition-colors line-clamp-2">
-                            OPTION STRATEGY FOR BEGINNERS (ADVANCED VERSION) PART 1
-                        </h3>
-                    </div>
-
-                    <div class="px-4 pb-4 space-y-4">
-                        <div class="text-xl md:text-2xl font-bold text-green-600">₹219</div>
-                        
-                        <div class="space-y-2">
-                            <div class="flex items-start space-x-2">
-                                <span class="text-green-500 mt-1 text-xs">✅</span>
-                                <span class="text-xs text-gray-800 line-clamp-2">Market Overview</span>
-                            </div>
-                            <div class="flex items-start space-x-2">
-                                <span class="text-green-500 mt-1 text-xs">✅</span>
-                                <span class="text-xs text-gray-800 line-clamp-2">Strike Price Selection (ATM, OTM, ITM)</span>
-                            </div>
-                            <div class="text-xs text-gray-500">
-                                +4 more features
-                            </div>
-                        </div>
-
-                        <div class="flex flex-wrap gap-1">
-                            <span class="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded-full">
-                                75+ Pages
-                            </span>
-                            <span class="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded-full flex items-center">
-                                <i data-lucide="globe" class="w-3 h-3 mr-1"></i>
-                                Hindi + English (2 in 1)
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="px-4 pb-4 pt-0 flex gap-2">
-
-                        </a>
-                        <a href="https://superprofile.bio/vp/option-strategy-for-beginners--advanced-version--part-1" target="_blank" class="flex-1 bg-green hover:bg-green-600 text-white font-semibold py-2 px-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 text-center text-sm flex items-center justify-center">
-                            <i data-lucide="external-link" class="w-3 h-3 mr-1"></i>
-                           🔓 Get eBook
-                        </a>
-                    </div>
-                </div>
-            <div class="text-center mt-6 md:mt-8">
-                <p class="text-xs md:text-sm text-gray-500">
-                    ⚠️ Not Financial Advice
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <script src="https://cdn.jsdelivr.net/npm/lucide-static@0.16.40/umd/lucide.min.js"></script>
-    <script>
-        lucide.createIcons();
-    </script>
-</body>
-</html>
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="text-center mb-12">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Have questions? We're here to help</p>
-            </div>
-
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <p>Email us at: <strong>bthsupport@beginnertrader.store</strong></p>
-                    <p>We typically respond within 24 hours during business days.</p>
-
-                    <div class="social-links">
-                        <a href="https://www.youtube.com/c/beginnertraderhelper" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.instagram.com/beginner_trader_helper/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.link/3af9e0" target="_blank" aria-label="WhatsApp" style="background: #25D366;"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://telegram.me/+EV4khEeJ5XozYmM1" target="_blank" aria-label="Telegram" style="background: #0088cc;"><i class="fab fa-telegram-plane"></i></a>
-                    </div>
-                </div>
-
-
-    <!-- Official Website Notice -->
-    <div class="official-warning">
-        <strong>⚠️ Note:</strong> The only official websites of <strong>Beginner Trader Helper™</strong> are 
-        <a href="https://www.beginnertrader.store/" target="_blank">beginnertrader.store</a> and 
-        <a href="https://www.beginnertrader.shop" target="_blank">beginnertrader.shop</a>. 
-        We do not operate on any other domains. 
-        <br> Always verify the links from our official <a href="https://www.instagram.com/beginner_trader_helper/" target="_blank">Instagram</a> or 
-        <a href="https://www.youtube.com/c/beginnertraderhelper" target="_blank">YouTube</a> pages.
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-logo">
-                    <h2>BEGINNER TRADER HELPER</h2>
-                    <p>Learn Smart. Trade Smarter.</p>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/beginner_trader_helper/#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/c/beginnertraderhelper" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="https://telegram.me/+EV4khEeJ5XozYmM1" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
-                    </div>
-                </div>
-
-                <div class="footer-links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#courses">Courses</a></li>
-                        <li><a href="#ebooks">eBooks</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-links">
-                    <h3>Legal</h3>
-                    <ul>
-                        <li><a href="#" onclick="openModal('privacyModal'); return false;">Privacy Policy</a></li>
-                        <li><a href="#" onclick="openModal('termsModal'); return false;">Terms of Service</a></li>
-                        <li><a href="#" onclick="openModal('refundModal'); return false;">Refund Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-note">
-                <p><strong>⚠️Important:</strong> All our products are in digital format. You will receive access through online download only. We do not deliver any physical books. If you use any trading indicators or algorithms provided, it is at your own risk. We are not SEBI-registered financial advisors. This website and its offerings comply with applicable Indian laws under the Information Technology Act, 2000 and Consumer Protection (E-Commerce) Rules, 2020.</p>
-            </div>
-
-            <div class="copyright">
-                <p>&copy; <span id="year"></span> Beginner Trader Shop. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Floating WhatsApp Widget -->
-    <div class="whatsapp-float">
-        <a href="https://wa.link/3af9e0" target="_blank" aria-label="Chat on WhatsApp">
-            <i class="fab fa-whatsapp"></i> Chat with Us
-        </a>
-    </div>
-
-    <!-- Policy Modals -->
-    <div id="privacyModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('privacyModal')">&times;</span>
-            <h2>Privacy Policy</h2>
-            <p>This Privacy Policy explains how we collect, use, and protect your personal information when you use our website and purchase our digital products.</p>
-            <h3>Information Collection</h3>
-            <p>We collect your name, email, and transaction details for orders and support.</p>
-            <h3>Use of Information</h3>
-            <p>Used to process orders and improve services. No spam.</p>
-            <h3>Third Parties</h3>
-            <p>We use third-party services (Cosmofeed and Instamojo). Their privacy policies apply.</p>
-            <h3>Contact</h3>
-            <p>Email: <a href="mailto:bthsupport@beginnertrader.store">bthsupport@beginnertrader.store</a></p>
-        </div>
-    </div>
-
-    <div id="termsModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('termsModal')">&times;</span>
-            <h2>Terms of Service</h2>
-            <p>By using this website and purchasing products, you agree to the terms below:</p>
-            <ul>
-                <li>All products are digital. No physical delivery.</li>
-                <li>Resale or redistribution is not allowed.</li>
-                <li>Trading involves risk. We are not SEBI-registered advisors.</li>
-                <li>Terms may change anytime. Stay updated.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="refundModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('refundModal')">&times;</span>
-            <h2>Refund Policy</h2>
-            <p>We do not offer refunds for digital content once accessed or downloaded.</p>
-            <h3>Exceptions:</h3>
-            <ul>
-                <li>Duplicate payment</li>
-                <li>Content access issue (our fault)</li>
-            </ul>
-            <p>Contact: <a href="mailto:bthsupport@beginnertrader.store">bthsupport@beginnertrader.store</a> within 24 hours with proof.</p>
-        </div>
-    </div>
-
-    <!-- Gallery Modal -->
-    <div class="gallery-modal" id="galleryModal">
-        <div class="gallery-modal-content">
-            <button class="gallery-modal-close" onclick="closeGallery()">&times;</button>
-            <img id="modalImage" class="gallery-modal-image" src="" alt="">
-            <button class="gallery-modal-nav gallery-modal-prev" onclick="prevImage()"><i class="fas fa-chevron-left"></i></button>
-            <button class="gallery-modal-nav gallery-modal-next" onclick="nextImage()"><i class="fas fa-chevron-right"></i></button>
-            <div class="gallery-modal-indicators" id="modalIndicators"></div>
-        </div>
-    </div>
-
-    <script>
-        // Set current year in footer
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Mobile menu toggle function
-        function toggleMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('active');
-        }
-
-        // Smooth scroll function
-        function scrollToSection(sectionId) {
-            document.getElementById(sectionId).scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-
-        // Modal functions
-        function openModal(id) {
-            document.getElementById(id).style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal(id) {
-            document.getElementById(id).style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        // FAQ Toggle Functionality
-        document.querySelectorAll('.faq-title').forEach(title => {
-            title.addEventListener('click', () => {
-                title.classList.toggle('active');
-                const content = title.nextElementSibling;
-                content.classList.toggle('active');
-            });
-        });
-
-        // Gallery Functionality
-        let currentGallery = [];
-        let currentIndex = 0;
-        const galleryModal = document.getElementById('galleryModal');
-        const modalImage = document.getElementById('modalImage');
-        const modalIndicators = document.getElementById('modalIndicators');
-
-        function openGallery(images) {
-            currentGallery = images;
-            currentIndex = 0;
-            updateModal();
-            galleryModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeGallery() {
-            galleryModal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        function prevImage() {
-            currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
-            updateModal();
-        }
-
-        function nextImage() {
-            currentIndex = (currentIndex + 1) % currentGallery.length;
-            updateModal();
-        }
-
-        function goToImage(index) {
-            currentIndex = index;
-            updateModal();
-        }
-
-        function updateModal() {
-            modalImage.src = currentGallery[currentIndex];
-            
-            // Update indicators
-            modalIndicators.innerHTML = '';
-            currentGallery.forEach((_, index) => {
-                const indicator = document.createElement('div');
-                indicator.className = `gallery-modal-indicator ${index === currentIndex ? 'active' : ''}`;
-                indicator.addEventListener('click', () => goToImage(index));
-                modalIndicators.appendChild(indicator);
-            });
-        }
-
-        // Close modal when clicking outside the image
-        galleryModal.addEventListener('click', (e) => {
-            if (e.target === galleryModal) {
-                closeGallery();
-            }
-        });
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (galleryModal.classList.contains('active')) {
-                if (e.key === 'Escape') {
-                    closeGallery();
-                } else if (e.key === 'ArrowLeft') {
-                    prevImage();
-                } else if (e.key === 'ArrowRight') {
-                    nextImage();
-                }
-            }
-        });
-
-        // Close modals when clicking outside the content
-        window.onclick = function(event) {
-            const modals = document.querySelectorAll('.modal');
-            modals.forEach(modal => {
-                if (event.target === modal) {
-                    modal.style.display = "none";
-                    document.body.style.overflow = 'auto';
-                }
-            });
-        }
-
-        // Prevent form resubmission on page refresh
-        if (window.history.replaceState) {
-            window.history.replaceState(null, null, window.location.href);
-        }
-
-        // Form submission handling
-        const form = document.querySelector('form');
-        if (form) {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const btn = this.querySelector('button[type="submit"]');
-                if (btn) {
-                    btn.disabled = true;
-                    btn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
-                    // Simulate form submission
-                    setTimeout(() => {
-                        btn.innerHTML = 'Message Sent!';
-                        btn.style.backgroundColor = '#4CAF50';
-                        this.reset();
-                        setTimeout(() => {
-                            btn.disabled = false;
-                            btn.innerHTML = 'Send Message';
-                            btn.style.backgroundColor = '';
-                        }, 3000);
-                    }, 1500);
-                }
-            });
-        }
-
-        // Create Diwali sparkles in banner
-        function createSparkles() {
-            const banner = document.getElementById('diwaliBanner');
-            for (let i = 0; i < 15; i++) {
-                const sparkle = document.createElement('div');
-                sparkle.className = 'diwali-sparkle';
-                sparkle.style.left = Math.random() * 100 + '%';
-                sparkle.style.top = Math.random() * 100 + '%';
-                sparkle.style.animationDelay = Math.random() * 3 + 's';
-                banner.appendChild(sparkle);
-            }
-        }
-
-        // Initialize on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            createSparkles();
-            
-            // Count up animation for stats
-            const stats = document.querySelectorAll('.stat-box h3');
-            stats.forEach(stat => {
-                const target = parseInt(stat.textContent.replace('K+', '000'));
-                const duration = 2000;
-                const startTime = performance.now();
-                
-                const animateCount = (currentTime) => {
-                    const elapsed = currentTime - startTime;
-                    const progress = Math.min(elapsed / duration, 1);
-                    const currentValue = Math.floor(progress * target);
-                    
-                    stat.textContent = (currentValue / 1000).toFixed(0) + 'K+';
-                    
-                    if (progress < 1) {
-                        requestAnimationFrame(animateCount);
-                    }
-                };
-                
-                // Start counting when stat box is in view
-                const observer = new IntersectionObserver((entries) => {
-                    if (entries[0].isIntersecting) {
-                        requestAnimationFrame(animateCount);
-                        observer.unobserve(stat.parentElement);
-                    }
-                });
-                
-                observer.observe(stat.parentElement);
-            });
-        });
-    </script>
 </body>
 </html>
