@@ -111,7 +111,6 @@ nav {
   align-items: center;
   justify-content: space-between;
 }
-/* Logo — clean and understated */
 .logo {
   font-family: var(--font-display);
   font-size: 15px;
@@ -120,13 +119,14 @@ nav {
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
-.logo-dot {
-  width: 8px; height: 8px;
+.logo-img {
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  background: var(--green);
-  box-shadow: 0 0 8px var(--green-glow);
+  object-fit: cover;
+  border: 1px solid rgba(34,197,94,0.3);
   flex-shrink: 0;
 }
 .nav-links { display: flex; align-items: center; gap: 28px; }
@@ -165,6 +165,7 @@ nav {
   cursor: pointer; text-decoration: none;
   transition: all 0.25s cubic-bezier(0.34,1.56,0.64,1);
   box-shadow: 0 0 16px rgba(245,158,11,0.35);
+  width: 100%;
 }
 .btn-gold:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 0 32px rgba(245,158,11,0.6); }
 
@@ -288,7 +289,12 @@ nav {
 .stat-label { font-size: 11px; color: var(--muted); margin-top: 2px; }
 
 /* ========= COURSES ========= */
-.courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; margin-top: 44px; }
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  margin-top: 44px;
+}
 .course-card { display: flex; flex-direction: column; overflow: hidden; }
 .course-img { position: relative; overflow: hidden; height: 190px; }
 .course-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
@@ -342,6 +348,16 @@ nav {
 }
 .gold-title { font-family: var(--font-display); font-size: clamp(1.25rem,2.5vw,1.65rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; }
 .gold-desc { font-size: 13px; color: var(--muted); margin: 8px 0 0; }
+
+/* ========= GOLD CARD INNER GRID ========= */
+.gold-inner-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+.gold-left { padding: 28px 24px; }
+.gold-right { padding: 24px 24px 24px 0; display: flex; flex-direction: column; justify-content: center; }
+
 .video-container {
   position: relative; width: 100%;
   border-radius: 10px; overflow: hidden;
@@ -366,7 +382,8 @@ nav {
 .play-btn svg { width: 24px; height: 24px; fill: #1a0a00; margin-left: 3px; }
 .video-thumbnail:hover .play-btn { transform: translate(-50%,-50%) scale(1.08); box-shadow: 0 0 40px rgba(245,158,11,0.7); }
 .video-iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-.gold-features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; }
+
+.gold-features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
 .gold-feat {
   background: rgba(245,158,11,0.05); border: 1px solid rgba(245,158,11,0.12);
   border-radius: 8px; padding: 10px 12px;
@@ -381,9 +398,36 @@ nav {
   font-size: 12px; font-weight: 600; color: var(--gold);
   width: fit-content;
 }
+.gold-view-features {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: transparent;
+  border: 1.5px solid var(--gold);
+  color: var(--gold);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  letter-spacing: 0.3px;
+  box-sizing: border-box;
+}
+.gold-view-features:hover {
+  background: rgba(245,158,11,0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(245,158,11,0.15);
+}
 
 /* ========= EBOOKS ========= */
-.ebooks-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; margin-top: 44px; }
+.ebooks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 44px;
+}
 .ebook-card { display: flex; flex-direction: column; overflow: hidden; }
 .ebook-img { position: relative; height: 170px; overflow: hidden; }
 .ebook-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
@@ -456,11 +500,11 @@ nav {
 }
 .modal-close:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
 
-/* ========= OFFER POPUP — compact & clean ========= */
+/* ========= OFFER POPUP ========= */
 .offer-modal .modal-box {
   background: #080f0a;
   border: 1px solid rgba(34,197,94,0.2);
-  max-width: 360px;            /* smaller width */
+  max-width: 360px;
   padding: 22px 22px 20px;
   text-align: center;
 }
@@ -478,13 +522,13 @@ nav {
 }
 .offer-title {
   font-family: var(--font-display);
-  font-size: 1.25rem;          /* was 1.6rem — much smaller */
+  font-size: 1.25rem;
   font-weight: 800;
   margin-bottom: 4px;
   line-height: 1.2;
 }
 .offer-price-row { display: flex; align-items: baseline; justify-content: center; gap: 10px; margin: 12px 0 4px; }
-.offer-price-now { font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; }  /* was 2.4rem */
+.offer-price-now { font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; }
 .offer-price-old { font-size: 0.9rem; color: var(--muted); text-decoration: line-through; }
 .offer-pill {
   background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.25);
@@ -554,22 +598,35 @@ footer a:hover { text-decoration: underline; }
 .fade-up-d3 { transition-delay: 0.3s; }
 .fade-up-d4 { transition-delay: 0.4s; }
 
-/* ========= RESPONSIVE ========= */
+/* ========= RESPONSIVE — TABLET (max 1024px) ========= */
+@media (max-width: 1024px) {
+  .courses-grid { grid-template-columns: repeat(2, 1fr); }
+  .ebooks-grid { grid-template-columns: repeat(3, 1fr); }
+  .gold-features-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ========= RESPONSIVE — TABLET (max 768px) ========= */
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .hamburger { display: block; }
   .hero-h1 { font-size: 2.2rem; }
   .courses-grid { grid-template-columns: 1fr; }
-  .ebooks-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .ebooks-grid { grid-template-columns: repeat(2, 1fr); }
   .section { padding: 52px 0; }
-  .gold-card .p-grid { grid-template-columns: 1fr !important; }
+  .gold-inner-grid { grid-template-columns: 1fr; }
+  .gold-right { padding: 0 24px 24px !important; }
+  .gold-features-grid { grid-template-columns: repeat(2, 1fr); }
   .countdown-cell { min-width: 42px; padding: 6px 8px; }
 }
+
+/* ========= RESPONSIVE — MOBILE (max 480px) ========= */
 @media (max-width: 480px) {
   .hero-h1 { font-size: 1.9rem; }
   .stat-card { padding: 12px 18px; }
   .stat-num { font-size: 1.5rem; }
   .ebooks-grid { grid-template-columns: 1fr; }
+  .courses-grid { grid-template-columns: 1fr; }
+  .gold-features-grid { grid-template-columns: 1fr 1fr; }
   .offer-modal .modal-box { max-width: calc(100vw - 32px); padding: 18px; }
 }
 
@@ -603,7 +660,7 @@ html.light footer { background: var(--bg); }
 <!-- ANNOUNCEMENT BAR -->
 <div class="ann-bar">
   <div class="marquee-track">
-    <span>🚀&nbsp;BTH ALGO V4.6.0 NOW LIVE — 91% OFF TODAY ONLY &nbsp;•&nbsp; 📊 New Update: BTH ALGO V4.6.0 is LIVE &nbsp;•&nbsp; 🔥 Enroll Now & Upgrade Your Trading &nbsp;•&nbsp; ⭐ Trusted by 392K+ Traders &nbsp;•&nbsp; 🎯 Gold Strategy — FREE for MT4 Users &nbsp;•&nbsp; 🚀&nbsp;BTH ALGO V4.6.0 NOW LIVE — 91% OFF TODAY ONLY &nbsp;•&nbsp; 📊 New Update: BTH ALGO V4.6.0 is LIVE &nbsp;•&nbsp; 🔥 Enroll Now & Upgrade Your Trading &nbsp;•&nbsp; ⭐ Trusted by 392K+ Traders &nbsp;•&nbsp; 🎯 Gold Strategy — FREE for MT4 Users &nbsp;•&nbsp;</span>
+    <span>🚀&nbsp;BTH ALGO V4.6.0 NOW LIVE — 91% OFF TODAY ONLY &nbsp;•&nbsp; 📊 New Update: BTH ALGO V4.6.0 is LIVE &nbsp;•&nbsp; 🔥 Enroll Now & Upgrade Your Trading &nbsp;•&nbsp; ⭐ Trusted by 387K+ Traders &nbsp;•&nbsp; 🎯 Xau/Btc Strategy — FREE for MT4 Users &nbsp;•&nbsp; 🚀&nbsp;BTH ALGO V4.6.0 NOW LIVE — 91% OFF TODAY ONLY &nbsp;•&nbsp; 📊 New Update: BTH ALGO V4.6.0 is LIVE &nbsp;•&nbsp; 🔥 Enroll Now & Upgrade Your Trading &nbsp;•&nbsp; ⭐ Trusted by 387K+ Traders &nbsp;•&nbsp; 🎯 Xau/Btc Strategy — FREE for MT4 Users &nbsp;•&nbsp;</span>
   </div>
 </div>
 
@@ -611,12 +668,12 @@ html.light footer { background: var(--bg); }
 <nav>
   <div class="nav-inner">
     <a href="#" class="logo">
-      <div class="logo-dot"></div>
+      <img src="https://iili.io/KDmPb5B.jpg" alt="BTH Logo" class="logo-img" onerror="this.style.display='none'">
       <span style="color:var(--text);">Beginner Trader Helper</span><span style="color:var(--green);font-size:10px;vertical-align:super;margin-left:1px;">™</span>
     </a>
     <div class="nav-links">
       <a href="#courses">Courses</a>
-      <a href="#gold-strategy">Gold Strategy</a>
+      <a href="#gold-strategy">Gold/BTC Strategy</a>
       <a href="#ebooks">eBooks</a>
       <a href="#contact">Contact</a>
       <button id="themeToggle" onclick="toggleTheme()" style="background:rgba(34,197,94,0.07);border:1px solid var(--border);border-radius:7px;padding:5px 9px;cursor:pointer;color:var(--text);font-size:14px;">🌙</button>
@@ -626,7 +683,7 @@ html.light footer { background: var(--bg); }
   </div>
   <div class="mobile-menu" id="mobileMenu">
     <a href="#courses" onclick="closeMenu()">📈 Courses</a>
-    <a href="#gold-strategy" onclick="closeMenu()">🏆 Gold Strategy</a>
+    <a href="#gold-strategy" onclick="closeMenu()">🏆 Gold/BTC Strategy</a>
     <a href="#ebooks" onclick="closeMenu()">📘 eBooks</a>
     <a href="#contact" onclick="closeMenu()">✉️ Contact</a>
     <div style="display:flex;gap:10px;align-items:center;">
@@ -653,7 +710,7 @@ html.light footer { background: var(--bg); }
     <p class="hero-quote fade-up fade-up-d3"></p>
     <div class="hero-ctas fade-up fade-up-d4">
       <a href="#courses" class="btn-primary">📈 Explore Courses</a>
-      <a href="#gold-strategy" class="btn-gold">🏆 Free Gold Strategy</a>
+      <a href="#gold-strategy" class="btn-gold" style="width:auto;">🏆 Free Xau/Btc Strategy</a>
       <a href="#ebooks" class="btn-outline">📘 View eBooks</a>
     </div>
     <div class="hero-stats fade-up fade-up-d4">
@@ -715,7 +772,7 @@ html.light footer { background: var(--bg); }
             <li>Premium eBooks on Price Action & SMC</li>
             <li>Free Indicator access included</li>
             <li>Step-by-step beginner-friendly content</li>
-            <li> Note: Video tutorials are not included in this version ❌</li>
+            <li>Note: Video tutorials are not included in this version ❌</li>
             <li>It is designed for traders who prefer reading material and hands-on practice.</li>
           </ul>
           <div class="price-row">
@@ -726,51 +783,54 @@ html.light footer { background: var(--bg); }
           <a href="https://superprofile.bio/vp/6438454049f50000204a22c4" target="_blank" rel="noopener" class="btn-primary" style="width:100%">Enroll Now →</a>
         </div>
       </div>
-<!-- COURSE 2 -->
-<div class="glass-hover course-card fade-up fade-up-d2">
-  <div class="course-img">
-    <div class="course-badge">🔥 Limited Time</div>
-    <img src="https://iili.io/BpgwDfS.md.png" alt="BTH ALGO Advanced" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#1a100a,#2e1a0a)';this.removeAttribute('src')">
-  </div>
-  <div class="course-body">
-    <h3 class="course-title">BTH ALGO V4.6.0 <span style="color:var(--muted);font-weight:400;">(Advanced Version)</span></h3>
-    <p class="course-desc">Master advanced price action, SMC, and algorithmic trading.</p>
-    <ul class="feature-list">
-      <li>Language: Hindi — easy to follow</li>
-      <li>Advanced eBook + updated indicator</li>
-      <li>Full HD video tutorials</li>
-      <li>Platform : Trading view</li>
-      <li>Lifetime access & future updates</li>
-    </ul>
-    <div class="price-row">
-      <span class="price-now gradient-text">₹1,599</span>
-      <span class="price-old">₹16,000</span>
-      <span class="discount-pill" style="background:rgba(245,158,11,0.12);color:var(--gold);border:1px solid rgba(245,158,11,0.25);">FLAT 91% OFF</span>
+      <!-- COURSE 2 -->
+      <div class="glass-hover course-card fade-up fade-up-d2">
+        <div class="course-img">
+          <div class="course-badge">🔥 Limited Time</div>
+          <img src="https://iili.io/BpgwDfS.md.png" alt="BTH ALGO Advanced" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#1a100a,#2e1a0a)';this.removeAttribute('src')">
+        </div>
+        <div class="course-body">
+          <h3 class="course-title">BTH ALGO V4.6.0 <span style="color:var(--muted);font-weight:400;">(Advanced Version)</span></h3>
+          <p class="course-desc">Master advanced price action, SMC, and algorithmic trading.</p>
+          <ul class="feature-list">
+            <li>Language: Hindi — easy to follow</li>
+            <li>Advanced eBook + updated indicator</li>
+            <li>Full HD video tutorials</li>
+            <li>Platform: TradingView</li>
+            <li>Lifetime access & future updates</li>
+          </ul>
+          <div class="price-row">
+            <span class="price-now gradient-text">₹1,599</span>
+            <span class="price-old">₹16,000</span>
+            <span class="discount-pill" style="background:rgba(245,158,11,0.12);color:var(--gold);border:1px solid rgba(245,158,11,0.25);">FLAT 91% OFF</span>
+          </div>
+          <a href="https://superprofile.bio/course/beginnertraderhelper?checkout=true" target="_blank" rel="noopener" class="btn-primary" style="width:100%">🔥 Enroll Now →</a>
+          <a href="https://beginnertrader.shop/Features/" target="_blank" rel="noopener" style="width:100%;display:block;text-align:center;margin-top:10px;padding:12px 20px;border-radius:10px;font-weight:600;font-size:0.95rem;background:transparent;border:1.5px solid var(--gold);color:var(--gold);text-decoration:none;transition:all 0.3s ease;letter-spacing:0.3px;" onmouseover="this.style.background='rgba(245,158,11,0.12)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='transparent';this.style.transform='translateY(0)'">✨ View Features →</a>
+        </div>
+      </div>
     </div>
-    <a href="https://superprofile.bio/course/a3cd1c57-33ea-49f2-9733-0e3d2c50fa19?dc=bth4.3.3" target="_blank" rel="noopener" class="btn-primary" style="width:100%">🔥 Enroll Now →</a>
-    <a href="https://beginnertrader.shop/Features/" target="_blank" rel="noopener" class="btn-features" style="width:100%;display:block;text-align:center;margin-top:10px;padding:12px 20px;border-radius:10px;font-weight:600;font-size:0.95rem;background:transparent;border:1.5px solid var(--gold);color:var(--gold);text-decoration:none;transition:all 0.3s ease;letter-spacing:0.3px;" onmouseover="this.style.background='rgba(245,158,11,0.12)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='transparent';this.style.transform='translateY(0)'">✨ View Features →</a>
   </div>
-</div>
+</section>
 
 <div class="section-divider"></div>
 
-<!-- GOLD STRATEGY FREE SECTION -->
+<!-- GOLD / BTCUSD STRATEGY FREE SECTION -->
 <section class="gold-section" id="gold-strategy">
   <div class="gold-bg"></div>
   <div class="section-inner" style="position:relative;z-index:1;">
     <div class="text-center fade-up" style="text-align:center;margin-bottom:36px;">
       <span style="display:inline-block;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.25);border-radius:100px;padding:4px 14px;font-size:11px;font-weight:600;color:var(--gold);margin-bottom:12px;">🏆 Exclusive Free Strategy</span>
-      <h2 class="section-title">Gold /Btcusd Strategy — <span class="gold-text">100% Free</span></h2>
+      <h2 class="section-title">Gold/Btcusd Strategy — <span class="gold-text">100% Free</span></h2>
       <p class="section-sub" style="margin:0 auto;">Specially crafted for MT4 traders. Proven gold / btcusd trading strategy — no hidden cost.</p>
     </div>
 
     <div class="gold-card fade-up fade-up-d1">
       <div class="offer-shimmer"></div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;" class="p-grid">
+      <div class="gold-inner-grid">
         <!-- LEFT: Info -->
-        <div style="padding:28px 24px;" class="gold-left">
+        <div class="gold-left">
           <div style="margin-bottom:18px;">
-            <div class="BTC/XAUUSD-tag">🏅 FREE Strategy</div>
+            <div class="gold-tag">🏅 FREE Strategy</div>
             <h3 class="gold-title">Gold / Btcusd <span class="gold-text">Scalping</span></h3>
             <p class="gold-desc">Battle-tested XAUUSD strategy for MT4. Works on M5 timeframe.</p>
           </div>
@@ -788,16 +848,16 @@ html.light footer { background: var(--bg); }
             <span>🎁</span> Completely Free — No Purchase Needed
           </div>
 
-          <a href="https://telegram.me/+EV4khEeJ5XozYmM1" target="_blank" rel="noopener" class="btn-gold" style="margin-bottom:8px;">
+          <a href="https://telegram.me/+EV4khEeJ5XozYmM1" target="_blank" rel="noopener" class="btn-gold">
             🏆 Get Gold / Btcusd Strategy Free
           </a>
 
-          <a href="https://beginnertrader.shop/features/" target="_blank" rel="noopener" style="display:block;width:100%;text-align:center;margin-top:10px;padding:12px 20px;border-radius:10px;font-weight:600;font-size:0.95rem;background:transparent;border:1.5px solid var(--gold);color:var(--gold);text-decoration:none;transition:all 0.3s ease;letter-spacing:0.3px;box-sizing:border-box;" onmouseover="this.style.background='rgba(245,158,11,0.12)';this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 15px rgba(245,158,11,0.15)'" onmouseout="this.style.background='transparent';this.style.transform='translateY(0)';this.style.boxShadow='none'">✨ View Features →</a>
+          <a href="https://beginnertrader.shop/features/" target="_blank" rel="noopener" class="gold-view-features">✨ View Features →</a>
 
           <p style="font-size:11px;color:var(--muted);margin-top:8px;">Available on Telegram — Join to get instant access</p>
         </div>
         <!-- RIGHT: Video -->
-        <div style="padding:24px 24px 24px 0;display:flex;flex-direction:column;justify-content:center;" class="gold-right">
+        <div class="gold-right">
           <p style="font-size:11px;color:var(--muted);margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;">▶ Watch Strategy Preview</p>
           <div class="video-container" id="videoContainer">
             <div class="video-thumbnail" id="videoThumb"
@@ -823,6 +883,7 @@ html.light footer { background: var(--bg); }
 </section>
 
 <div class="section-divider"></div>
+
 <!-- EBOOKS -->
 <section class="section" id="ebooks" style="background:rgba(34,197,94,0.015);">
   <div class="section-inner">
@@ -966,7 +1027,7 @@ html.light footer { background: var(--bg); }
   </svg>
 </a>
 
-<!-- OFFER POPUP MODAL — compact -->
+<!-- OFFER POPUP MODAL -->
 <div class="modal-overlay offer-modal" id="offerModal">
   <div class="modal-box">
     <div class="offer-shimmer"></div>
@@ -985,7 +1046,7 @@ html.light footer { background: var(--bg); }
       <div class="countdown-cell"><div class="countdown-num" id="cdS">59</div><div class="countdown-lbl">Secs</div></div>
     </div>
     <div class="offer-actions">
-      <a href="https://superprofile.bio/course/a3cd1c57-33ea-49f2-9733-0e3d2c50fa19?dc=bth4.3.3" target="_blank" rel="noopener" class="btn-primary" onclick="closeModal('offerModal')">Claim Offer →</a>
+      <a href="https://beginnertrader.shop/Features/" target="_blank" rel="noopener" class="btn-primary" onclick="closeModal('offerModal')">Claim Offer →</a>
       <a href="https://beginnertrader.shop" target="_blank" rel="noopener" class="btn-outline" onclick="closeModal('offerModal')">Browse All Products</a>
     </div>
     <p class="offer-dismiss" onclick="closeModal('offerModal')">No thanks, I'll pay full price later</p>
@@ -1075,8 +1136,8 @@ window.addEventListener('load', function(){
   setTimeout(function(){
     var s = document.getElementById('countSubs');
     var f = document.getElementById('countFollowers');
-    if(s) animateCount(s, 392);
-    if(f) animateCount(f, 134);
+    if(s) animateCount(s, 387);
+    if(f) animateCount(f, 132);
   }, 400);
 });
 
@@ -1129,23 +1190,6 @@ document.querySelectorAll('.fade-up').forEach(function(el){ observer.observe(el)
 
 // ===== YEAR =====
 document.getElementById('year').textContent = new Date().getFullYear();
-
-// ===== GOLD CARD RESPONSIVE =====
-function fixGoldGrid() {
-  var grid = document.querySelector('.gold-card .p-grid');
-  if(!grid) return;
-  if(window.innerWidth < 768) {
-    grid.style.gridTemplateColumns = '1fr';
-    var right = grid.querySelector('.gold-right');
-    if(right) right.style.padding = '0 24px 24px';
-  } else {
-    grid.style.gridTemplateColumns = '1fr 1fr';
-    var right = grid.querySelector('.gold-right');
-    if(right) right.style.padding = '24px 24px 24px 0';
-  }
-}
-fixGoldGrid();
-window.addEventListener('resize', fixGoldGrid);
 </script>
 </body>
 </html>
