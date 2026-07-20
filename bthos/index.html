@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Best Practices -->
+  <title>BTH OS | The Desktop Trading Operating System For Serious Traders</title>
+  <meta name="description" content="BTH OS (Beginner Trader Helper OS) is an ultra-premium desktop operating system built for professional traders. Journal, analyze, simulate, and calculate risk with local security.">
+  <meta name="keywords" content="BTH OS, Beginner Trader Helper, Trading Journal, MT5 Analytics, Trading Simulator, Risk Calculator, Desktop Trading Terminal">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="BTH OS | The Trading Operating System You Always Needed">
+  <meta property="og:description" content="One powerful desktop platform built for serious traders. Journal, analyze, simulate, and improve.">
+  <meta property="og:image" content="https://bthalgo.com/images/bth%20os%20dashboard.png">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon & Brand -->
+  <link rel="icon" type="image/png" href="https://bthalgo.com/images/logo.png">
+
+  <!-- Premium Typography (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==================== NAVIGATION NAVBAR ==================== -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="nav-logo" id="nav-brand-logo">
+        <img src="https://bthalgo.com/images/logo.png" alt="BTH OS Logo" width="32" height="32">
+        <span class="nav-logo-text">BTH OS</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#showcase">Showcase</a></li>
+          <li><a href="#why-bth">Why BTH OS</a></li>
+          <li><a href="#comparison">Comparison</a></li>
+          <li><a href="#roadmap">Roadmap</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="https://bthalgo.com" target="_blank" rel="noopener">bthalgo.com ↗</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle light and dark theme" title="Toggle Light/Dark Theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="https://bthalgo.com" target="_blank" rel="noopener" class="btn btn-secondary" id="nav-website-btn">
+          <span>Main Website</span>
+          <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+        <a href="https://bthalgo.com/download" target="_blank" rel="noopener" class="btn btn-primary" id="nav-cta-btn">
+          <span>Download BTH OS</span>
+          <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+        </a>
+        <button class="mobile-toggle" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Dropdown Menu -->
+  <div class="mobile-menu">
+    <a href="#showcase">Showcase</a>
+    <a href="#why-bth">Why BTH OS</a>
+    <a href="#comparison">Comparison</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#faq">FAQ</a>
+    <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border-subtle);">
+      <span style="font-weight: 600; color: var(--text-main); font-size: 1.05rem;">Color Theme</span>
+      <button class="theme-toggle-btn" id="mobile-theme-toggle" aria-label="Toggle light and dark theme">
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+    <a href="https://bthalgo.com" target="_blank" class="btn btn-secondary" style="margin-top: 12px;">Main Website (bthalgo.com)</a>
+    <a href="https://bthalgo.com/download" target="_blank" class="btn btn-primary" style="margin-top: 8px;">Download BTH OS</a>
+  </div>
+
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero" id="hero">
+    <canvas id="hero-canvas"></canvas>
+
+    <div class="container hero-content fade-up">
+      <div class="section-badge">
+        <span class="badge-dot"></span>
+        <span>v1.0.1 Live · Professional Desktop Terminal</span>
+      </div>
+
+      <h1 class="hero-title text-gradient">
+        The Trading Operating System You Always Needed
+      </h1>
+
+      <p class="hero-subtitle">
+        <strong>Journal. Analyze. Simulate. Improve.</strong><br>
+        One powerful desktop platform engineered specifically for serious traders.
+      </p>
+
+      <div class="hero-actions">
+        <a href="https://bthalgo.com/download" target="_blank" rel="noopener" class="btn btn-primary btn-lg" id="hero-download-btn">
+          <span>Download BTH OS</span>
+          <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+        </a>
+        <a href="https://bthalgo.com" target="_blank" rel="noopener" class="btn btn-secondary btn-lg" id="hero-website-btn">
+          <span>Main Website (bthalgo.com)</span>
+          <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Floating Desktop Frame Screenshot -->
+    <div class="container hero-mockup-wrapper fade-up">
+      <div class="desktop-frame">
+        <div class="desktop-header">
+          <div class="desktop-dots">
+            <span class="desktop-dot red"></span>
+            <span class="desktop-dot yellow"></span>
+            <span class="desktop-dot green"></span>
+          </div>
+          <div class="desktop-title">
+            <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
+            BTH OS - Main Trading Dashboard
+          </div>
+        </div>
+        <div class="desktop-body" id="hero-mockup-trigger">
+          <img src="https://bthalgo.com/images/bth%20os%20dashboard.png" alt="BTH OS Main Dashboard Screenshot" width="1200" height="675" decoding="async">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== TRUST BAR ==================== -->
+  <section class="trust-bar">
+    <div class="container">
+      <div class="trust-label">Built For Professional Traders</div>
+      <div class="trust-items">
+        <div class="trust-chip">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Trade Journal
+        </div>
+        <div class="trust-chip">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          Advanced Analytics
+        </div>
+        <div class="trust-chip">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          MT5 Compatible
+        </div>
+        <div class="trust-chip">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          Local Data Storage
+        </div>
+        <div class="trust-chip">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          Risk Management
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ==================== SCREENSHOT SHOWCASE EXPERIENCE ==================== -->
+  <section class="section-padding" id="showcase">
+    <div class="container">
+      <div class="text-center fade-up">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span>Interactive Desktop Showcase</span>
+        </div>
+        <h2 class="section-title text-gradient">Designed Like a World-Class OS</h2>
+        <p class="section-subtitle">Explore every tool built into the BTH OS desktop suite.</p>
+      </div>
+
+      <div class="showcase-wrapper">
+
+        <!-- Showcase 1: Dashboard -->
+        <div class="showcase-item fade-up">
+          <div class="showcase-text">
+            <span class="showcase-badge">Command Center</span>
+            <h3 class="showcase-title">Trading Dashboard</h3>
+
+            <ul class="showcase-bullets">
+              <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Live Equity & Drawdown Tracking</li>
+              <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Real-Time Session Status Indicator</li>
+              <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Instant MT5 Account Syncing</li>
+            </ul>
+          </div>
+          <div class="showcase-frame">
+            <div class="desktop-frame">
+              <div class="desktop-header">
+                <div class="desktop-dots"><span class="desktop-dot red"></span><span class="desktop-dot yellow"></span><span class="desktop-dot green"></span></div>
+                <div class="desktop-title">BTH OS - Dashboard</div>
+              </div>
+              <div class="desktop-body">
+                <img src="https://bthalgo.com/images/bth%20os%20dashboard.png" alt="BTH OS Dashboard Showcase" loading="lazy" decoding="async" width="1000" height="562">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Showcase 2: Analytics -->
+        <div class="showcase-item reverse fade-up">
+          <div class="showcase-text">
+            <span class="showcase-badge">Deep Analytics</span>
+            <h3 class="showcase-title">Advanced Performance Analytics</h3>
+
+            <ul class="showcase-bullets">
+              <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Profit Factor & Expectancy Engine</li>
+              <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Win Rate by Day of Week & Hour</li>
+              <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> RRR Distribution Graphs</li>
+            </ul>
+          </div>
+          <div class="showcase-frame">
+            <div class="desktop-frame">
+              <div class="desktop-header">
+                <div class="desktop-dots"><span class="desktop-dot red"></span><span class="desktop-dot yellow"></span><span class="desktop-dot green"></span></div>
+                <div class="desktop-title">BTH OS - Analytics Module</div>
+              </div>
+              <div class="desktop-body">
+                <img src="https://bthalgo.com/images/bth%20os%20analytics.png" alt="BTH OS Analytics Screenshot" loading="lazy" decoding="async" width="1000" height="562">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Showcase 3: Journal -->
+        <div class="showcase-item fade-up">
+          <div class="showcase-text">
+            <span class="showcase-badge">Trade Logging</span>
+            <h3 class="showcase-title">Comprehensive Trade Journal</h3>
+
+            <ul class="showcase-bullets">
+              <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Setup & Mistake Tagging</li>
+              <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> High-Resolution Chart Image Attachments</li>
+              <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Session Mood & Discipline Score</li>
+            </ul>
+          </div>
+          <div class="showcase-frame">
+            <div class="desktop-frame">
+              <div class="desktop-header">
+                <div class="desktop-dots"><span class="desktop-dot red"></span><span class="desktop-dot yellow"></span><span class="desktop-dot green"></span></div>
+                <div class="desktop-title">BTH OS - Trade Journal</div>
+              </div>
+              <div class="desktop-body">
+                <img src="https://bthalgo.com/images/bth%20os%20journal.png" alt="BTH OS Journal Screenshot" loading="lazy" decoding="async" width="1000" height="562">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Showcase 4: Trade History -->
+        <div class="showcase-item reverse fade-up">
+          <div class="showcase-text">
+            <span class="showcase-badge">Master Archive</span>
+            <h3 class="showcase-title">Searchable Trade History</h3>
+
+            <ul class="showcase-bullets">
+              <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Multi-Column Filtering & Search</li>
+              <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Export to Institutional CSV / PDF</li>
+              <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Complete Audit Trail</li>
+            </ul>
+          </div>
+          <div class="showcase-frame">
+            <div class="desktop-frame">
+              <div class="desktop-header">
+                <div class="desktop-dots"><span class="desktop-dot red"></span><span class="desktop-dot yellow"></span><span class="desktop-dot green"></span></div>
+                <div class="desktop-title">BTH OS - Trade History</div>
+              </div>
+              <div class="desktop-body">
+                <img src="https://bthalgo.com/images/bth%20os%20trade%20history.png" alt="BTH OS Trade History Screenshot" loading="lazy" decoding="async" width="1000" height="562">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Showcase 5: Compounding Calculator -->
+        <div class="showcase-item fade-up">
+          <div class="showcase-text">
+            <span class="showcase-badge">Growth Modeling</span>
+            <h3 class="showcase-title">Compounding Calculator</h3>
+
+            <ul class="showcase-bullets">
+              <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Daily & Monthly Compounding Curves</li>
+              <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Custom Drawdown Buffer Settings</li>
+              <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Visual Projection Charts</li>
+            </ul>
+          </div>
+          <div class="showcase-frame">
+            <div class="desktop-frame">
+              <div class="desktop-header">
+                <div class="desktop-dots"><span class="desktop-dot red"></span><span class="desktop-dot yellow"></span><span class="desktop-dot green"></span></div>
+                <div class="desktop-title">BTH OS - Compounding Calculator</div>
+              </div>
+              <div class="desktop-body">
+                <img src="https://bthalgo.com/images/bth%20os%20calcu%20compounding.png" alt="BTH OS Compounding Calculator Screenshot" loading="lazy" decoding="async" width="1000" height="562">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Showcase 6: Daily Breakdown Calculator -->
+        <div class="showcase-item reverse fade-up">
+          <div class="showcase-text">
+            <span class="showcase-badge">Goal Planning</span>
+            <h3 class="showcase-title">Daily Breakdown Calculator</h3>
+
+            <ul class="showcase-bullets">
+              <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Realistic Target Deconstruction</li>
+              <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Prop Firm Evaluation Target Mapping</li>
+              <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Max Loss Boundary Warnings</li>
+            </ul>
+          </div>
+          <div class="showcase-frame">
+            <div class="desktop-frame">
+              <div class="desktop-header">
+                <div class="desktop-dots"><span class="desktop-dot red"></span><span class="desktop-dot yellow"></span><span class="desktop-dot green"></span></div>
+                <div class="desktop-title">BTH OS - Daily Breakdown Calculator</div>
+              </div>
+              <div class="desktop-body">
+                <img src="https://bthalgo.com/images/bth%20os%20calcu%20daily%20breakdown.png" alt="BTH OS Daily Breakdown Calculator Screenshot" loading="lazy" decoding="async" width="1000" height="562">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Showcase 7: Trading Simulator -->
+        <div class="showcase-item fade-up">
+          <div class="showcase-text">
+            <span class="showcase-badge">Offline Backtesting</span>
+            <h3 class="showcase-title">Risk-Free Trading Simulator</h3>
+
+            <ul class="showcase-bullets">
+              <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Full Offline Execution Engine</li>
+              <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Speed Variable Replay Controls</li>
+              <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Instant Backtest Metric Generation</li>
+            </ul>
+          </div>
+          <div class="showcase-frame">
+            <div class="desktop-frame">
+              <div class="desktop-header">
+                <div class="desktop-dots"><span class="desktop-dot red"></span><span class="desktop-dot yellow"></span><span class="desktop-dot green"></span></div>
+                <div class="desktop-title">BTH OS - Trading Simulator</div>
+              </div>
+              <div class="desktop-body">
+                <img src="https://bthalgo.com/images/bth%20os%20calu%20trading%20simulator.png" alt="BTH OS Trading Simulator Screenshot" loading="lazy" decoding="async" width="1000" height="562">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Showcase 8: About & System Info -->
+        <div class="showcase-item reverse fade-up">
+          <div class="showcase-text">
+            <span class="showcase-badge">System Integrity</span>
+            <h3 class="showcase-title">Local Native Desktop Engine</h3>
+
+            <ul class="showcase-bullets">
+              <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> 100% Local SQLite Encryption</li>
+              <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Low Memory Footprint</li>
+              <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg> Automatic Local Backups</li>
+            </ul>
+          </div>
+          <div class="showcase-frame">
+            <div class="desktop-frame">
+              <div class="desktop-header">
+                <div class="desktop-dots"><span class="desktop-dot red"></span><span class="desktop-dot yellow"></span><span class="desktop-dot green"></span></div>
+                <div class="desktop-title">BTH OS - About System</div>
+              </div>
+              <div class="desktop-body">
+                <img src="https://bthalgo.com/images/bth%20os%20about.png" alt="BTH OS About Screenshot" loading="lazy" decoding="async" width="1000" height="562">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== WHY BTH OS (BENTO GRID) ==================== -->
+  <section class="section-padding" id="why-bth">
+    <div class="container">
+      <div class="text-center fade-up">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span>The BTH OS Advantage</span>
+        </div>
+        <h2 class="section-title text-gradient">Why Serious Traders Upgrade to BTH OS</h2>
+        <p class="section-subtitle">Standard spreadsheets and generic web apps fail professional traders. BTH OS is built different.</p>
+      </div>
+
+      <div class="bento-grid">
+
+        <!-- 1. Track Every Trade (Span 8) -->
+        <div class="bento-card bento-span-8 fade-up">
+          <div class="bento-header">
+            <div class="bento-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+            </div>
+            <h3 class="bento-title">Track Every Single Trade Execution</h3>
+            <p class="bento-desc">Zero manual data entry errors. Sync automatically or log entries with customized risk metrics.</p>
+          </div>
+          <div class="bento-visual">
+            <div class="bento-trade-row">
+              <span>EURUSD · Buy 1.5 Lots</span>
+              <span class="tag-win">+$1,450.00 (+2.5R)</span>
+            </div>
+            <div class="bento-trade-row">
+              <span>XAUUSD · Sell 2.0 Lots</span>
+              <span class="tag-win">+$2,800.00 (+3.2R)</span>
+            </div>
+            <div class="bento-trade-row">
+              <span>GBPJPY · Sell 1.0 Lots</span>
+              <span class="tag-loss">-$450.00 (-1.0R)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Measure Performance (Span 4) -->
+        <div class="bento-card bento-span-4 fade-up">
+          <div class="bento-header">
+            <div class="bento-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+            </div>
+            <h3 class="bento-title">Measure True Edge</h3>
+            <p class="bento-desc">Real mathematical expectancy analysis.</p>
+          </div>
+          <div class="bento-visual text-center">
+            <div class="bento-stat-highlight">2.84</div>
+            <div style="color: var(--text-subtle); font-size: 0.75rem;">PROFIT FACTOR</div>
+          </div>
+        </div>
+
+        <!-- 3. Improve Discipline (Span 4) -->
+        <div class="bento-card bento-span-4 fade-up">
+          <div class="bento-header">
+            <div class="bento-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="bento-title">Improve Discipline</h3>
+            <p class="bento-desc">Pre-trade checklists force emotional control before taking risk.</p>
+          </div>
+          <div class="bento-visual">
+            <div style="color: #4ADE80; font-weight: 700; margin-bottom: 4px;">✔ Risk Limit Verified</div>
+            <div style="color: #4ADE80; font-weight: 700;">✔ Strategy Criteria Met</div>
+          </div>
+        </div>
+
+        <!-- 4. Calculate Risk (Span 4) -->
+        <div class="bento-card bento-span-4 fade-up">
+          <div class="bento-header">
+            <div class="bento-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="bento-title">Calculate Risk</h3>
+            <p class="bento-desc">Precise position sizing according to account balance and stop loss distance.</p>
+          </div>
+          <div class="bento-visual text-center">
+            <div class="bento-stat-highlight">1.0%</div>
+            <div style="color: var(--text-subtle); font-size: 0.75rem;">STRICT RISK PER TRADE</div>
+          </div>
+        </div>
+
+        <!-- 5. Store Data Locally (Span 4) -->
+        <div class="bento-card bento-span-4 fade-up">
+          <div class="bento-header">
+            <div class="bento-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            </div>
+            <h3 class="bento-title">Store Data Locally</h3>
+            <p class="bento-desc">Zero cloud leaks. Complete privacy on your desktop SSD.</p>
+          </div>
+          <div class="bento-visual text-center">
+            <div style="color: var(--accent-cyan); font-weight: 700; font-size: 0.9rem;">🔒 LOCAL ENCRYPTED DB</div>
+          </div>
+        </div>
+
+        <!-- 6. Review Trading History (Span 4) -->
+        <div class="bento-card bento-span-4 fade-up">
+          <div class="bento-header">
+            <div class="bento-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            </div>
+            <h3 class="bento-title">Review History</h3>
+            <p class="bento-desc">Audit sessions by day, month, or customized prop firm challenge dates.</p>
+          </div>
+          <div class="bento-visual">
+            <div style="color: var(--text-muted);">Total Trades: <strong>412</strong></div>
+            <div style="color: var(--text-muted);">Win Rate: <strong>68.4%</strong></div>
+          </div>
+        </div>
+
+        <!-- 7. Analyze Winning Trades (Span 4) -->
+        <div class="bento-card bento-span-4 fade-up">
+          <div class="bento-header">
+            <div class="bento-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 30a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2V5z"/></svg>
+            </div>
+            <h3 class="bento-title">Analyze Winners</h3>
+            <p class="bento-desc">Double down on setups that produce highest return profile.</p>
+          </div>
+          <div class="bento-visual text-center">
+            <div class="bento-stat-highlight">68.4%</div>
+            <div style="color: var(--text-subtle); font-size: 0.75rem;">STRATEGY WIN RATE</div>
+          </div>
+        </div>
+
+        <!-- 8. Learn From Mistakes (Span 4) -->
+        <div class="bento-card bento-span-4 fade-up">
+          <div class="bento-header">
+            <div class="bento-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+            </div>
+            <h3 class="bento-title">Learn From Mistakes</h3>
+            <p class="bento-desc">Eliminate FOMO and revenge trading with emotion tagging.</p>
+          </div>
+          <div class="bento-visual">
+            <div style="color: #F87171; font-size: 0.8rem;">⚠️ FOMO Tag Triggered - Trade Rejected</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ==================== COMPARISON SECTION ==================== -->
+  <section class="section-padding" id="comparison">
+    <div class="container">
+      <div class="text-center fade-up">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span>Side-By-Side Comparison</span>
+        </div>
+        <h2 class="section-title text-gradient">Traditional Trading vs BTH OS</h2>
+        <p class="section-subtitle">See how BTH OS compares against legacy spreadsheets and notes apps.</p>
+      </div>
+
+      <div class="comparison-table-wrapper fade-up">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature Capability</th>
+              <th>Traditional Spreadsheet / Notes</th>
+              <th class="highlight">BTH OS Desktop Terminal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Trade Journaling</td>
+              <td><span class="badge-neg">✕ No Built-In Journal</span></td>
+              <td><span class="badge-pos">✓ Dedicated OS Journal Module</span></td>
+            </tr>
+            <tr>
+              <td>Analytics & Expectancy</td>
+              <td><span class="badge-neg">✕ Manual Clunky Formulas</span></td>
+              <td><span class="badge-pos">✓ Instant Automated Advanced Analytics</span></td>
+            </tr>
+            <tr>
+              <td>Data Syncing</td>
+              <td><span class="badge-neg">✕ 100% Manual Entry</span></td>
+              <td><span class="badge-pos">✓ Automated MT5 Sync Integration</span></td>
+            </tr>
+            <tr>
+              <td>Backtesting & Simulation</td>
+              <td><span class="badge-neg">✕ No Simulator</span></td>
+              <td><span class="badge-pos">✓ Offline Risk-Free Trading Simulator</span></td>
+            </tr>
+            <tr>
+              <td>Reporting & Audits</td>
+              <td><span class="badge-neg">✕ No Institutional Reports</span></td>
+              <td><span class="badge-pos">✓ One-Click PDF/CSV Performance Reports</span></td>
+            </tr>
+            <tr>
+              <td>Data Privacy</td>
+              <td><span class="badge-neg">✕ Cloud Third-Party Vendor Risk</span></td>
+              <td><span class="badge-pos">✓ 100% Encrypted Local Storage</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== DOWNLOAD SECTION ==================== -->
+  <section class="section-padding setup-download-section" id="download">
+    <div class="container fade-up">
+      <div class="setup-download-grid">
+        
+        <!-- Left Column: Info & Checklists -->
+        <div class="setup-left-content">
+          <div class="setup-badge">SETUP BTH OS</div>
+          
+          <h2 class="setup-main-title">Download BTH OS</h2>
+          
+          <p class="setup-subtitle">
+            Professional desktop trading software built for serious traders.
+          </p>
+
+          <div class="setup-checklist-grid">
+            <div class="checklist-col">
+              <div class="setup-check-item">
+                <span class="check-icon-green">✓</span>
+                <span>Windows 10 & 11</span>
+              </div>
+              <div class="setup-check-item">
+                <span class="check-icon-green">✓</span>
+                <span>Free Beta Release</span>
+              </div>
+              <div class="setup-check-item">
+                <span class="check-icon-green">✓</span>
+                <span>Fast Installation</span>
+              </div>
+              <div class="setup-check-item">
+                <span class="check-icon-green">✓</span>
+                <span>No Subscription Required</span>
+              </div>
+            </div>
+
+            <div class="checklist-col">
+              <div class="setup-check-item">
+                <span class="check-icon-green">✓</span>
+                <span>Desktop Application</span>
+              </div>
+              <div class="setup-check-item">
+                <span class="check-icon-green">✓</span>
+                <span>Secure Download</span>
+              </div>
+              <div class="setup-check-item">
+                <span class="check-icon-green">✓</span>
+                <span>Regular Updates</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Installer Card -->
+        <div class="setup-card">
+          <div class="setup-card-header">
+            <div class="setup-app-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><polyline points="7 8 10 11 7 14"/><line x1="13" y1="14" x2="17" y2="14"/></svg>
+            </div>
+            <div>
+              <h3 class="setup-app-title">BTH OS v1.0.1</h3>
+              <div class="setup-app-status">READY TO INSTALL</div>
+            </div>
+          </div>
+
+          <div class="setup-specs-row">
+            <div class="spec-col">
+              <span class="spec-label">PLATFORM</span>
+              <span class="spec-value">Windows</span>
+            </div>
+            <div class="spec-col">
+              <span class="spec-label">VERSION</span>
+              <span class="spec-value">1.0.1</span>
+            </div>
+            <div class="spec-col">
+              <span class="spec-label">SIZE</span>
+              <span class="spec-value">42 MB</span>
+            </div>
+          </div>
+
+          <div class="setup-security-list">
+            <div class="security-item">
+              <svg class="sec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+              <span>Checked by Microsoft Defender (100% Secure)</span>
+            </div>
+            <div class="security-item">
+              <svg class="sec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>SHA-256 Verified Signature</span>
+            </div>
+          </div>
+
+          <a href="https://bthalgo.com/download" target="_blank" rel="noopener" class="btn-green-download">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Start Secure Download</span>
+          </a>
+
+          <!-- Community / Social Media Links -->
+          <div class="community-box">
+            <h4 class="community-title">COMMUNITY</h4>
+            <div class="community-social-grid">
+              <a href="https://www.youtube.com/c/beginnertraderhelper" target="_blank" rel="noopener" class="social-icon-btn" aria-label="YouTube Channel" title="YouTube">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </a>
+              <a href="https://www.instagram.com/beginner_trader_helper/" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Instagram Profile" title="Instagram">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </a>
+              <a href="https://telegram.me/+EV4khEeJ5XozYmM1" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Telegram Community" title="Telegram">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.56 8.16l-1.97 9.28c-.15.67-.54.83-1.1.52l-3.02-2.23-1.46 1.41c-.16.16-.3.3-.61.3l.21-3.04 5.54-5.01c.24-.21-.05-.33-.37-.12l-6.85 4.31-2.95-.92c-.64-.2-.65-.64.13-.95l11.53-4.44c.53-.2 1 .12.83.89z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== SOFTWARE ROADMAP / TIMELINE ==================== -->
+  <section class="section-padding roadmap-section" id="roadmap">
+    <div class="container">
+      <div class="text-center fade-up">
+        <div class="section-badge roadmap-badge">
+          <span class="badge-dot"></span>
+          <span>TIMELINE</span>
+        </div>
+        <h2 class="section-title text-gradient">Software Roadmap</h2>
+        <p class="section-subtitle">
+          Follow our planned feature iterations as we scale BTH OS from beta releases to full AI-assisted ecosystems.
+        </p>
+      </div>
+
+      <div class="timeline-container">
+        <!-- Central Timeline Vertical Line -->
+        <div class="timeline-line"></div>
+
+        <!-- Timeline Item 1: Version 1.0 (Left Side) -->
+        <div class="timeline-item timeline-left fade-up">
+          <div class="timeline-card">
+            <div class="timeline-version text-green-accent">VERSION 1.0 (CURRENT)</div>
+            <h3 class="timeline-card-title">Core Trading OS</h3>
+            <ul class="timeline-checklist">
+              <li><span>MT5 Integration</span> <span class="check-done">✔</span></li>
+              <li><span>Local Trading Analytics</span> <span class="check-done">✔</span></li>
+              <li><span>Local Trading Journal</span> <span class="check-done">✔</span></li>
+              <li><span>Calculator Suite</span> <span class="check-done">✔</span></li>
+            </ul>
+          </div>
+          <div class="timeline-node active-node"></div>
+        </div>
+
+        <!-- Timeline Item 2: Version 1.1 (Right Side) -->
+        <div class="timeline-item timeline-right fade-up">
+          <div class="timeline-card">
+            <div class="timeline-version text-green-accent">VERSION 1.1 (Q3 2026)</div>
+            <h3 class="timeline-card-title">BTH AI Analyzer</h3>
+            <ul class="timeline-checklist">
+              <li><span class="bullet-dot">●</span> <span>Smart Bias Detection</span></li>
+              <li><span class="bullet-dot">●</span> <span>Automated Statistics Audit</span></li>
+              <li><span class="bullet-dot">●</span> <span>Entry Quality Grades</span></li>
+            </ul>
+          </div>
+          <div class="timeline-node"></div>
+        </div>
+
+        <!-- Timeline Item 3: Version 1.2 (Left Side) -->
+        <div class="timeline-item timeline-left fade-up">
+          <div class="timeline-card">
+            <div class="timeline-version text-green-accent">VERSION 1.2 (Q4 2026)</div>
+            <h3 class="timeline-card-title">AI Trade Replay</h3>
+            <ul class="timeline-checklist">
+              <li><span class="bullet-dot">●</span> <span>Session Rewinds</span></li>
+              <li><span class="bullet-dot">●</span> <span>AI Replay Auditing</span></li>
+              <li><span class="bullet-dot">●</span> <span>Mistake Flagging Algorithm</span></li>
+            </ul>
+          </div>
+          <div class="timeline-node"></div>
+        </div>
+
+        <!-- Timeline Item 4: Version 2.0 (Right Side) -->
+        <div class="timeline-item timeline-right fade-up">
+          <div class="timeline-card">
+            <div class="timeline-version text-green-accent">VERSION 2.0 (2026)</div>
+            <h3 class="timeline-card-title">AI Trading Coach</h3>
+            <ul class="timeline-checklist">
+              <li><span class="bullet-dot">●</span> <span>Personal Habits Auditor</span></li>
+              <li><span class="bullet-dot">●</span> <span>Real-time Voice Assistance</span></li>
+              <li><span class="bullet-dot">●</span> <span>Advanced Custom Integrations</span></li>
+            </ul>
+          </div>
+          <div class="timeline-node"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== FAQ ACCORDION SECTION ==================== -->
+  <section class="section-padding" id="faq">
+    <div class="container">
+      <div class="text-center fade-up">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span>Frequently Asked Questions</span>
+        </div>
+        <h2 class="section-title text-gradient">Got Questions? We Have Answers.</h2>
+        <p class="section-subtitle">Everything you need to know about BTH OS.</p>
+      </div>
+
+      <div class="faq-list fade-up">
+
+        <!-- Question 1 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What is BTH OS?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>BTH OS (Beginner Trader Helper OS) is an ultra-premium desktop operating system designed specifically for traders. It integrates a trade journal, advanced performance analytics, compounding calculators, MT5 synchronization, and an offline trading simulator into one unified desktop application.</p>
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Who is it for?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>BTH OS is designed for serious traders of all levels — from ambitious beginners looking to establish professional discipline to experienced prop firm and institutional traders who need deep analytics and performance reporting.</p>
+          </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Does it support MT5?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. BTH OS seamlessly integrates with MetaTrader 5 (MT5), allowing automatic synchronization of executed trades, entry/exit prices, lot sizes, and PnL directly into your local journal without manual data entry.</p>
+          </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Is data stored locally?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely. 100% of your trading logs, financial numbers, and chart attachments are stored locally on your desktop device using encrypted SQLite databases. Your sensitive trading data is never uploaded to external cloud servers.</p>
+          </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can I use calculators?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! BTH OS includes multiple specialized financial tools, including a Compounding Growth Calculator, Daily Breakdown Target Calculator, and Position Sizing Risk Calculator.</p>
+          </div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can I track performance over time?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. The Advanced Analytics module tracks your equity curves, win rate percentages, Profit Factor, average risk-to-reward ratios, and session-by-session drawdown to provide complete performance transparency.</p>
+          </div>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Does it require subscriptions?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>No mandatory hidden monthly subscription lock-ins. You get full access to the desktop software suite to journal, simulate, and analyze your trades locally.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== DISCLAIMER SECTION ==================== -->
+  <section class="disclaimer-section" id="disclaimer">
+    <div class="container fade-up">
+      <div class="disclaimer-header">
+        <div class="disclaimer-title-wrap">
+          <div class="disclaimer-icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <h2 class="disclaimer-main-title">Disclaim<span class="text-green-accent">er</span></h2>
+        </div>
+        <p class="disclaimer-lead-text">
+          <strong>BTH OS by Beginner Trader Helper</strong> is an educational and analytical trading software designed to assist traders with journaling, analytics, performance tracking, calculators, and market analysis tools.
+        </p>
+      </div>
+
+      <div class="disclaimer-grid">
+        
+        <!-- Card 1: No Financial Advice -->
+        <div class="disclaimer-card">
+          <div class="disclaimer-card-header">
+            <svg class="disclaimer-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+            <h3>No Financial Advice</h3>
+          </div>
+          <p>
+            BTH OS does not provide financial, investment, legal, or tax advice. Any information, analytics, probabilities, trade ideas, market insights, AI-generated analysis, or trading-related content displayed within the software is for educational and informational purposes only and should not be considered as a recommendation to buy, sell, or hold any financial instrument.
+          </p>
+        </div>
+
+        <!-- Card 2: Market Risk Warning -->
+        <div class="disclaimer-card">
+          <div class="disclaimer-card-header">
+            <svg class="disclaimer-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <h3>Market Risk Warning</h3>
+          </div>
+          <p>
+            Trading in stocks, options, futures, forex, commodities, cryptocurrencies, and other financial markets involves substantial risk and may result in the loss of part or all of your invested capital. Past performance does not guarantee future results.
+          </p>
+        </div>
+
+        <!-- Card 3: User Responsibility -->
+        <div class="disclaimer-card">
+          <div class="disclaimer-card-header">
+            <svg class="disclaimer-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <h3>User Responsibility</h3>
+          </div>
+          <p>
+            Users are solely responsible for their trading decisions, risk management, and financial outcomes. Beginner Trader Helper, BTH OS, its developers, affiliates, partners, and contributors shall not be held liable for any direct or indirect losses, damages, or financial consequences resulting from the use of this software.
+          </p>
+        </div>
+
+        <!-- Card 4: AI Content Disclaimer -->
+        <div class="disclaimer-card">
+          <div class="disclaimer-card-header">
+            <svg class="disclaimer-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="15" x2="23" y2="15"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="15" x2="4" y2="15"/></svg>
+            <h3>AI Content Disclaimer</h3>
+          </div>
+          <p>
+            Any AI-powered features, including BTH AI Analyzer, market condition assessments, probability scores, trend analysis, momentum analysis, support/resistance levels, trade plans, or risk evaluations, are generated using algorithmic models and should not be relied upon as guaranteed predictions of future market behavior.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            <img src="https://bthalgo.com/images/logo.png" alt="BTH OS Logo" width="32" height="32">
+            <span class="nav-logo-text">BTH OS</span>
+          </a>
+          <p>Built By Beginner Trader Helper. The premier desktop operating system for serious market traders.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#showcase">Showcase</a></li>
+            <li><a href="#why-bth">Why BTH OS</a></li>
+            <li><a href="#comparison">Comparison</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="https://bthalgo.com" target="_blank" rel="noopener">bthalgo.com ↗</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Official Site</h4>
+          <ul class="footer-links">
+            <li><a href="https://bthalgo.com" target="_blank" rel="noopener" style="color: var(--accent-cyan); font-weight: 600;">Visit bthalgo.com ↗</a></li>
+            <li><a href="https://bthalgo.com/download" target="_blank" rel="noopener">Download BTH OS</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Community</h4>
+          <ul class="footer-links">
+            <li><a href="https://www.youtube.com/c/beginnertraderhelper" target="_blank" rel="noopener">YouTube ↗</a></li>
+            <li><a href="https://www.instagram.com/beginner_trader_helper/" target="_blank" rel="noopener">Instagram ↗</a></li>
+            <li><a href="https://telegram.me/+EV4khEeJ5XozYmM1" target="_blank" rel="noopener">Telegram ↗</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">System</h4>
+          <div class="status-badge" style="margin-top: 4px;">
+            <span class="status-dot"></span>
+            <span>All Systems Operational</span>
+          </div>
+          <p style="margin-top: 12px; font-size: 0.8rem; color: var(--text-subtle);">v1.0.1 Desktop Engine</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Beginner Trader Helper. All rights reserved. BTH OS™</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="https://bthalgo.com/download" target="_blank">Download Terminal</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ==================== LIGHTBOX MODAL ==================== -->
+  <div class="lightbox-modal" id="lightbox-modal">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close modal">&times;</button>
+    <div class="lightbox-content">
+      <img src="" id="lightbox-img" alt="BTH OS Screenshot Lightbox View">
+    </div>
+  </div>
+
+
+  <!-- App Script -->
+  <script src="app.js"></script>
+</body>
+</html>
