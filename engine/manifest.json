@@ -1,1 +1,29 @@
-
+{
+  "engineVersion": "1.0.0",
+  "releaseDate": "2026-08-29T10:00:00Z",
+  "changelog": "Official BTH Institutional Engine Release",
+  "mathPatches": [
+    {
+      "name": "orderflow",
+      "description": "Calculates volume delta and buyer/seller pressure",
+      "code": "function(candles) { const len = candles ? candles.length : 0; const delta = new Array(len); for (let i = 0; i < len; i++) { const c = candles[i]; const range = (c.high - c.low) || 0.0001; const buyRatio = (c.close - c.low) / range; const buyVol = (c.volume || 1000) * buyRatio; const sellVol = (c.volume || 1000) * (1 - buyRatio); delta[i] = buyVol - sellVol; } return delta; }"
+    }
+  ],
+  "newIndicators": [
+    {
+      "id": "bth_ict_silver_bullet",
+      "name": "🎯 BTH ICT Silver Bullet & Killzone Matrix",
+      "shortName": "ICT Silver Bullet",
+      "category: "BTH Institutional",
+      "description": "Detects 10:00-11:00 AM NY Session FVGs with Auto-Mitigating targets and live HUD.",
+      "overlay": true,
+      "isBTH": true,
+      "isNew": true,
+      "version": "1.0.0",
+      "script": "const isSilverBulletTime = session.isin('1000-1100'); const ema20 = ta.ema(close, 20); plot.line({ id: 'ema20', values: ema20, color: '#00F2FE', width: 2, title: '20 Trend EMA' }); const buySignal = ta.and(isSilverBulletTime, ta.crossover(close, ema20)); plot.shape({ id: 'sb_buy', condition: buySignal, shape: 'arrowUp', position: 'belowBar', color: '#00E676', text: '🎯 SILVER BULLET' }); plot.panel({ id: 'sb_hud', title: '🎯 BTH SILVER BULLET RADAR', position: 'top-right', rows: [{ label: 'Killzone Status', value: isSilverBulletTime ? 'ACTIVE 🟢' : 'INACTIVE ⚪', color: isSilverBulletTime ? '#00E676' : '#787B86' }, { label: 'Trend Baseline', value: (ema20[ema20.length - 1] || 0).toFixed(2), color: '#00F2FE' }] });"
+    }
+  ],
+  "aiPromptAdditions": [
+    "- ta.orderflow(candles): Returns array of candle volume delta (Buy Volume - Sell Volume)."
+  ]
+}
