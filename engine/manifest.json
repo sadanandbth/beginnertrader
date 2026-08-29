@@ -14,7 +14,7 @@
       "id": "bth_ict_silver_bullet",
       "name": "🎯 BTH ICT Silver Bullet & Killzone Matrix",
       "shortName": "ICT Silver Bullet",
-      "category: "BTH Institutional",
+      "category": "BTH Institutional",
       "description": "Detects 10:00-11:00 AM NY Session FVGs with Auto-Mitigating targets and live HUD.",
       "overlay": true,
       "isBTH": true,
