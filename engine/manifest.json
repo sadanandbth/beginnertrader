@@ -1,6 +1,6 @@
 {
   "engineVersion": "1.0.0",
-  "releaseDate": "2026-08-30T14:41:12.168Z",
+  "releaseDate": "2026-08-30T15:26:12.812Z",
   "changelog": "Official BTH Institutional Vault Initial Release",
   "maintenance": {
     "active": false,
@@ -10,33 +10,6 @@
     "supportText": "Join Official Telegram Channel"
   },
   "mathPatches": [],
-  "newIndicators": [
-    {
-      "id": "bth__bth_order_flow_volume_delta_imbalance_1788100866436",
-      "name": "⚡ BTH Order Flow & Volume Delta Imbalance",
-      "shortName": "⚡ BTH Order Flow & Volume Delta Imbalance",
-      "category": "BTH Institutional",
-      "description": "Tracks institutional buyer/seller volume pressure, cumulative volume delta (CVD), and auto-plots high-volume exhaustion reversal points with a live telemetry dashboard.",
-      "overlay": true,
-      "isBTH": true,
-      "isNew": true,
-      "version": "1.0.0",
-      "script": "BTH_ENC_3e+w/Bj9aCubkGoRotlrFHvM+IMzXyAH3UvYfFrWhBzBIzQk6lgHp5Mn1y57YSPfIWnqvuQkE2QDliLOuiuKyyaBVLWRVebxPSN5CRm1UNLxyc5hgreFS2LesynQHxRrVRioII650s7WjLGtNokfnLsFrbXU9RFLcDbgMD8UMCpEzgQYHIplDdahYQJJWCvFxRBEi9ZRi41dSrCq4DuV4Xp4WWJ3fbZbC4P+dnvdXvhq/HE2NgkZRnsUd8pUs94TNsa32obYum51zDlX9TCmoXQF2b1H/t482wyxNI2fUDXyvfPPbjVrG5h/USGHAA9E5YLFVpUKrwn2kQwHZP0FMFUdiAGYLSTFIaGpoWNlSZRKynWcKmVr7FbRtEnp6xhVc06KwYYem/lFEmsVFAOSYmCY12zKE9ddzx/q7pHz+Dd9+YkFkwDlTDuaarCjuFJ9RlqGOmQgmuBbnQtJTn21iYIYkOQf7RdjffyXzxykeWF62eu59jhP20KYA0bb81SS7/gs1nwWEQ2ejXwsdbz3Dy+94d2jAmhhlREfqbeNhdRGkbqDpvXUOJyJiZ36LIrZokRi7SNuAEO/cTH5NRuNVPaJ9mEtJa5ELGfIhhCSEKLflHup+Sbv5EY0XzAAyXvAWPFwnvRWXZEL2Aa/OKQXaC/A5x3KrVV6ctSSsPEPtgxdNG5BTm4dfYKr+vPspwY801rQdCuOK9oLj7ozYN4rupPfpTQgBZD4NJ/eHFHW6rvi5LHkm30Dw5eKhH8nF2IeR5P0kHDxnTaQiE0+sz4tzjwrpCbR6pnHfYuZwVy0VrWDoZZpeL+rBwlajf55pKqunrzw1B4QXka7We5Rs9M1NLoVp6po4O3bCrAySw19C+RQLZHfxlz5KEQpPkcd7eVJZM97vHwBlS6akep55xKqNOdb47b1FBuQoGMs6bE54Wg2kTZVuRQ7CgirDr7EEuhV4Bd559JrueAl9nVU0wQP1i9Wey8zbU/hhh3jeZzkUw/Mq8JS16UB4PlDkD9+P4cz5L+M0ePHRtGBAKjXvyrr8Jwrm7aa2aHiU0QHSYk3cNP/DCkTGLM5yFKuaGl0VUi0YDMfDTOGaTsJjXdQ6o8FQC0gqvbY4rh9nQ8j8jB3z2XyP7Pq28gWNr2A9oRVmlK0SI5G5ppYaYxcGM7+jiQ7vp9rFTZqS/flPlXUu/eJhYJM0pBjFGXl8CjvyuGJs9edG686sNO+c8Hs7wbyhXEc4q+agoTd6QclGvwAqDt4iLmrPwMYkNWWhIfmkBqrrZ1yFKkt5YCs9bACHWO1FGLP6vw18SLAIJT5JA/C8fFdshqz9q3mb5cCEcieAGDYyAKVWXWD9+cNCEFt8Pn4bKNX522bDpANu6dYYb7VQo6zPNSJDg3YtPf/cJZXgQtNh6Hvr883DkCajqUGOeavwWNc2K3YQQYz7a8yNFxSxjfJgv1G5c5flNqNZzhW5ELxFpFWChERWPc/BSmhwp73r9f5Bt15NS6O0hOBoqkUtY4CgBup7ATTfqW3c8ZO4QqqgMeBJFT8t1eD1CiLXh34KjOPrW7/Fy/zhjYcO7ZiRyAWKnJwI+BTjsaw8uOEfKSyadwRGHqKyV0l9RYwtk8u9Ls33yokCin8KCr2SgdGUsTnVn6tevxyifzhE5FCwNKdPUyPk7MAIEjkg0xsl87cMB7+G9wiLgz3yjLzmrkWaYBgsewX+LnVgd3TbqeIn++J4oqKEhueyg9jjbbJY+90hw1MOhJJ5zfupG1UnkRu4trByBNpm/dRTH4mrIfjbygFqHUitmRd1MNznTO58z4g8fCg2BYDs7sIfnZc/GVhb2fOrBoZS4Me9epbqofZo7uzmEkBfVDb6B+TxyjC1fLmHtIUvvPjhRjr392JAQaQ0qgXQvTbdSAJ5q1JpItuLVIZ5nBMhDSggQsvmCP7vIuuJCphQJ4ig2tEUHtYaF7+y7XC9zn8VYLGnVqNQfNX3tUbRTKwHkCixDJng2PQrxYkjzvxIFVCJfjs7JevNDML4bpfXopVCbFRKBReep2ALRllT/LQ//Ik54sKXcPF06FQGxlWm6mbeYpm0sJwEYy3Mv1+G82ar6XuDVDzxtjMIDY2nedrmq3MRxEmuqf+5ZxWW7L48cn5/AVf3MDcPS4lcUS+gERwgE05GYwH6/PKTMHbk2Q+WD87LF4pSaT5xgERpYOOm/GgwWWlMvCaPwdS/PR4IaZNhmX68wKuPzBj99b8NIwU0idR4M+bFhFPT1qlCVd2297ZcuK45SPmpuKSHEAgRva2/0rxfxtAQ1KqIhoD+GZYG9yAhxgm2A+D9/NY/+WuAzPp7GE1mTIjYphEuY7zolaXfj/47kCAl4G1mPcQTRW0+zBeQxAr/MQ8AgUc9OIzzM68vC9zS4u6y8N6hR9+zail24NxkCCFL+EMfnvXBIHDYJDKLxqnKj/3E0WVq0+R0Q6R0fq8I12b6Zhw1rMjleU35/Z3QoedeBT2I7Ww4VCCc3GMfOGcQd5qOjokj8DT0sudo2U3L0R5AGgMZc0mhR60T5X2q92qL0ha8HtWqvjrVhNPdF2qbuLmISPLykb+hWx8W0CQ2meP1VQ5aZGt5I+PQuvU1nU2Yl80hCDX1L09fxGCYdApbeVPAlcm6d2/vwe7Qy4lgZgPDOWZx6ceU65qpHpV+x38OkGPbT3nv/O7EDMXvKT0sq9vylCp6874AcBPorFULUUQhhh31vvghWOJKcXiJN1oF1zYRmx3F46GYbb0Vq8ILcuxxgVLii3P67rYobFqBXPbkEjseM7QIZb2sSy3cKSJGLVB1A+8WqoM/sttDakNu/LUHpB2siD+tZyE+RB72IRCaxI7fH/3IEHa+v5vJcmnASLqr2MFI9fYWJlTaKSdhif+Ig5bnln0Qn49b2U2hdbIcOwW8STOYf3tqIIvj4CpK8GkLa79g9aaydOg1ZJugMwHSXvQUQ+wiV66NLkS+HGaqZD3zmipl3mtDtJzUBS0DHEMlJjrnKjfKMxtVF9ARFRyhDrAe0U/PRy63F2CwslR3RK3lolf5mGsckU2LmtLO5RXra2Swr/3zWAvj6fcGsz/DIDvm3ze8MYi9cWPB2r+t/s31b3+brWgaPTjxo4rx1SayoSUeSyQ7gh5KciIPv1i3LIzr+idh7zqZSlcNaryQ5aV2jvo7pgtJ/JozRMyOAkbmUWhBE81pcShADsTqkNmr+zfuBDNE2vn2JqVeFaCGlDJVQfgUqAOezFegFN7jiSadT9cmbK9c1Ov2RP7c6R6a2A=",
-      "isProtected": true
-    },
-    {
-      "id": "bth__bth_institutional_smc_liquidity_master_1788013805349",
-      "name": "👑 BTH Institutional SMC & Liquidity Master",
-      "shortName": "👑 BTH Institutional SMC & Liquidity Master",
-      "category": "BTH Institutional",
-      "description": "Institutional Fair Value Gaps (FVG), Trend Baseline EMAs, and Smart Money Liquidity Reversal Signals with live HUD panel.",
-      "overlay": true,
-      "isBTH": true,
-      "isNew": true,
-      "version": "1.0.0",
-      "script": "BTH_ENC_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",
-      "isProtected": true
-    }
-  ],
+  "newIndicators": [],
   "aiPromptAdditions": []
 }
