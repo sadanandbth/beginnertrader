@@ -1,6 +1,6 @@
 {
   "engineVersion": "1.0.0",
-  "releaseDate": "2026-08-30T15:26:12.812Z",
+  "releaseDate": "2026-08-30T15:32:43.127Z",
   "changelog": "Official BTH Institutional Vault Initial Release",
   "maintenance": {
     "active": false,
@@ -10,6 +10,20 @@
     "supportText": "Join Official Telegram Channel"
   },
   "mathPatches": [],
-  "newIndicators": [],
+  "newIndicators": [
+    {
+      "id": "bth__bth_smart_money_liquidity_grab_pro_1788103954213",
+      "name": "💧 BTH Smart Money Liquidity Grab Pro",
+      "shortName": "💧 BTH Smart Money Liquidity Grab Pro",
+      "category": "BTH Institutional",
+      "description": "Detects Buy-Side (BSL) and Sell-Side (SSL) liquidity sweeps with dynamic 20/50 EMA trend filter and real-time HUD dashboard.",
+      "overlay": true,
+      "isBTH": true,
+      "isNew": true,
+      "version": "1.0.0",
+      "script": "BTH_ENC_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",
+      "isProtected": true
+    }
+  ],
   "aiPromptAdditions": []
 }
