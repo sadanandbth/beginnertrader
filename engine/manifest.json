@@ -1,6 +1,6 @@
 {
   "engineVersion": "1.0.0",
-  "releaseDate": "2026-08-31T15:23:17.728Z",
+  "releaseDate": "2026-08-31T15:34:37.565Z",
   "changelog": "Official BTH Institutional Vault Initial Release",
   "maintenance": {
     "active": false,
@@ -10,49 +10,6 @@
     "supportText": "Join Official Telegram Channel"
   },
   "mathPatches": [],
-  "newIndicators": [
-    {
-      "id": "bth_vip_testing_for_free_users_1788189792384",
-      "name": "VIP TESTING FOR FREE USERS",
-      "shortName": "VIP TESTING FOR FREE USERS",
-      "category": "All Indicators",
-      "description": "FOR FREE USERS",
-      "overlay": true,
-      "isBTH": true,
-      "isVIP": false,
-      "isNew": true,
-      "version": "1.0.0",
-      "script": "BTH_ENC_XucAC3eX+agbQv9ZbgXLn9qV4TSfXXLyIVoI8Xp6HfgPdbqb1H85TxacRsgQfQCCc1XTTR3i4iGXl3iaQfyNKBXEy2Qi1nQi1WzjnYtPc3RViJO/MudOsiYtcaYrylO8NE54VWjS07JGi3Gjte+x2c6tubCkgWruYQ0P05OVicZVinpo06p97DzBwoyu8vvVJboQzwfGk+nxPWzpQkwhhwpSaCNXYed2gJjS8Ex5jI4gHOBq0dUqVRJ4mt/pu0BU84K2JaXP/waRnDaxMp/8TMfkZqp/le0psYNXfHLwpp47VAzbPk7kX4Dwg/XpjGrBVO7ZB3bfnnJOhm0FvxKWF9AgCubppvONjqe/QTDP0f4a2+BGaKVIwm1Tk7F7egmKNNFgBezCXbcUsp+NEYa37/k1ZqjndRI4kIV8Ovm6r6hjmdkEbGuah3NoLgtvWn9/UP9zvsWGzFCVgQUzbaXVU4d7QTPnexQkboTrfkpAMYUNVaT/KSzaquEv/40sPXhBIXDi5IJBmWeAcrq9pPEwxMV4k7tO0BAC9Fxz71ny1KmMbMvgt2eew/BejAXUJn6iaCVOKlTGmQsiXDdSgPQnb1DCu5OEROAM1fM9g6xyXjicgjM8V/nFi2+Id8UYzb/i7LQfNIxymi3snvzQMkvywLA6zIk3Fj6ZTSfwFehs7UUNOsiYxfOl+4ft1idNOGElgUthRCBa7AoEMRrXly/+IzW8C1AMg4WSPqJKstICcU/pAbmwO2x09MNciJwzxOzMYjvoZ5hABLEpXX9sFv+OnjP0NQcRg21pMjxdrOAFstAmDp3B55DnjGeOSBKmvUMQUK6TlryOtXeu818y15Qqqz70qZ11DyKOloTZxm66N8liIVPbMYDzKeCBmeuz71ltnSMBDsyc4LslBAJa4nUptdrn/n9JZDvT6L9vKHWrzFZEPiL/Xc8MbmY9vSNGE2xBIHh8B4ygTIJCKAWqYwdLHGQJir9ZRELqAxP3swZWbFyeVbgNAOCgOdlRRoGNHInkLf6QKcJtXlwYKNckcpWx2yhQIUl+B+6eCtYTZ1pFyraxbfj0Tj+sOAWyC48niWG/LcuMXIPwCZE8PJsgfh68vkW2k2rWY24CcsrbJCQyS2YgxB+yILFP+IJoqrPFrJfJGztq21X+7fVV4L/SW7fDXiuGPNDc4KPYO1AaHR+plWOh+k9GgJgDAzwL6E77u6S4l+2zhjxwElHtXOq89zE9BqZFR06Pqt3rKV1IlkdgtdX8ZVL59qzasEydNPBHV/oSVoS2O5/kGACSl7CtQTx3rjEQG/++VvlKlG2t0eNsLxXtFcKO8mwceD4WIExdakstttRNhiZzVXjsNLhw6D0xCqwzQUCWswqIPeajV90rBn9VZOPqDPgW+tlKHZmLEKLH//bcz4mvd/CC5zgVE/KRa41ppsWe1orG/XRovHp8DZKgdGa7ssVCygq2Wk1z+b9ep6dLFY7o1fZ5x2QYNf6Ks3sQx5MyI/J2OPj3RHkYppUTsf48FyNdwKOGXaLWKxNZ2BrHzg9q2pX1n4Ln8pfmzymWqziFEgRjYIDhwBCwPSit7+GXzg0goFlgJnvDOFWFXBTNB/OwDEHklMO895rm5L/Zt5uc060oJnymqtQT8CQMF4+MbgcxuX7UnE/UNlCPBN/uW7aFz/+MfKjIu07hJDdLKgCrKBTqLhzDeEz0RtEvpkkrW+lCVCCeep7lA7Xnu46srNqwG9iHZSL2NX1JwjXHXq/Btd3Ux/W7QJimmMz6+y8lTZ4WI9QDmZgQAH+rIxJBsd0Rt1SGsuSNBYsHbg89qUEOneW0bUNl5uPzMuGza1kuJqB4/sBwpBymf8WPp942h/8qXcQUex1azdPtHby1ubgCCDZewasC2AOWao9eWQP1iy6oKo5nj85mX2MfM9irdaTrD2cxqY0UZv6HvwGGxhUlKl/2cu8+cc2v+IlB5k6KL4c59L+T5A68niA5Tj1bXuSfj4j7DnWX+rJ0kCob9PEyA/XfDaxe2b7C7puB1Q4A5QjTbUbVrkiNsK+Y/w0pHWZppWhgQp0SHmQtSXQNp+4P/Cv3xTDsaGksrKzaKyfXR1/HITXL9JFnl1pQnqvyAyIr9C8ak/y6MfT/OngDVPI1q1Ade35SoquTB9gqAKuWvXGmiAR5pMXqFAV7QSZlLpMakCG5TqNxI9r0orbHHfsl9jsAVXPl4+1pTGSG4UYWqmwt8K8NCvWnyhdx5jZtikmQp/EeS/s7HM5SCBchhvk=",
-      "isProtected": true
-    },
-    {
-      "id": "bth_vip_testing_1788189499036",
-      "name": "VIP TESTING",
-      "shortName": "VIP TESTING",
-      "category": "BTH Institutional",
-      "description": "VIP TESTING FOR STUDENT",
-      "overlay": true,
-      "isBTH": true,
-      "isVIP": true,
-      "isNew": false,
-      "version": "1.0.0",
-      "script": "BTH_ENC_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",
-      "isProtected": true
-    },
-    {
-      "id": "bth__bth_smart_money_liquidity_grab_pro_1788103954213",
-      "name": "💧 BTH Smart Money Liquidity Grab Pro",
-      "shortName": "💧 BTH Smart Money Liquidity Grab Pro",
-      "category": "BTH Institutional",
-      "description": "Detects Buy-Side (BSL) and Sell-Side (SSL) liquidity sweeps with dynamic 20/50 EMA trend filter and real-time HUD dashboard.",
-      "overlay": true,
-      "isBTH": true,
-      "isNew": true,
-      "version": "1.0.0",
-      "script": "BTH_ENC_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",
-      "isProtected": true,
-      "isVIP": false
-    }
-  ],
+  "newIndicators": [],
   "aiPromptAdditions": []
 }
