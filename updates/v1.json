@@ -1,1 +1,10 @@
-
+{
+  "active": true,
+  "targetVersion": "3.0.0",
+  "title": "BTH OS v3.0 MAJOR UPGRADE AVAILABLE",
+  "header": "Upgrade Required to Continue Trading",
+  "message": "A powerful new version of BTH OS (v3.0.0) is available with ultra-fast feeds, advanced AI features, and zero latency. Please update your system to continue.",
+  "downloadUrl": "https://bthalgo.com/downloads/BTH_OS_v3.0_Setup.exe",
+  "buttonText": "Download & Install BTH OS v3.0",
+  "dataSafetyNote": "Your trade journal, watchlist, and PRO license will be 100% preserved during update."
+}
