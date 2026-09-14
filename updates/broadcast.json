@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "broadcasts": [
+    {
+      "id": "bth_alert_001",
+      "title": "🚀 New VIP Indicator Available!",
+      "message": "BTH SMC Liquidity Matrix V2 is live in BTH Terminal. Open charts now!",
+      "target": "all",
+      "actionUrl": "terminal"
+    }
+  ]
+}
