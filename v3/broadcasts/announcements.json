@@ -1,11 +1,25 @@
 {
   "version": "3.2.0",
-  "updatedAt": "2026-10-10T15:15:00Z",
+  "updatedAt": "2026-10-11T05:14:07.557Z",
   "banner": {
     "active": false,
     "badge": "",
     "text": "",
     "link": ""
   },
-  "broadcasts": []
+  "broadcasts": [
+    {
+      "id": "bth_notif_1791695647557",
+      "type": "youtube",
+      "title": "How to Create Angel One API in 1 Minutes (Algo Trading Setup)",
+      "desc": "watch here",
+      "message": "watch here",
+      "target": "All Users",
+      "time": "Just now",
+      "timestamp": 1791695647557,
+      "clicks": 0,
+      "link": "https://youtu.be/Y9MqyVtl-ow?si=t9QcanM7AqLHFdTE",
+      "actionUrl": "https://youtu.be/Y9MqyVtl-ow?si=t9QcanM7AqLHFdTE"
+    }
+  ]
 }
