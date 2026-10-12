@@ -1,6 +1,6 @@
 {
   "version": "3.2.0",
-  "updatedAt": "2026-10-11T05:14:07.557Z",
+  "updatedAt": "2026-10-12T12:17:40.043Z",
   "banner": {
     "active": false,
     "badge": "",
@@ -8,6 +8,19 @@
     "link": ""
   },
   "broadcasts": [
+    {
+      "id": "bth_notif_1791807460042",
+      "type": "youtube",
+      "title": "How to Create Dhan API in 1 Minutes (Algo Trading Setup)",
+      "desc": "This video provides a step-by-step guide on how to easily create an Access Token Key in the Dhan Broker app.",
+      "message": "This video provides a step-by-step guide on how to easily create an Access Token Key in the Dhan Broker app.",
+      "target": "All Users",
+      "time": "Just now",
+      "timestamp": 1791807460042,
+      "clicks": 0,
+      "link": "https://youtu.be/LGE8rUPiOAw?si=qnDZHdQ8EMydG5SL",
+      "actionUrl": "https://youtu.be/LGE8rUPiOAw?si=qnDZHdQ8EMydG5SL"
+    },
     {
       "id": "bth_notif_1791695647557",
       "type": "youtube",
