@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=5">
+<title>BTH Terminal | BTH OS v3.0 Features | bthalgo.com</title>
+<meta name="description" content="BTH Terminal in BTH OS v3.0: charts, live option chain, scalping signals, bar replay with paper trading and Telegram alerts for Indian markets.">
+<meta name="theme-color" content="#060812" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: light)">
+<meta name="color-scheme" content="dark">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="BTH Terminal">
+<meta name="application-name" content="BTH Terminal">
+<meta name="format-detection" content="telephone=no">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#eef2ff;--mute:#a4aec8;--teal:#2de2c0;--blue:#4c8dff;--vio:#8b5cf6;--pink:#ff5fa2;--amber:#f5b83d;
+  --gl:rgba(255,255,255,.06);--gb:rgba(255,255,255,.15);--bl:12px;
+  --bg:#060812;--bg2:#0b1020;--glass-bg:linear-gradient(135deg,rgba(255,255,255,.1),rgba(255,255,255,.03));
+  --glass-fallback:rgba(20,24,44,.92);--shadow:0 30px 70px -30px rgba(0,0,0,.7);
+  --orb1:rgba(45,226,192,.34);--orb2:rgba(139,92,246,.4);--orb3:rgba(76,141,255,.36);--orb4:rgba(255,95,162,.22);
+  --safe-top:env(safe-area-inset-top);--safe-bottom:env(safe-area-inset-bottom);
+  --safe-left:env(safe-area-inset-left);--safe-right:env(safe-area-inset-right);
+  --nav-h:64px;
+}
+html[data-theme="light"]{
+  --ink:#0a0f1e;--mute:#1f2937;--teal:#0f766e;--blue:#1e40af;--vio:#5b21b6;--pink:#9d174d;--amber:#78350f;
+  --gl:rgba(0,0,0,.06);--gb:rgba(0,0,0,.18);
+  --bg:#f1f5f9;--bg2:#ffffff;--glass-bg:linear-gradient(135deg,rgba(255,255,255,.98),rgba(255,255,255,.85));
+  --glass-fallback:rgba(255,255,255,.98);--shadow:0 20px 50px -20px rgba(15,23,42,.22);
+  --orb1:rgba(45,226,192,.12);--orb2:rgba(139,92,246,.12);--orb3:rgba(76,141,255,.12);--orb4:rgba(255,95,162,.10);
+}
+@media (prefers-color-scheme: light){
+  html:not([data-theme]){
+    --ink:#0a0f1e;--mute:#1f2937;--teal:#0f766e;--blue:#1e40af;--vio:#5b21b6;--pink:#9d174d;--amber:#78350f;
+    --gl:rgba(0,0,0,.06);--gb:rgba(0,0,0,.18);
+    --bg:#f1f5f9;--bg2:#ffffff;--glass-bg:linear-gradient(135deg,rgba(255,255,255,.98),rgba(255,255,255,.85));
+    --glass-fallback:rgba(255,255,255,.98);--shadow:0 20px 50px -20px rgba(15,23,42,.22);
+    --orb1:rgba(45,226,192,.12);--orb2:rgba(139,92,246,.12);--orb3:rgba(76,141,255,.12);--orb4:rgba(255,95,162,.10);
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overscroll-behavior-y:none}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.6 Sora,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-x:hidden;min-height:100vh;min-height:100dvh;padding-bottom:env(safe-area-inset-bottom)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:8px}
+.w{width:min(1160px,100% - 32px);margin-inline:auto}
+@media (max-width:480px){.w{width:calc(100% - 24px)}}
+
+/* background orbs */
+.bg{position:fixed;inset:0;z-index:-1;overflow:hidden;background:var(--bg);pointer-events:none}
+.o{position:absolute;border-radius:50%;will-change:transform;filter:blur(2px)}
+.o1{width:90vmax;height:90vmax;left:-35vmax;top:-45vmax;background:radial-gradient(closest-side,var(--orb1),transparent);animation:d1 22s ease-in-out infinite}
+.o2{width:80vmax;height:80vmax;right:-35vmax;top:10vh;background:radial-gradient(closest-side,var(--orb2),transparent);animation:d2 26s ease-in-out infinite}
+.o3{width:70vmax;height:70vmax;left:5vw;bottom:-45vmax;background:radial-gradient(closest-side,var(--orb3),transparent);animation:d1 30s ease-in-out infinite reverse}
+.o4{width:44vmax;height:44vmax;right:10vw;bottom:-18vmax;background:radial-gradient(closest-side,var(--orb4),transparent);animation:d2 24s ease-in-out infinite reverse}
+
+/* glass */
+.glass{position:relative;background:var(--glass-bg);border:1px solid var(--gb);border-radius:24px;-webkit-backdrop-filter:blur(var(--bl)) saturate(160%);backdrop-filter:blur(var(--bl)) saturate(160%);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),var(--shadow)}
+.glass::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(420px circle at var(--x,50%) var(--y,0%),rgba(255,255,255,.12),transparent 45%);opacity:0;transition:opacity .3s;pointer-events:none}
+@media (hover:hover){.glass:hover::before{opacity:1}}
+@supports not (backdrop-filter:blur(1px)){.glass{background:var(--glass-fallback)}}
+
+/* header */
+header{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:env(safe-area-inset-top)}
+.nav{display:flex;align-items:center;gap:6px;padding:8px 8px 8px 16px;border-radius:99px;margin:10px 16px 0}
+.logo{display:flex;align-items:center;gap:9px;font-weight:800;margin-right:auto;letter-spacing:-.02em;font-size:15px}
+.logo i{width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--blue));box-shadow:0 0 16px var(--teal);flex-shrink:0}
+nav ul{display:none;list-style:none;gap:2px;margin-right:8px}
+nav ul a{padding:8px 14px;border-radius:99px;font-size:14px;color:var(--mute);transition:.2s;display:block}
+nav ul a:hover{color:#fff;background:rgba(255,255,255,.08)}
+.ib{width:44px;height:44px;border-radius:50%;border:0;background:none;color:var(--ink);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.menu{display:none;flex-direction:column;margin:8px 16px 0;padding:8px 16px;border-radius:24px}
+.menu.open{display:flex}
+.menu a{padding:14px 0;color:var(--mute);border-bottom:1px solid rgba(255,255,255,.08);font-size:15px;min-height:48px;display:flex;align-items:center}
+.menu a:last-child{border:0}
+
+/* buttons */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 24px;border-radius:99px;font:700 15px Sora,sans-serif;color:#fff;border:1px solid var(--gb);background:var(--gl);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);cursor:pointer;overflow:hidden;transition:transform .15s,box-shadow .3s;touch-action:manipulation}
+.btn:active{transform:scale(.96)}
+.btn.p{border:0;color:#04110e;background:linear-gradient(135deg,var(--teal),var(--blue));box-shadow:0 10px 34px -10px var(--teal)}
+.btn.p:hover{box-shadow:0 14px 44px -8px var(--teal)}
+.btn.p::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.6) 50%,transparent 65%);transform:translate3d(-120%,0,0);animation:sh 3.8s infinite}
+.btn.s{min-height:44px;padding:0 18px;font-size:13px}
+.btn.block{width:100%}
+
+/* hero */
+.hero{padding:100px 0 32px;text-align:center}
+.pill{display:inline-flex;align-items:center;gap:9px;padding:7px 16px;border-radius:99px;font-size:13px;color:var(--mute);max-width:100%}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 10px var(--teal);animation:bl 1.6s infinite;flex-shrink:0}
+.pill b{color:#fff}
+h1{font-size:clamp(32px,9vw,76px);font-weight:800;line-height:1.06;letter-spacing:-.04em;max-width:14ch;margin:20px auto 16px}
+h1 span{background:linear-gradient(90deg,var(--teal),var(--blue) 45%,var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:gr 8s linear infinite}
+.lead{color:var(--mute);font-size:clamp(15px,4vw,18px);max-width:580px;margin:0 auto 28px}
+.cta{display:flex;flex-direction:column;gap:12px;max-width:360px;margin:0 auto}
+.cta .btn{width:100%}
+
+.stage{position:relative;margin-top:40px;perspective:1500px;padding:0 8px}
+.hf{padding:8px;border-radius:22px;transform-origin:50% 0;will-change:transform;cursor:zoom-in;box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 50px 120px -30px rgba(76,141,255,.55);overflow:hidden}
+.hf img,.sh img{border-radius:14px;width:100%;height:auto;aspect-ratio:1521/899;object-fit:cover}
+.chip{position:absolute;display:none;align-items:center;gap:9px;padding:10px 16px;border-radius:16px;font-size:13px;font-weight:600;z-index:2;animation:fl 6s ease-in-out infinite;white-space:nowrap}
+
+/* sections */
+.f{padding:36px 0}
+.card{display:grid;gap:24px;padding:20px;align-items:center}
+.k{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:99px;font-size:12.5px;font-weight:700;color:var(--c,var(--teal));background:rgba(255,255,255,.06);border:1px solid var(--gb);margin-bottom:14px}
+h2{font-size:clamp(24px,6vw,40px);font-weight:800;line-height:1.12;letter-spacing:-.03em;margin-bottom:12px}
+.tx p{color:var(--mute);font-size:15.5px;margin-bottom:16px}
+.ls{list-style:none;display:grid;gap:10px;font-size:14.5px}
+.ls li{position:relative;padding-left:28px;line-height:1.5}
+.ls li::before{content:"";position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--c,var(--teal));box-shadow:0 0 14px var(--c,var(--teal));opacity:.9}
+.ls li::after{content:"";position:absolute;left:4.5px;top:10.5px;width:7px;height:3.5px;border-left:2px solid #04110e;border-bottom:2px solid #04110e;transform:rotate(-45deg)}
+.sh{padding:6px;border-radius:20px;cursor:zoom-in;transition:transform .4s cubic-bezier(.2,.8,.2,1);overflow:hidden}
+.sh:hover{transform:translate3d(0,-4px,0)}
+.sh img{aspect-ratio:1522/900}
+.tools{display:grid;gap:10px}
+.tool{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 16px;border-radius:16px;font-weight:700;font-size:14.5px;background:var(--gl);border:1px solid var(--gb);min-height:56px}
+.tool small{display:block;font-weight:400;color:var(--mute);font-size:12.5px;margin-top:2px}
+.st{font-size:11.5px;font-weight:700;padding:4px 10px;border-radius:99px;white-space:nowrap;background:rgba(45,226,192,.16);color:var(--teal)}
+.st.n{background:var(--gl);color:var(--mute)}
+.st.c{background:rgba(245,184,61,.18);color:#f5b83d}
+
+.end{margin:40px 0 56px;padding:40px 20px;text-align:center;overflow:hidden}
+.end h2{max-width:16ch;margin-inline:auto}
+.end p{color:var(--mute);max-width:440px;margin:0 auto 24px}
+footer{padding:10px 0 calc(24px + env(safe-area-inset-bottom));text-align:center;color:var(--mute);font-size:12.5px}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(4,6,12,.97);overflow:auto;-webkit-overflow-scrolling:touch;touch-action:pinch-zoom;opacity:0;pointer-events:none;transition:opacity .25s ease}
+.lb.open{opacity:1;pointer-events:auto;animation:lbIn .25s ease}
+.lb img{width:100%;max-width:none;min-width:100%;transform-origin:center center;transition:transform .2s ease;will-change:transform}
+.lb button{position:fixed;top:calc(12px + env(safe-area-inset-top));right:12px;width:48px;height:48px;border-radius:50%;border:1px solid var(--gb);background:rgba(255,255,255,.18);color:#fff;font-size:26px;z-index:2;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .15s,background .2s}
+.lb button:hover{background:rgba(255,255,255,.28);transform:scale(1.05)}
+.lb button:active{transform:scale(.95)}
+.lb .hint{position:fixed;bottom:calc(16px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);color:rgba(255,255,255,.6);font-size:12px;z-index:2;pointer-events:none;transition:opacity .3s}
+@keyframes lbIn{from{opacity:0}to{opacity:1}}
+
+/* reveal */
+.rv{opacity:0;transform:translate3d(0,30px,0) scale(.98);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+/* install banner */
+.install-banner{position:fixed;left:12px;right:12px;bottom:calc(80px + env(safe-area-inset-bottom));z-index:45;display:none;padding:12px 14px;border-radius:16px;background:linear-gradient(135deg,rgba(45,226,192,.18),rgba(76,141,255,.18));border:1px solid var(--gb);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);align-items:center;gap:10px}
+.install-banner.show{display:flex}
+.install-banner p{flex:1;font-size:13px;margin:0}
+.install-banner button{min-height:36px;padding:0 14px;font-size:12px;border-radius:99px;border:0;background:linear-gradient(135deg,var(--teal),var(--blue));color:#04110e;font-weight:700;cursor:pointer}
+.install-banner .close{background:none;border:0;color:var(--mute);font-size:18px;min-height:36px;min-width:36px;padding:0}
+
+/* animations */
+@keyframes d1{50%{transform:translate3d(8vw,6vh,0)}}
+@keyframes d2{50%{transform:translate3d(-9vw,-7vh,0)}}
+@keyframes sh{to{transform:translate3d(120%,0,0)}}
+@keyframes bl{50%{opacity:.3}}
+@keyframes gr{to{background-position:200% 0}}
+@keyframes fl{50%{transform:translate3d(0,-12px,0)}}
+@keyframes up{from{opacity:0;transform:translate3d(0,26px,0)}}
+.hero .pill,.hero h1,.hero .lead,.hero .cta{animation:up 1s cubic-bezier(.2,.8,.2,1) both}
+.hero h1{animation-delay:.1s}.hero .lead{animation-delay:.2s}.hero .cta{animation-delay:.3s}
+.hero h1 span{animation:gr 8s linear infinite,up 1s .1s both}
+
+/* responsive */
+@media (max-width:639px){
+  .nav{margin:6px 12px 0;padding:6px 6px 6px 12px;gap:4px}
+  .logo{font-size:13px;gap:7px}
+  .logo i{width:10px;height:10px}
+  .btn.s{min-height:38px;padding:0 12px;font-size:12px}
+  .ib{width:40px;height:40px;font-size:18px}
+  .menu a{padding:12px 0;min-height:44px;font-size:14px}
+}
+@media (min-width:640px){
+  .cta{flex-direction:row;max-width:none;justify-content:center}
+  .cta .btn{width:auto;min-width:180px}
+  .stage{padding:0 24px}
+}
+@media (min-width:800px){
+  :root{--bl:22px}
+  header{padding-top:env(safe-area-inset-top)}
+  .nav{margin:12px 24px 0;padding:8px 8px 8px 18px}
+  nav ul{display:flex}
+  .mb,.menu{display:none!important}
+  .chip{display:flex}
+  .hero{padding-top:150px}
+  body{padding-bottom:0}
+  .install-banner{bottom:24px}
+}
+@media (min-width:920px){
+  .card{grid-template-columns:1fr 1.35fr;gap:48px;padding:40px}
+  .card.r{grid-template-columns:1.35fr 1fr}
+  .card.r .tx{order:2}
+  .f{padding:56px 0}
+  .tools{grid-template-columns:1fr 1fr}
+  .end{padding:56px 22px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+html[data-theme="light"] .btn{background:rgba(255,255,255,.9);border-color:rgba(0,0,0,.18);color:#0a0f1e}
+html[data-theme="light"] .pill b{color:#0a0f1e}
+html[data-theme="light"] .btn.p{color:#ffffff;background:linear-gradient(135deg,#0f766e,#1e40af)}
+html[data-theme="light"] .glass{background:#ffffff;border-color:rgba(0,0,0,.12);box-shadow:0 8px 30px -12px rgba(15,23,42,.18),0 2px 6px -2px rgba(15,23,42,.08)}
+html[data-theme="light"] .glass::before{background:radial-gradient(420px circle at var(--x,50%) var(--y,0%),rgba(0,0,0,.04),transparent 45%)}
+html[data-theme="light"] h1 span{background:linear-gradient(90deg,#0f766e,#1e40af 45%,#9d174d);-webkit-background-clip:text;background-clip:text;color:transparent}
+html[data-theme="light"] nav ul a:hover{color:#0a0f1e;background:rgba(0,0,0,.06)}
+html[data-theme="light"] .chip{color:#0a0f1e}
+html[data-theme="light"] .install-banner{background:linear-gradient(135deg,rgba(45,226,192,.12),rgba(76,141,255,.12));border-color:rgba(0,0,0,.12)}
+html[data-theme="light"] .bg{display:none}
+@media (prefers-reduced-transparency:reduce){
+  .glass{background:rgba(14,18,36,.95);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+</style>
+</head>
+<body>
+<div class="bg" aria-hidden="true"><div class="o o1"></div><div class="o o2"></div><div class="o o3"></div><div class="o o4"></div></div>
+
+<header>
+  <div class="w">
+    <div class="nav glass">
+      <a href="#top" class="logo"><i></i>BTH Terminal</a>
+      <nav aria-label="Main"><ul>
+        <li><a href="#signals">Signals</a></li>
+        <li><a href="#chain">Option chain</a></li>
+        <li><a href="#replay">Replay</a></li>
+        <li><a href="#tools">Pro tools</a></li><li><a href="#orderflow">Order Flow</a></li>
+        <li><a href="#telegram">Telegram</a></li><li><a href="#download">Download</a></li>
+      </ul></nav>
+      <button class="ib" id="themeToggle" aria-label="Toggle light/dark theme" title="Toggle theme">🌙</button>
+      <a class="btn p s" href="https://bthalgo.com">Get access</a>
+      <button class="ib mb" id="bg" aria-label="Open menu" aria-expanded="false" aria-controls="mn">☰</button>
+    </div>
+    <div class="menu glass" id="mn" role="dialog" aria-label="Navigation menu">
+      <a href="#top">Home</a>
+      <a href="#signals">Signals</a>
+      <a href="#chain">Option chain</a>
+      <a href="#replay">Replay</a>
+      <a href="#tools">Pro tools</a>
+      <a href="#orderflow">Order Flow</a>
+      <a href="#telegram">Telegram</a>
+      <a href="#download">Download</a>
+      <a href="#" id="themeToggleMenu">Toggle theme</a>
+      <a href="https://bthalgo.com">Get access ↗</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero"><div class="w">
+  <span class="pill glass"><i></i><b>BTH OS v3.0</b>&nbsp;BTH Terminal is live</span>
+  <h1>Your market edge, <span>crystal clear</span></h1>
+  <div class="cta">
+    <a class="btn p" href="https://bthalgo.com">Get BTH Terminal</a>
+    <a class="btn" href="#signals">Explore features</a>
+  </div>
+  <div class="stage">
+    <div class="chip glass" style="left:0;top:12%"><i style="background:var(--teal)"></i>4 charts, one screen</div>
+    <div class="chip glass" style="right:0;top:48%;animation-delay:-3s"><i style="background:var(--pink)"></i>Live option chain</div>
+    <div class="hf glass" id="tilt" data-z>
+      <img src="images/multichart.webp" width="1521" height="899" alt="BTH Terminal multi-chart layout with NIFTY, BANKNIFTY, FINNIFTY and SENSEX" fetchpriority="high" decoding="async">
+    </div>
+  </div>
+</div></section>
+
+<section class="f" id="signals"><div class="w"><div class="card glass rv">
+  <div class="tx"><span class="k">BTH Scalping Algo</span><h2>Signals you can read at a glance</h2>
+    <p>BUY and SELL labels sit on the exact candle, with TP1 and TP2 markers as the trade moves.</p>
+    <ul class="ls"><li>TP1 and TP2 hit markers on the chart</li><li>Performance panel: TP hits, SL hits, total trades</li><li>Filtered signals counter and engine status</li></ul></div>
+  <div class="sh glass" data-z><img loading="lazy" decoding="async" src="images/indicator.webp" width="1522" height="900" alt="BTH Scalping Algo signals with TP1, TP2 and performance panel"></div>
+</div></div></section>
+
+<section class="f" id="chain" style="--c:var(--blue)"><div class="w"><div class="card r glass rv">
+  <div class="tx"><span class="k">Option chain</span><h2>See where the big money is positioned</h2>
+    <p>Live OI, PCR, Max Pain and Greeks for indices and top stocks, with a bias banner that tells you what to look for.</p>
+    <ul class="ls"><li>Bias with confidence and a suggested action</li><li>Buildup tags: short covering, long buildup, short buildup, long unwinding</li><li>ATM straddle, expected range, refresh every 5 seconds</li><li>Plot support and resistance on your chart in one tap</li></ul></div>
+  <div class="sh glass" data-z><img loading="lazy" decoding="async" src="images/option-chain.webp" width="1523" height="887" alt="BTH Option Chain with OI, PCR, Max Pain and buildup tags"></div>
+</div></div></section>
+
+<section class="f" id="replay" style="--c:var(--vio)"><div class="w"><div class="card glass rv">
+  <div class="tx"><span class="k">Bar replay and paper trading</span><h2>Practice on past candles. Risk nothing.</h2>
+    <p>Replay any session candle by candle and place virtual orders. Test your plan before you use real money.</p>
+    <ul class="ls"><li>Play, step and speed controls</li><li>Trade Spot, ATM Call or ATM Put</li><li>Market, limit and stop orders with take profit and stop loss</li><li>Live net P&amp;L, trade count and win rate</li></ul></div>
+  <div class="sh glass" data-z><img loading="lazy" decoding="async" src="images/replay-trading.webp" width="1519" height="899" alt="Bar replay mode with paper trading panel"></div>
+</div></div></section>
+
+<section class="f" id="tools" style="--c:var(--pink)"><div class="w"><div class="card r glass rv">
+  <div class="tx"><span class="k">BTH Pro Tools</span><h2>Every pro tool is one tap away</h2>
+    <p>Open the Indicators menu and launch what you need. No extra windows.</p>
+    <div class="tools">
+      <div class="tool"><div>AI Analyzer<small>Dynamic S/R and institutional levels</small></div><span class="st">Live</span></div>
+      <div class="tool"><div>Option Chain<small>OI, PCR, Greeks and Max Pain</small></div><span class="st">Live</span></div>
+      <div class="tool"><div>Paper Trade Panel<small>Simulated BUY / SELL orders</small></div><span class="st">Live</span></div>
+      <div class="tool"><div>Telegram Signals<small>Real-time bot alerts</small></div><span class="st">Live</span></div>
+      <div class="tool"><div>Order Flow &amp; Delta<small>CVD, session POC, VAH/VAL</small></div><span class="st n">Optional</span></div>
+      <div class="tool"><div>Ignition Signals<small>Upgraded breakout engine</small></div><span class="st c">Coming soon</span></div>
+    </div></div>
+  <div class="sh glass" data-z><img loading="lazy" decoding="async" src="images/pro-tools.webp" width="1528" height="913" alt="BTH Pro Tools in the Indicators menu"></div>
+</div></div></section>
+
+
+<section class="f" id="heatmap" style="--c:var(--vio)"><div class="w"><div class="card r glass rv">
+  <div class="tx"><span class="k">BTH Pro Tools</span><h2>Noise Free Order Flow + Order Blocks</h2>
+    <p>A simplified take on complex order flow. Read market momentum without adding noise to your chart.</p>
+    <ul class="ls"><li>Noise-free order flow shows true momentum</li><li>Order blocks create key levels automatically</li><li>Each level shows its success percentage</li><li>Works on top of your existing chart setup</li></ul></div>
+  <div class="sh glass" data-z><img loading="lazy" decoding="async" src="images/institutional-heatmap.webp" width="1790" height="909" style="aspect-ratio:1790/909" alt="BTH institutional heatmap and radar"></div>
+</div></div></section>
+
+<section class="f" id="orderflow" style="--c:var(--pink)"><div class="w"><div class="card glass rv">
+  <div class="tx"><span class="k">BTH Institutional Heatmap</span><h2>Stock momentum and market direction, at a glance</h2>
+    <p>An advanced heatmap that shows stock momentum, plus the BTH Institutional Radar that hints at where the market is heading so you avoid wrong-side trades.</p>
+    <ul class="ls"><li>Advanced heatmap of stock momentum</li><li>Institutional radar for market direction</li><li>Helps avoid trading against the trend</li><li>Built for quick decision making</li></ul></div>
+  <div class="sh glass" data-z><img loading="lazy" decoding="async" src="images/noise-orderflow.webp" width="1779" height="825" style="aspect-ratio:1779/825" alt="Noise free order flow and order blocks"></div>
+  <div class="sh glass" data-z><img loading="lazy" decoding="async" src="images/extra-1.webp" width="1775" height="807" style="aspect-ratio:1775/807" alt="BTH feature"></div>
+</div></div></section>
+
+<section class="f" id="telegram" style="--c:var(--blue)"><div class="w"><div class="card glass rv">
+  <div class="tx"><span class="k">Telegram signal alerts</span><h2>Get every signal on your phone</h2>
+    <p>Connect your own bot and forward signals to yourself or your channel in about a minute.</p>
+    <ul class="ls"><li>Paste the bot token from @BotFather</li><li>Send to a personal chat or a channel</li><li>Add your own watermark to every signal</li><li>Credentials are encrypted on your device before storage</li></ul></div>
+  <div class="sh glass" data-z><img loading="lazy" decoding="async" src="images/telegram.webp" width="1533" height="914" alt="Telegram Signal Alerts setup"></div>
+</div></div></section>
+
+
+<section class="f" id="access"><div class="w"><div class="card glass rv" style="--c:var(--teal);grid-template-columns:1fr">
+  <div class="tx"><span class="k">Free VIP access</span><h2>Open a broker account. Get BTH OS free.</h2>
+    <p>Open your account via our partner links, then verify on WhatsApp or Telegram to activate your free VIP access.</p>
+    <div class="tools">
+      <a class="tool" href="https://join.dhan.co/?invite=PGMIL25182" target="_blank" rel="noopener noreferrer">
+        <div style="display:flex;align-items:center;gap:12px"><img src="images/dhan-logo.webp" alt="Dhan" width="40" height="40" style="border-radius:10px;object-fit:contain"><div>Dhan<small>Open account &amp; get free access</small></div></div>
+        <span class="st">Open ↗</span>
+      </a>
+      <a class="tool" href="https://www.angelone.in/signup/register?rne_source=DRA&btype=&referrer=SDAUK%3A%3Arne_source%3DDRA%3A%3Abtype%3D&source_caller=api&pid=KYC&SbTag=U0RBVUs%3D&deep_link_value=referrer%3DSDAUK%3A%3Arne_source%3DDRA%3A%3Abtype%3D&c=referral" target="_blank" rel="noopener noreferrer">
+        <div style="display:flex;align-items:center;gap:12px"><img src="images/angel-one-logo.webp" alt="Angel One" width="40" height="40" style="border-radius:10px;object-fit:contain"><div>Angel One<small>Open account &amp; get free access</small></div></div>
+        <span class="st">Open ↗</span>
+      </a>
+    </div>
+    <div class="cta" style="margin-top:18px">
+      <a class="btn p" href="https://api.whatsapp.com/send?phone=919855052263&text=Hello%20BTH%20Team%2C%0A%0AI%20have%20opened%20my%20broker%20account%20via%20your%20link.%20Please%20activate%20my%20Free%20BTH%20OS%20VIP%20Access.%0A%0AMy%20Verification%20Details%3A%0A%E2%80%A2%20Full%20Name%3A%20%0A%E2%80%A2%20Registered%20Email%3A%20%0A%E2%80%A2%20Broker%20(Dhan%2FAngel%20One)%3A%20%0A%E2%80%A2%20Client%20ID%20%2F%20UCC%3A%20%0A%0AThank%20you" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="margin-right:8px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>Verify on WhatsApp</a>
+      <a class="btn" href="https://t.me/Sadanand_bth_official?text=Hello%20BTH%20Team%2C%0A%0AI%20have%20opened%20my%20broker%20account%20via%20your%20link.%20Please%20activate%20my%20Free%20BTH%20OS%20VIP%20Access.%0A%0AMy%20Verification%20Details%3A%0A%E2%80%A2%20Full%20Name%3A%20%0A%E2%80%A2%20Registered%20Email%3A%20%0A%E2%80%A2%20Broker%20(Dhan%2FAngel%20One)%3A%20%0A%E2%80%A2%20Client%20ID%20%2F%20UCC%3A%20%0A%0AThank%20you" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="margin-right:8px"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.31l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>Verify on Telegram</a>
+    </div></div>
+</div></div></section>
+
+<section class="f" id="download"><div class="w"><div class="card r glass rv" style="--c:var(--blue);grid-template-columns:1fr">
+  <div class="tx"><span class="k">Download</span><h2>Get BTH Terminal on your device</h2>
+    <p>Download for Windows or Android and start trading.</p>
+    <div class="cta">
+      <a class="btn p" href="https://bthalgo.com/download/" target="_blank" rel="noopener noreferrer" style="gap:10px;padding:12px 20px"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></path></svg><span style="display:flex;flex-direction:column;align-items:flex-start;line-height:1.2"><span style="font-weight:700">Download for Windows</span><small style="font-size:11px;font-weight:500;opacity:.85">61.4 MB — 64-bit Installer</small></span></a>
+      <a class="btn" href="https://bthalgo.com/download/android/" target="_blank" rel="noopener noreferrer" style="gap:10px;padding:12px 20px"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zM3.5 8C2.67 8 2 8.67 2 9.5v7c0 .83.67 1.5 1.5 1.5S5 17.33 5 16.5v-7C5 8.67 4.33 8 3.5 8zm17 0c-.83 0-1.5.67-1.5 1.5v7c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-7c0-.83-.67-1.5-1.5-1.5zm-4.97-5.84l1.3-1.3c.2-.2.2-.51 0-.71s-.51-.2-.71 0l-1.48 1.48C13.85 1.23 12.95 1 12 1c-.96 0-1.86.23-2.66.63L7.85.15c-.2-.2-.51-.2-.71 0s-.2.51 0 .71l1.31 1.31C6.97 3.26 6 5.01 6 7h12c0-1.99-.97-3.75-2.47-4.84zM10 5c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm4 0c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/></path></svg><span style="display:flex;flex-direction:column;align-items:flex-start;line-height:1.2"><span style="font-weight:700">Download for Android</span><small style="font-size:11px;font-weight:500;opacity:.85">14.6 MB — APK v3.0</small></span></a>
+
+    <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+      <a class="btn s" href="https://www.youtube.com/c/beginnertraderhelper" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="min-width:48px;padding:0 14px"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+      <a class="btn s" href="https://www.instagram.com/beginner_trader_helper/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="min-width:48px;padding:0 14px"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+      <a class="btn s" href="https://telegram.me/+EV4khEeJ5XozYmM1" target="_blank" rel="noopener noreferrer" aria-label="Telegram" style="min-width:48px;padding:0 14px"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.31l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg></a>
+    </div>
+    </div></div>
+</div></div></section>
+
+</main>
+
+<footer><div class="w">© <span id="y"></span> Beginner Trader Helper · bthalgo.com · Trading involves risk. Signals are not financial advice.</div></footer>
+
+<!-- install banner -->
+<div class="install-banner" id="installBanner" role="dialog" aria-label="Install app">
+  <p><b>Add BTH Terminal to your home screen</b> for an app-like experience.</p>
+  <button id="installBtn">Install</button>
+  <button class="close" id="installClose" aria-label="Dismiss">×</button>
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Full size screenshot">
+  <button aria-label="Close image">×</button>
+  <img alt="">
+  <span class="hint">Pinch or scroll to zoom · Tap outside to close</span>
+</div>
+
+<script>
+(()=> {
+  const $ = s => document.querySelector(s);
+  const $$ = s => [...document.querySelectorAll(s)];
+  $('#y').textContent = new Date().getFullYear();
+
+  // theme toggle
+  const themeToggle = $('#themeToggle');
+  const applyTheme = (t) => {
+    if (t === 'light') document.documentElement.setAttribute('data-theme','light');
+    else document.documentElement.removeAttribute('data-theme');
+    if (themeToggle) themeToggle.textContent = t === 'light' ? '☀️' : '🌙';
+    const meta = document.querySelector('meta[name="theme-color"]:not([media])') || document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', t === 'light' ? '#f1f5f9' : '#060812');
+    const cs = document.querySelector('meta[name="color-scheme"]');
+    if (cs) cs.setAttribute('content', t === 'light' ? 'light' : 'dark');
+    localStorage.setItem('bth-theme', t);
+  };
+  const savedTheme = localStorage.getItem('bth-theme');
+  const prefersLight = matchMedia('(prefers-color-scheme: light)').matches;
+  applyTheme(savedTheme || (prefersLight ? 'light' : 'dark'));
+  themeToggle && (themeToggle.onclick = () => {
+    const cur = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+    applyTheme(cur === 'light' ? 'dark' : 'light');
+    if (navigator.vibrate) navigator.vibrate(8);
+  });
+
+  // menu
+  const bg = $('#bg'), mn = $('#mn');
+  const toggleMenu = (open) => {
+    const o = open ?? !mn.classList.contains('open');
+    mn.classList.toggle('open', o);
+    bg.setAttribute('aria-expanded', String(o));
+    bg.textContent = o ? '✕' : '☰';
+    document.body.style.overflow = o ? 'hidden' : '';
+  };
+  bg.onclick = () => toggleMenu();
+  mn.onclick = e => {
+    if (e.target.id === 'themeToggleMenu') { e.preventDefault(); themeToggle && themeToggle.click(); return; }
+    if (e.target.tagName === 'A') toggleMenu(false);
+  };
+
+  // reveal on scroll
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+  }), { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  $$('.rv').forEach(el => io.observe(el));
+
+  // pointer glow (hover devices)
+  if (matchMedia('(hover:hover)').matches) $$('.glass').forEach(el => el.addEventListener('pointermove', e => {
+    const r = el.getBoundingClientRect();
+    el.style.setProperty('--x', e.clientX - r.left + 'px');
+    el.style.setProperty('--y', e.clientY - r.top + 'px');
+  }, { passive: true }));
+
+  // tilt hero image
+  const t = $('#tilt');
+  let k = false;
+  const up = () => {
+    k = false;
+    const p = Math.min(scrollY / 460, 1);
+    if (t) t.style.transform = `rotateX(${(1-p)*14}deg) scale(${.93 + p*.07})`;
+  };
+  if (!matchMedia('(prefers-reduced-motion:reduce)').matches && t) {
+    up();
+    addEventListener('scroll', () => { if (!k){ k = true; requestAnimationFrame(up); } }, { passive: true });
+  }
+
+  // lightbox
+  const lb = $('#lb'), li = lb.querySelector('img');
+  const openLb = (img) => {
+    li.src = img.currentSrc || img.src;
+    li.alt = img.alt;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (navigator.vibrate) navigator.vibrate(10);
+  };
+  const closeLb = () => { lb.classList.remove('open'); setTimeout(()=>{ if(!lb.classList.contains('open')) document.body.style.overflow=''; }, 260); };
+  $$('[data-z]').forEach(el => el.addEventListener('click', () => {
+    const i = el.querySelector('img'); if (i) openLb(i);
+  }));
+  lb.querySelector('button').onclick = closeLb;
+  lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+  addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+
+  // haptic on buttons
+  $$('a.btn, button').forEach(b => b.addEventListener('click', () => { if (navigator.vibrate) navigator.vibrate(8); }, { passive: true }));
+
+  // install prompt (PWA)
+  let deferredPrompt = null;
+  const banner = $('#installBanner');
+  const installBtn = $('#installBtn');
+  const installClose = $('#installClose');
+  addEventListener('beforeinstallprompt', e => {
+    e.preventDefault();
+    deferredPrompt = e;
+    if (!localStorage.getItem('bth-install-dismissed')) banner.classList.add('show');
+  });
+  installBtn.onclick = async () => {
+    if (!deferredPrompt) return;
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    deferredPrompt = null;
+    banner.classList.remove('show');
+    if (outcome === 'accepted' && navigator.vibrate) navigator.vibrate(20);
+  };
+  installClose.onclick = () => { banner.classList.remove('show'); localStorage.setItem('bth-install-dismissed','1'); };
+
+  // service worker
+  if ('serviceWorker' in navigator) {
+    addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(()=>{}));
+  }
+
+  // close menu on resize to desktop
+  addEventListener('resize', () => { if (innerWidth >= 800) toggleMenu(false); });
+})();
+</script>
+</body>
+</html>
