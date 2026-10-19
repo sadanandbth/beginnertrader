@@ -2565,10 +2565,168 @@ html[data-theme="light"] .product-card-body > .btn-expand.active{
  color:#134e4a;border-color:#0f766e;
 }
 </style>
+  <!-- Optional festival component styles; remove with component -->
+  <style>/* OPTIONAL FESTIVAL COMPONENT — all rules are scoped; safe to remove. */
+#bth-festival-promo{--bg:#060812;--ink:#eef2ff;--mute:#a4aec8;--border:#ffffff24;--surface:#ffffff06;--teal:#2de2c0;color-scheme:dark}
+html[data-theme="light"] #bth-festival-promo{--bg:#f1f5f9;--ink:#0a0f1e;--mute:#475569;--border:#0f172a24;--surface:#fff;--teal:#0f766e;color-scheme:light}
+#bth-festival-promo .festival-banner{position:relative;isolation:isolate;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:28px;padding:27px 38px;min-height:170px;border:1px solid #b69aff55;border-radius:24px;background:#0c0a1c;color:#fff;box-shadow:inset 0 1px 0 #ffffff17,0 20px 45px -32px #8b5cf655}
+#bth-festival-promo .festival-banner:before{content:"";position:absolute;z-index:-2;inset:0;background:radial-gradient(ellipse 23% 190% at 9% 8%,#5551b752,transparent 74%),radial-gradient(ellipse 18% 170% at 39% 80%,#673bc650,transparent 74%),radial-gradient(ellipse 40% 170% at 90% 5%,#cc4acf45,transparent 75%),linear-gradient(105deg,#0e0b1e,#16112b 48%,#0b0915)}
+#bth-festival-promo .festival-banner:after{content:"";position:absolute;inset:0;z-index:-1;opacity:.45;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='170'%3E%3Cg fill='%23ffffff'%3E%3Ccircle cx='11' cy='24' r='.7' opacity='.6'/%3E%3Ccircle cx='65' cy='72' r='.8' opacity='.4'/%3E%3Ccircle cx='143' cy='13' r='1' opacity='.7'/%3E%3Ccircle cx='206' cy='39' r='.6' opacity='.5'/%3E%3Ccircle cx='261' cy='113' r='1' opacity='.6'/%3E%3Ccircle cx='112' cy='141' r='.7' opacity='.4'/%3E%3Ccircle cx='183' cy='97' r='.9' opacity='.7'/%3E%3Ccircle cx='30' cy='149' r='.5' opacity='.7'/%3E%3Ccircle cx='239' cy='159' r='.6' opacity='.5'/%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
+#bth-festival-promo .offer-copy{min-width:0}
+#bth-festival-promo .offer-eyebrow{font-size:9px;font-weight:650;letter-spacing:.14em;color:#c6bcf1;display:flex;align-items:center;gap:8px}
+#bth-festival-promo .offer-eyebrow:before{content:"✦";font-size:14px;color:#e6bcff}
+#bth-festival-promo .festival-banner h2{font-size:clamp(25px,3.2vw,37px);letter-spacing:-.045em;line-height:1.2;font-weight:800;margin:9px 0 7px}
+#bth-festival-promo .festival-banner h2 span{background:linear-gradient(100deg,#a18aff,#e46be4,#ffadd8);background-clip:text;-webkit-background-clip:text;color:transparent}
+#bth-festival-promo .offer-sub{margin:0;font-size:11px;color:#bdb6d5;line-height:1.6}
+#bth-festival-promo .clock-wrap{flex-shrink:0;text-align:center}
+#bth-festival-promo .countdown{display:flex;gap:8px;justify-content:center}
+#bth-festival-promo .unit{width:63px;min-height:66px;border:1px solid #ffffff30;border-radius:11px;background:linear-gradient(135deg,#ffffff0a,#07060ed9);box-shadow:inset 0 1px 0 #ffffff09;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:9px 7px}
+#bth-festival-promo .number{font-size:27px;font-weight:750;line-height:1.1;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+#bth-festival-promo .unit small{font-size:8px;font-weight:550;letter-spacing:.08em;line-height:1.7;color:#c8bfdc;margin-top:5px}
+#bth-festival-promo .deadline{color:#b9accf;font-size:8px;line-height:1.5;margin:9px 0 0;letter-spacing:.025em}
+#bth-festival-promo .expired{font-size:13px;color:#ecd9ff;margin:0;padding:15px;border:1px solid #ffffff24;border-radius:12px;background:#ffffff08}
+#bth-festival-promo .expired[hidden]{display:none}
+#bth-festival-promo .countdown[hidden]{display:none}
+html[data-theme="light"] #bth-festival-promo .festival-banner{border-color:#9c7bd073;box-shadow:0 12px 30px -24px #5b21b680}
+@media (max-width:740px){#bth-festival-promo .festival-banner{padding:23px 18px;min-height:0;gap:18px;flex-direction:column;text-align:center;border-radius:20px}
+#bth-festival-promo .offer-eyebrow{justify-content:center;font-size:8px}
+#bth-festival-promo .festival-banner h2{font-size:29px;line-height:1.15;margin:8px 0}
+#bth-festival-promo .offer-sub{font-size:10px}
+#bth-festival-promo .unit{width:59px;min-height:62px;border-radius:10px}
+#bth-festival-promo .number{font-size:25px}
+#bth-festival-promo .countdown{gap:7px}
+#bth-festival-promo .deadline{font-size:8px;margin-top:8px}}
+@media (max-width:359px){#bth-festival-promo .festival-banner h2{font-size:25px}
+#bth-festival-promo .unit{width:54px}
+#bth-festival-promo .number{font-size:23px}
+#bth-festival-promo .countdown{gap:6px}}
+#bth-festival-promo{--fest-bg:linear-gradient(125deg,#101d2b,#101327 55%,#19122d);--fest-ink:#eef2ff;--fest-mute:#adb8ce;--fest-border:#ffffff29;--fest-unit:#080e1cc9;--fest-glow:radial-gradient(ellipse at 0% 95%,#2de2c019,transparent 55%),radial-gradient(ellipse at 100% 0%,#8b5cf625,transparent 60%);--flame:#ffdd8b}
+html[data-theme="light"] #bth-festival-promo{--fest-bg:linear-gradient(125deg,#f5fffc,#f4f7ff 55%,#faf5ff);--fest-ink:#0a0f1e;--fest-mute:#475569;--fest-border:#0f172a25;--fest-unit:#ffffffdb;--fest-glow:radial-gradient(ellipse at 0% 95%,#0f766e08,transparent 55%),radial-gradient(ellipse at 100% 0%,#5b21b608,transparent 60%);--flame:#f2a82c}
+#bth-festival-promo .festival-banner{min-height:200px;padding:30px 76px 40px;background:var(--fest-bg);color:var(--fest-ink);border-color:var(--fest-border);box-shadow:inset 0 1px 0 #ffffff24,0 20px 45px -32px #0009}
+#bth-festival-promo .festival-banner:before{background:var(--fest-glow)}
+#bth-festival-promo .festival-banner:after{opacity:.15}
+#bth-festival-promo .offer-copy,#bth-festival-promo .clock-wrap{position:relative;z-index:2}
+#bth-festival-promo .offer-eyebrow{color:var(--fest-mute)}
+#bth-festival-promo .offer-eyebrow:before{color:var(--teal)}
+#bth-festival-promo .festival-banner h2 span{background:linear-gradient(100deg,#2de2c0,#4c8dff,#b493ff);background-clip:text;-webkit-background-clip:text;color:transparent}
+#bth-festival-promo .offer-sub,#bth-festival-promo .deadline{color:var(--fest-mute)}
+#bth-festival-promo .unit{border-color:var(--fest-border);background:var(--fest-unit);box-shadow:inset 0 1px 0 #ffffff14}
+#bth-festival-promo .unit small{color:var(--fest-mute)}
+#bth-festival-promo .expired{color:var(--fest-ink);border-color:var(--fest-border)}
+#bth-festival-promo .firework-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;opacity:.65}
+#bth-festival-promo .diya{position:absolute;z-index:2;pointer-events:none;width:65px;height:56px;bottom:5px;left:13px;color:#c78c3a}
+#bth-festival-promo .diya.right{left:auto;right:13px;transform:scaleX(-1)}
+#bth-festival-promo .diya svg{width:100%;height:100%;overflow:visible}
+#bth-festival-promo .diya .flame{transform-origin:32px 25px;animation:flameSway 2.4s ease-in-out infinite alternate}
+#bth-festival-promo .fest-foot{position:absolute;bottom:10px;left:90px;right:90px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:7px;letter-spacing:.15em;color:var(--fest-mute);opacity:.75;pointer-events:none;z-index:2}
+#bth-festival-promo .fest-foot:before,#bth-festival-promo .fest-foot:after{content:"";width:35px;height:1px;background:linear-gradient(90deg,transparent,#dca65d66,transparent)}
+html[data-theme="light"] #bth-festival-promo .festival-banner{border-color:var(--fest-border);box-shadow:0 16px 32px -24px #33415555}
+html[data-theme="light"] #bth-festival-promo .festival-banner h2 span{background:linear-gradient(100deg,#0f766e,#1e40af,#5b21b6);background-clip:text;-webkit-background-clip:text;color:transparent}
+@keyframes flameSway{from{transform:rotate(-3deg) scaleY(.97)}to{transform:rotate(3deg) scaleY(1.04)}}
+@media (max-width:740px){#bth-festival-promo .festival-banner{min-height:238px;padding:23px 18px 43px;gap:17px}
+#bth-festival-promo .diya{width:49px;height:43px;left:8px;bottom:4px}
+#bth-festival-promo .diya.right{left:auto;right:8px}
+#bth-festival-promo .fest-foot{left:65px;right:65px;bottom:12px;font-size:6px;letter-spacing:.12em}
+#bth-festival-promo .fest-foot:before,#bth-festival-promo .fest-foot:after{width:14px}
+#bth-festival-promo .firework-canvas{opacity:.5}}
+@media (prefers-reduced-motion:reduce){#bth-festival-promo .diya .flame{animation:none}
+#bth-festival-promo .firework-canvas{display:none}}
+#bth-festival-promo .firework-canvas{opacity:1;z-index:1}
+#bth-festival-promo .firework-decoration{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.65;z-index:1}
+#bth-festival-promo .diya{width:75px;height:65px;bottom:4px}
+html[data-theme="light"] #bth-festival-promo .firework-decoration{opacity:.8}
+@media (max-width:740px){#bth-festival-promo .firework-canvas{opacity:1}
+#bth-festival-promo .diya{width:58px;height:51px;left:4px}
+#bth-festival-promo .diya.right{right:4px}
+#bth-festival-promo .firework-decoration{opacity:.65}}
+@media (prefers-reduced-motion:reduce){#bth-festival-promo .firework-canvas.user-enabled{display:block}}
+#bth-festival-promo .festival-banner{border-color:#8f9bcc52}
+#bth-festival-promo .festival-banner:before{background:var(--fest-glow),linear-gradient(90deg,transparent,#caa15d04,transparent)}
+#bth-festival-promo .hanging-lamp{position:absolute;top:0;left:15px;width:34px;height:83px;z-index:2;pointer-events:none}
+#bth-festival-promo .hanging-lamp svg{display:block;width:100%;height:100%}
+#bth-festival-promo .hanging-lamp.lamp-2{left:auto;right:15px}
+#bth-festival-promo .diya{width:86px;height:70px;left:5px;bottom:0;z-index:3}
+#bth-festival-promo .diya.right{left:auto;right:5px}
+#bth-festival-promo .diya .ornate-flame{transform-origin:44px 37px}
+#bth-festival-promo .rangoli{position:absolute;left:-35px;bottom:-45px;width:150px;height:150px;color:#e6b76a;opacity:.14;pointer-events:none;z-index:0}
+#bth-festival-promo .festival-banner .offer-eyebrow{letter-spacing:.17em}
+#bth-festival-promo .offer-eyebrow:before{content:"✦";color:#e2bc77}
+#bth-festival-promo .fest-foot{color:#bdac89;font-size:7px;letter-spacing:.16em}
+html[data-theme="light"] #bth-festival-promo .rangoli{color:#9d6823;opacity:.17}
+html[data-theme="light"] #bth-festival-promo .fest-foot{color:#856633}
+html[data-theme="light"] #bth-festival-promo .hanging-lamp{opacity:.95}
+@media (max-width:740px){#bth-festival-promo .hanging-lamp{width:25px;height:61px;left:7px}
+#bth-festival-promo .hanging-lamp.lamp-2{right:7px}
+#bth-festival-promo .diya{width:68px;height:56px;left:1px;bottom:0}
+#bth-festival-promo .diya.right{right:1px}
+#bth-festival-promo .rangoli{width:120px;height:120px;left:-32px;bottom:-39px}
+#bth-festival-promo .festival-banner .offer-eyebrow{font-size:7px;letter-spacing:.14em}
+#bth-festival-promo .fest-foot{left:75px;right:75px;font-size:5.7px;letter-spacing:.08em}
+#bth-festival-promo .fest-foot:before,#bth-festival-promo .fest-foot:after{width:10px;flex-shrink:0}}
+#bth-festival-promo .hanging-lamp{z-index:4}
+#bth-festival-promo .firework-canvas{clip-path:polygon(58px 0,calc(100% - 58px) 0,calc(100% - 58px) 88px,100% 88px,100% 100%,0 100%,0 88px,58px 88px)}
+#bth-festival-promo .diya{width:64px;height:53px;left:10px;bottom:3px}
+#bth-festival-promo .diya.right{left:auto;right:10px}
+#bth-festival-promo .rangoli{width:124px;height:124px;left:-30px;bottom:-39px;opacity:.11}
+@media (max-width:740px){#bth-festival-promo .diya{width:50px;height:42px;left:6px;bottom:3px}
+#bth-festival-promo .diya.right{left:auto;right:6px}
+#bth-festival-promo .rangoli{width:96px;height:96px;left:-26px;bottom:-31px}
+#bth-festival-promo .firework-canvas{clip-path:polygon(42px 0,calc(100% - 42px) 0,calc(100% - 42px) 66px,100% 66px,100% 100%,0 100%,0 66px,42px 66px)}}
+#bth-festival-promo .festival-banner h2{
+ background-image:linear-gradient(110deg,var(--fest-ink) 0%,var(--fest-ink) 39%,#a8e9ef 44%,#ffffff 49%,#c2b7ff 54%,var(--fest-ink) 60%,var(--fest-ink) 100%);
+ background-size:260% 100%;background-position:140% 0;
+ background-clip:text;-webkit-background-clip:text;color:transparent;
+ animation:festivalTitleShine 5.5s ease-in-out infinite;
+}
+#bth-festival-promo .festival-banner h2 span{
+ background:transparent!important;color:inherit;-webkit-text-fill-color:inherit;
+}
+html[data-theme="light"] #bth-festival-promo .festival-banner h2{
+ background-image:linear-gradient(110deg,#0a0f1e 0%,#0a0f1e 39%,#0f766e 44%,#4c8dff 49%,#7c3aed 54%,#0a0f1e 60%,#0a0f1e 100%);
+}
+@keyframes festivalTitleShine{0%,30%{background-position:140% 0}76%,100%{background-position:-40% 0}}
+@media (prefers-reduced-motion:reduce){#bth-festival-promo .festival-banner h2{animation:none;background-position:140% 0}}
+#bth-festival-promo .festival-banner h2{position:relative;background-image:linear-gradient(100deg,#eef2ff 0%,#b4c9ff 45%,#ab91ff 100%);background-size:100% 100%;animation:none;color:transparent;-webkit-text-fill-color:transparent}
+html[data-theme="light"] #bth-festival-promo .festival-banner h2{background-image:linear-gradient(100deg,#0a0f1e,#1e40af 55%,#5b21b6)}
+#bth-festival-promo .festival-banner h2:after{content:attr(data-shine);position:absolute;inset:0;pointer-events:none;font:inherit;letter-spacing:inherit;line-height:inherit;text-align:inherit;
+ color:transparent;-webkit-text-fill-color:transparent;
+ background-image:linear-gradient(105deg,transparent 0%,transparent 37%,#ffc96b 44%,#fff9cf 48%,#fff 50%,#fff9cf 52%,#ffc96b 56%,transparent 63%,transparent 100%);
+ background-size:280% 100%;background-position:120% 0;background-clip:text;-webkit-background-clip:text;
+ animation:clearFestivalShine 7s ease-in-out infinite;
+}
+html[data-theme="light"] #bth-festival-promo .festival-banner h2:after{background-image:linear-gradient(105deg,transparent 0%,transparent 37%,#b56c07 44%,#eaa631 48%,#ffca55 50%,#eaa631 52%,#b56c07 56%,transparent 63%,transparent 100%)}
+@keyframes clearFestivalShine{from{background-position:120% 0}to{background-position:-120% 0}}
+#bth-festival-promo .festival-banner h2.shine-replay:after{animation:clearFestivalShine 7s ease-in-out infinite!important}
+@media (prefers-reduced-motion:reduce){#bth-festival-promo .festival-banner h2:after{animation:none;opacity:0}
+#bth-festival-promo .festival-banner h2.shine-replay:after{opacity:1}}
+#bth-festival-promo{margin:0 0 38px;min-width:0}
+#bth-festival-promo[hidden],#bth-festival-promo[data-enabled="false"]{display:none!important;margin:0!important}
+#bth-festival-promo .festival-banner{font-family:var(--font-main,-apple-system,sans-serif)}
+#bth-festival-promo .festival-banner h2:after{animation:clearFestivalShine 7s ease-in-out infinite!important}
+#bth-festival-promo .diya .ornate-flame{animation:flameSway 2.4s ease-in-out infinite alternate!important}
+#bth-festival-promo .festival-banner h2 span{animation:none!important}
+#bth-festival-promo .festival-banner[data-effects-paused="true"] .ornate-flame,
+#bth-festival-promo .festival-banner[data-effects-paused="true"] h2:after{animation-play-state:paused!important}
+@media(max-width:740px){#bth-festival-promo{margin-bottom:28px}#bth-festival-promo .festival-banner h2{font-size:clamp(24px,7vw,29px)}}
+@media(prefers-reduced-motion:reduce){#bth-festival-promo .festival-banner h2:after{animation:none!important;opacity:0}#bth-festival-promo .diya .ornate-flame{animation:none!important}}
+/* Placement: after the pricing introduction, before the plan selector/cards. */
+#pricing .section-header:has(+ #bth-festival-promo){margin-bottom:24px}
+/* Campaign animation autoplays; no user-facing controls. */
+#bth-festival-promo[data-motion="on"] .firework-canvas{display:block!important}
+#bth-festival-promo[data-motion="on"] .festival-banner h2:after{opacity:1!important;animation:clearFestivalShine 7s ease-in-out infinite!important}
+#bth-festival-promo[data-motion="on"] .diya .ornate-flame{animation:flameSway 2.4s ease-in-out infinite alternate!important}
+#bth-festival-promo[data-motion="off"] .firework-canvas{display:none!important}
+#bth-festival-promo[data-motion="off"] .festival-banner h2:after{animation:none!important;opacity:0!important}
+#bth-festival-promo[data-motion="off"] .diya .ornate-flame{animation:none!important}
+#bth-festival-promo[data-motion="on"] .festival-banner[data-effects-paused="true"] h2:after,
+#bth-festival-promo[data-motion="on"] .festival-banner[data-effects-paused="true"] .ornate-flame{animation-play-state:paused!important}
+</style>
   
   <!-- Script -->
   
   
+  
+  <!-- Optional festival component behavior; no dependencies -->
   
   <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://bthalgo.com/#organization", "name": "Beginner Trader Helper", "alternateName": ["BTH ALGO", "BTH OS"], "url": "https://bthalgo.com/", "logo": "https://bthalgo.com/images/logo.png", "sameAs": ["https://www.youtube.com/c/beginnertraderhelper", "https://www.instagram.com/beginner_trader_helper/"]}, {"@type": "WebSite", "@id": "https://bthalgo.com/#website", "url": "https://bthalgo.com/", "name": "BTH ALGO", "alternateName": "BTHALGO.COM", "publisher": {"@id": "https://bthalgo.com/#organization"}, "inLanguage": "en-IN"}, {"@type": "WebPage", "@id": "https://bthalgo.com/#webpage", "url": "https://bthalgo.com/", "name": "BTH ALGO Official | BTH OS Trading Tools & Courses", "description": "Explore BTH OS for Windows and Android, trading tools and BTH Algo courses. Compare free and PRO plans, features and broker integrations.", "isPartOf": {"@id": "https://bthalgo.com/#website"}, "about": {"@id": "https://bthalgo.com/#organization"}, "inLanguage": "en-IN"}]}</script>
 </head>
@@ -3007,6 +3165,9 @@ html[data-theme="light"] .product-card-body > .btn-expand.active{
   <section class="section-padding" id="pricing">
     <div class="container">
       
+      
+
+
       <div class="section-header">
         <div class="badge-tag"><span class="terminal-section-no">02 /</span> Access Plans</div>
         <h2 class="section-title">Choose Your BTH OS Plan</h2>
@@ -3014,6 +3175,13 @@ html[data-theme="light"] .product-card-body > .btn-expand.active{
           Start 100% free, claim 3-months free VIP by opening a partner broker account, or upgrade to the Master Course bundle.
         </p>
       </div>
+
+      <!-- OPTIONAL FESTIVAL PROMO: START — set data-enabled="false" to hide; remove this block to delete. -->
+      <div id="bth-festival-promo" data-enabled="true" data-motion="on" data-deadline="2026-11-10T00:00:00+05:30" data-fireworks="true" data-hide-after-expiry="true">
+<section aria-label="Festival Season Offer countdown" class="festival-banner"><svg aria-hidden="true" class="firework-decoration" preserveaspectratio="none" viewbox="0 0 1160 240"><g fill="none" stroke-linecap="round"><g stroke="#2de2c0" stroke-width="1.5" transform="translate(580 25)"><path d="M0 -12V-6M0 6V12M-12 0H-6M6 0H12M-9 -9L-5 -5M5 5L9 9M-9 9L-5 5M5 -5L9 -9"></path></g><g stroke="#f5c66c" stroke-width="1.5"><path d="M190 201v8M186 205h8M965 190v8M961 194h8"></path></g></g></svg><canvas aria-hidden="true" class="firework-canvas"></canvas><div aria-hidden="true" class="hanging-lamp lamp-1"><svg viewbox="0 0 42 100"><defs><lineargradient id="bth-fest-lantern1" x2="0" y2="1"><stop stop-color="#e7bf7b" stop-opacity=".95"></stop><stop offset="1" stop-color="#99683b" stop-opacity=".7"></stop></lineargradient></defs><path d="M21 0V24" stroke="#cda46d" stroke-width=".8"></path><path d="M16 25Q21 16 26 25" fill="none" stroke="#dcae65"></path><path d="M14 27L9 37 12 61 21 67 30 61 33 37 28 27Z" fill="#e3ab4f12" stroke="url(#bth-fest-lantern1)" stroke-width="1.1"></path><path d="M9 37H33M12 61H30M14 27H28M21 29V65M14 37L17 61M28 37L25 61" opacity=".8" stroke="#d4a76c" stroke-width=".7"></path><ellipse cx="21" cy="49" fill="#ffcd6c" opacity=".12" rx="6" ry="9"></ellipse><path d="M21 40C20 45 17 48 19 52C21 55 24 52 24 49Z" fill="#ffd682"></path><path d="M21 67V78M16 66L14 74M26 66L28 74" stroke="#cda46d" stroke-width=".8"></path><circle cx="21" cy="80" fill="#e8c88b" r="1.5"></circle></svg></div><div aria-hidden="true" class="hanging-lamp lamp-2"><svg viewbox="0 0 42 100"><defs><lineargradient id="bth-fest-lantern2" x2="0" y2="1"><stop stop-color="#e7bf7b" stop-opacity=".95"></stop><stop offset="1" stop-color="#99683b" stop-opacity=".7"></stop></lineargradient></defs><path d="M21 0V24" stroke="#cda46d" stroke-width=".8"></path><path d="M16 25Q21 16 26 25" fill="none" stroke="#dcae65"></path><path d="M14 27L9 37 12 61 21 67 30 61 33 37 28 27Z" fill="#e3ab4f12" stroke="url(#bth-fest-lantern2)" stroke-width="1.1"></path><path d="M9 37H33M12 61H30M14 27H28M21 29V65M14 37L17 61M28 37L25 61" opacity=".8" stroke="#d4a76c" stroke-width=".7"></path><ellipse cx="21" cy="49" fill="#ffcd6c" opacity=".12" rx="6" ry="9"></ellipse><path d="M21 40C20 45 17 48 19 52C21 55 24 52 24 49Z" fill="#ffd682"></path><path d="M21 67V78M16 66L14 74M26 66L28 74" stroke="#cda46d" stroke-width=".8"></path><circle cx="21" cy="80" fill="#e8c88b" r="1.5"></circle></svg></div><svg aria-hidden="true" class="rangoli" viewbox="0 0 120 120"><g fill="none" stroke="currentColor" stroke-width=".8"><ellipse cx="60" cy="37" rx="8" ry="20" transform="rotate(0 60 60)"></ellipse><ellipse cx="60" cy="37" rx="8" ry="20" transform="rotate(45 60 60)"></ellipse><ellipse cx="60" cy="37" rx="8" ry="20" transform="rotate(90 60 60)"></ellipse><ellipse cx="60" cy="37" rx="8" ry="20" transform="rotate(135 60 60)"></ellipse><ellipse cx="60" cy="37" rx="8" ry="20" transform="rotate(180 60 60)"></ellipse><ellipse cx="60" cy="37" rx="8" ry="20" transform="rotate(225 60 60)"></ellipse><ellipse cx="60" cy="37" rx="8" ry="20" transform="rotate(270 60 60)"></ellipse><ellipse cx="60" cy="37" rx="8" ry="20" transform="rotate(315 60 60)"></ellipse><circle cx="60" cy="60" r="14"></circle><circle cx="60" cy="60" r="35" stroke-dasharray="1 4"></circle><circle cx="60" cy="60" r="47" stroke-dasharray="2 5"></circle></g></svg><svg aria-hidden="true" class="rangoli rangoli-right" viewbox="0 0 120 120"><g fill="none" stroke="currentColor" stroke-width=".8"><ellipse cx="60" cy="37" rx="8" ry="20" transform="rotate(0 60 60)"></ellipse><ellipse cx="60" cy="37" rx="8" ry="20" transform="rotate(45 60 60)"></ellipse><ellipse cx="60" cy="37" rx="8" ry="20" transform="rotate(90 60 60)"></ellipse><ellipse cx="60" cy="37" rx="8" ry="20" transform="rotate(135 60 60)"></ellipse><ellipse cx="60" cy="37" rx="8" ry="20" transform="rotate(180 60 60)"></ellipse><ellipse cx="60" cy="37" rx="8" ry="20" transform="rotate(225 60 60)"></ellipse><ellipse cx="60" cy="37" rx="8" ry="20" transform="rotate(270 60 60)"></ellipse><ellipse cx="60" cy="37" rx="8" ry="20" transform="rotate(315 60 60)"></ellipse><circle cx="60" cy="60" r="14"></circle><circle cx="60" cy="60" r="35" stroke-dasharray="1 4"></circle><circle cx="60" cy="60" r="47" stroke-dasharray="2 5"></circle></g></svg><div aria-hidden="true" class="diya"><svg aria-hidden="true" focusable="false" viewbox="0 0 88 72"><defs><radialgradient id="bth-fest-halo1"><stop stop-color="#ffd785" stop-opacity=".24"></stop><stop offset="1" stop-color="#ffd785" stop-opacity="0"></stop></radialgradient><lineargradient id="bth-fest-bowl1" x2="0" y2="1"><stop stop-color="#e8ae59"></stop><stop offset=".45" stop-color="#bc7133"></stop><stop offset="1" stop-color="#754222"></stop></lineargradient><lineargradient id="bth-fest-flame1" x2="0" y2="1"><stop stop-color="#fff4bc"></stop><stop offset=".6" stop-color="#ffc75c"></stop><stop offset="1" stop-color="#ef8738"></stop></lineargradient></defs><ellipse cx="44" cy="29" fill="url(#bth-fest-halo1)" rx="39" ry="29"></ellipse><ellipse cx="44" cy="65" fill="#e5a343" opacity=".08" rx="34" ry="4"></ellipse><path d="M12 44Q44 85 76 44Z" fill="url(#bth-fest-bowl1)" stroke="#d79649" stroke-width=".7"></path><path d="M18 50Q44 74 70 50M25 57Q44 69 63 57" fill="none" opacity=".7" stroke="#efc77f" stroke-width="1"></path><path d="M26 54l3 4 3-2 3 4 4-2 5 4 5-4 4 2 3-4 3 2 3-4" fill="none" opacity=".6" stroke="#ffe2a0" stroke-width="1"></path><ellipse cx="44" cy="44" fill="#9b5d2b" rx="32" ry="6.2" stroke="#e9ba6c" stroke-width="1.1"></ellipse><ellipse cx="44" cy="43.3" fill="#f2b85d" rx="28.5" ry="4.1"></ellipse><ellipse cx="44" cy="43" fill="#ffe2a0" opacity=".5" rx="22" ry="2"></ellipse><path d="M43 42l2-9" stroke="#794024" stroke-linecap="round" stroke-width="2.2"></path><g class="flame ornate-flame"><path d="M44 5C43 15 32 21 35 30C37 41 51 40 54 30C57 22 47 17 44 5Z" fill="url(#bth-fest-flame1)"></path><path d="M44 20C44 25 39 29 41 33C44 39 49 33 48 29Z" fill="#fff8d5"></path></g><g fill="#ffdaa0" opacity=".9"><circle cx="28" cy="51" r=".8"></circle><circle cx="37" cy="56" r=".8"></circle><circle cx="51" cy="56" r=".8"></circle><circle cx="60" cy="51" r=".8"></circle></g></svg></div><div aria-hidden="true" class="diya right"><svg aria-hidden="true" focusable="false" viewbox="0 0 88 72"><defs><radialgradient id="bth-fest-halo2"><stop stop-color="#ffd785" stop-opacity=".24"></stop><stop offset="1" stop-color="#ffd785" stop-opacity="0"></stop></radialgradient><lineargradient id="bth-fest-bowl2" x2="0" y2="1"><stop stop-color="#e8ae59"></stop><stop offset=".45" stop-color="#bc7133"></stop><stop offset="1" stop-color="#754222"></stop></lineargradient><lineargradient id="bth-fest-flame2" x2="0" y2="1"><stop stop-color="#fff4bc"></stop><stop offset=".6" stop-color="#ffc75c"></stop><stop offset="1" stop-color="#ef8738"></stop></lineargradient></defs><ellipse cx="44" cy="29" fill="url(#bth-fest-halo2)" rx="39" ry="29"></ellipse><ellipse cx="44" cy="65" fill="#e5a343" opacity=".08" rx="34" ry="4"></ellipse><path d="M12 44Q44 85 76 44Z" fill="url(#bth-fest-bowl2)" stroke="#d79649" stroke-width=".7"></path><path d="M18 50Q44 74 70 50M25 57Q44 69 63 57" fill="none" opacity=".7" stroke="#efc77f" stroke-width="1"></path><path d="M26 54l3 4 3-2 3 4 4-2 5 4 5-4 4 2 3-4 3 2 3-4" fill="none" opacity=".6" stroke="#ffe2a0" stroke-width="1"></path><ellipse cx="44" cy="44" fill="#9b5d2b" rx="32" ry="6.2" stroke="#e9ba6c" stroke-width="1.1"></ellipse><ellipse cx="44" cy="43.3" fill="#f2b85d" rx="28.5" ry="4.1"></ellipse><ellipse cx="44" cy="43" fill="#ffe2a0" opacity=".5" rx="22" ry="2"></ellipse><path d="M43 42l2-9" stroke="#794024" stroke-linecap="round" stroke-width="2.2"></path><g class="flame ornate-flame"><path d="M44 5C43 15 32 21 35 30C37 41 51 40 54 30C57 22 47 17 44 5Z" fill="url(#bth-fest-flame2)"></path><path d="M44 20C44 25 39 29 41 33C44 39 49 33 48 29Z" fill="#fff8d5"></path></g><g fill="#ffdaa0" opacity=".9"><circle cx="28" cy="51" r=".8"></circle><circle cx="37" cy="56" r=".8"></circle><circle cx="51" cy="56" r=".8"></circle><circle cx="60" cy="51" r=".8"></circle></g></svg></div><div aria-hidden="true" class="fest-foot">A LITTLE LIGHT. A LITTLE MORE PRO.</div><div class="offer-copy"><div class="offer-eyebrow">BTH OS · FESTIVE COUNTDOWN</div><h2 data-shine="Festival Season Offer">Festival Season <span>Offer</span></h2><p class="offer-sub">A little more PRO. A little more to celebrate.</p></div><div class="clock-wrap"><div aria-label="Time remaining until 10 November 2026, midnight India time" aria-live="off" class="countdown" id="bth-fest-countdown" role="timer"><div class="unit"><span class="number" id="bth-fest-days">--</span><small>DAYS</small></div><div class="unit"><span class="number" id="bth-fest-hours">--</span><small>HOURS</small></div><div class="unit"><span class="number" id="bth-fest-minutes">--</span><small>MINS</small></div><div class="unit"><span class="number" id="bth-fest-seconds">--</span><small>SECS</small></div></div><p class="expired" hidden="" id="bth-fest-expired">The festival countdown has ended.</p><p class="deadline">Countdown to 10 Nov 2026 · 12:00 AM IST</p></div></section>
+      </div>
+      <!-- OPTIONAL FESTIVAL PROMO: END -->
+
 
       <div class="pricing-grid">
 
@@ -3592,5 +3760,93 @@ html[data-theme="light"] .product-card-body > .btn-expand.active{
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();
-</script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4bd4cf1da9412bc',t:'MTc5MjIxOTEwOA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</script><script>/* OPTIONAL FESTIVAL PROMO. Configure on #bth-festival-promo in index.html. */
+(() => {
+ const root=document.getElementById('bth-festival-promo');
+ if(!root||root.dataset.enabled==='false')return;
+ const target=Date.parse(root.dataset.deadline);
+ if(!Number.isFinite(target)){root.hidden=true;return;}
+ const nodes=['days','hours','minutes','seconds'].map(id=>root.querySelector('#bth-fest-'+id));
+ const banner=root.querySelector('.festival-banner');
+ let timer=0;
+ function tick(){
+  const remaining=Math.max(0,Math.floor((target-Date.now())/1000));
+  const values=[Math.floor(remaining/86400),Math.floor(remaining/3600)%24,Math.floor(remaining/60)%60,remaining%60];
+  nodes.forEach((node,i)=>{const text=String(values[i]).padStart(2,'0');if(node.textContent!==text)node.textContent=text;});
+  if(!remaining){clearInterval(timer);root.querySelector('#bth-fest-countdown').hidden=true;root.querySelector('#bth-fest-expired').hidden=false;if(root.dataset.hideAfterExpiry==='true')root.hidden=true;}
+ }
+ function start(){clearInterval(timer);tick();if(Date.now()<target&&!document.hidden&&!root.hidden)timer=setInterval(tick,1000);}
+ document.addEventListener('visibilitychange',()=>{if(document.hidden)clearInterval(timer);else start();});
+ start();
+})();
+
+// Visible festive preview: bounded canvas particles + a user-controlled replay.
+(()=>{
+ const root=document.getElementById('bth-festival-promo');
+ if(!root||root.dataset.enabled==='false'||root.dataset.fireworks==='false'||root.hidden)return;
+ const banner=root.querySelector('.festival-banner');
+ const canvas=banner.querySelector('.firework-canvas'),ctx=canvas.getContext('2d');
+ if(!ctx)return;
+ // This campaign autoplays. No user controls or saved OFF preference.
+ let visible=false,w=0,h=0,raf=0,last=0,next=0,cycle=0,particles=[],rockets=[];
+ root.dataset.motion='on';
+ const colorsDark=['245,195,91','45,226,192','172,143,255','255,137,191'];
+ const colorsLight=['160,96,12','15,118,110','100,55,180','185,40,115'];
+ function palette(){return document.documentElement.dataset.theme==='light'?colorsLight:colorsDark;}
+ function allowed(){return visible&&!root.hidden&&root.dataset.enabled!=='false'&&!document.hidden;}
+ function size(){const r=banner.getBoundingClientRect();w=r.width;h=r.height;const d=Math.min(devicePixelRatio||1,1.5);canvas.width=Math.round(w*d);canvas.height=Math.round(h*d);ctx.setTransform(d,0,0,d,0,0);}
+ function burst(x,y,color){
+  const count=w<600?22:32, radius=w<600?45:64;
+  // A chrysanthemum outer shell, a contrasting inner ring, then gold glitter.
+  for(let i=0;i<count;i++){
+   const angle=i/count*Math.PI*2;
+   const speed=radius*(.85+Math.random()*.3);
+   particles.push({x,y,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed,age:0,life:1.6+Math.random()*.3,color,glitter:false});
+  }
+  const inner=palette()[(cycle+1)%palette().length];
+  for(let i=0;i<10;i++){
+   const angle=i/10*Math.PI*2+.14;
+   particles.push({x,y,vx:Math.cos(angle)*radius*.48,vy:Math.sin(angle)*radius*.48,age:0,life:1.3+Math.random()*.4,color:inner,glitter:false});
+  }
+  for(let i=0;i<8;i++){
+   const angle=Math.random()*Math.PI*2,speed=radius*(.5+Math.random()*.55);
+   particles.push({x,y,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed,age:0,life:1.8+Math.random()*.4,color:palette()[0],glitter:true});
+  }
+  const max=w<600?100:150;
+  if(particles.length>max)particles.splice(0,particles.length-max);
+ }
+ function immediate(){const c=palette();burst(w*.09,h*.23,c[0]);burst(w*.9,h*.25,c[2]);if(w>700)burst(w*.52,h*.12,c[1]);next=performance.now()+1900;}
+ function launch(){const x=cycle++%2===0?w*.11:w*.88;rockets.push({x,y:h+8,target:h*(.17+Math.random()*.18),color:palette()[cycle%4]});}
+ function stop(){banner.dataset.effectsPaused='true';cancelAnimationFrame(raf);raf=0;particles=[];rockets=[];ctx.clearRect(0,0,w,h);}
+ function draw(now){if(!allowed()){stop();return;}raf=requestAnimationFrame(draw);if(now-last<33)return;const dt=Math.min((now-last)/1000,.06);last=now;ctx.clearRect(0,0,w,h);
+  if(now>next&&rockets.length<2){launch();next=now+2400;}
+  rockets=rockets.filter(r=>{r.y-=h*1.55*dt;const gradient=ctx.createLinearGradient(r.x,r.y,r.x,r.y+45);gradient.addColorStop(0,'rgba('+r.color+',1)');gradient.addColorStop(1,'rgba('+r.color+',0)');ctx.strokeStyle=gradient;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(r.x,r.y);ctx.lineTo(r.x,r.y+45);ctx.stroke();ctx.fillStyle='rgb('+r.color+')';ctx.beginPath();ctx.arc(r.x,r.y,2,0,Math.PI*2);ctx.fill();if(r.y<=r.target){burst(r.x,r.y,r.color);return false;}return true;});
+  particles=particles.filter(p=>{
+   p.age+=dt;if(p.age>p.life)return false;
+   p.x+=p.vx*dt;p.y+=p.vy*dt;p.vy+=17*dt;
+   p.vx*=Math.pow(.8,dt);p.vy*=Math.pow(.9,dt);
+   const alpha=Math.pow(1-p.age/p.life,.7);
+   if(p.glitter){
+    // Soft sparse twinkles, never a full-area flash.
+    const glow=alpha*(.65+.35*Math.sin(p.age*9+p.x));
+    ctx.fillStyle='rgba('+p.color+','+glow+')';ctx.beginPath();ctx.arc(p.x,p.y,1.15,0,Math.PI*2);ctx.fill();
+    if(p.age>.65){ctx.strokeStyle='rgba('+p.color+','+glow*.6+')';ctx.lineWidth=.7;ctx.beginPath();ctx.moveTo(p.x-2.3,p.y);ctx.lineTo(p.x+2.3,p.y);ctx.moveTo(p.x,p.y-2.3);ctx.lineTo(p.x,p.y+2.3);ctx.stroke();}
+   }else{
+    const tail=.09;
+    ctx.strokeStyle='rgba('+p.color+','+alpha*.28+')';ctx.lineWidth=2.6;
+    ctx.beginPath();ctx.moveTo(p.x-p.vx*tail,p.y-p.vy*tail);ctx.lineTo(p.x,p.y);ctx.stroke();
+    ctx.strokeStyle='rgba('+p.color+','+alpha+')';ctx.lineWidth=1.25;
+    ctx.beginPath();ctx.moveTo(p.x-p.vx*tail*.75,p.y-p.vy*tail*.75);ctx.lineTo(p.x,p.y);ctx.stroke();
+   }
+   return true;
+  });
+ }
+ function start(showBurst=true){if(!allowed())return;banner.dataset.effectsPaused='false';if(showBurst)immediate();if(!raf){last=performance.now()-34;raf=requestAnimationFrame(draw);}}
+ size();
+ if('ResizeObserver' in window)new ResizeObserver(size).observe(banner);else window.addEventListener('resize',size);
+ if('IntersectionObserver' in window)new IntersectionObserver(items=>{visible=items[0].isIntersecting;if(visible)start(true);else stop();},{threshold:.05}).observe(banner);else{visible=true;start(true);}
+ document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();else start(true);});
+ new MutationObserver(()=>{if(allowed()){stop();start(true);}}).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+})();
+</script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4d14c8128711bd3',t:'MTc5MjQyODgwNQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
